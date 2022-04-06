@@ -3,6 +3,7 @@ Repository containing small iOS Demos &amp; Projects
 
 TODOs:
 
+- start with Swift Concepts & Demos 
 - creating custom UI 
 - full lifecycle of mobile development, testing, publishing and devops.
 - networks and distributed systems.
