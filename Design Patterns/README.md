@@ -1,0 +1,9 @@
+https://refactoring.guru/design-patterns
+https://chetan-aggarwal.medium.com/ios-design-patterns-f478abd78132
+https://www.raywenderlich.com/477-design-patterns-on-ios-using-swift-part-1-2
+https://medium.com/swlh/ios-design-patterns-a9bd07818129
+https://rubygarage.org/blog/swift-design-patterns
+https://gbksoft.com/blog/top-design-patterns-for-developing-ios-apps/
+https://stfalcon.com/en/blog/post/ios-patterns
+https://developer.apple.com/documentation/swift/cocoa_design_patterns
+https://www.spaceotechnologies.com/blog/ios-design-patterns/
