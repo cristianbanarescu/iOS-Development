@@ -1,0 +1,16 @@
+https://www.raywenderlich.com/21020457-ios-unit-testing-and-ui-testing-tutorial
+https://semaphoreci.com/blog/xcode-unit-testing-tutorial
+https://medium.com/swlh/unit-testing-in-swift-the-fundamentals-eec805766349
+https://www.swiftbysundell.com/basics/unit-testing/
+https://clean-swift.com/effective-unit-testing/
+https://developer.apple.com/documentation/xctest
+https://www.hackingwithswift.com/read/39/overview
+https://www.avanderlee.com/swift/unit-tests-best-practices/
+https://roadfiresoftware.com/2018/03/how-to-write-unit-tests-in-swift-4-with-xctest/
+https://semaphoreci.com/blog/ui-testing-swift
+https://codewithchris.com/xcode-ui-testing-swift/
+https://www.hackingwithswift.com/articles/148/xcode-ui-testing-cheat-sheet
+https://www.appcoda.com/ui-testing-swiftui-xctest/
+https://developer.apple.com/documentation/xctest/user_interface_tests
+https://www.swiftbysundell.com/articles/getting-started-with-xcode-ui-testing-in-swift/
+https://blog.bitrise.io/post/the-ultimate-guide-to-unit-and-ui-testing-for-beginners-in-swift
