@@ -1,5 +1,6 @@
 # iOS-Development
-Repository containing small iOS Demos &amp; Projects
+Repository containing small iOS Demos &amp; Projects.
+This is a work in progress. Right now, this repo only contains links to useful information about different topics.
 
 TODOs:
 
