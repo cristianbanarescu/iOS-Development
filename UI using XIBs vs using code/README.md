@@ -1,0 +1,9 @@
+https://www.hackingwithswift.com/quick-start/swiftui/swiftui-vs-interface-builder-and-storyboards
+https://medium.com/technology-nineleaps/swift-ui-or-storyboard-675ff2b40829
+https://www.toptal.com/ios/ios-user-interfaces-storyboards-vs-nibs-vs-custom-code
+https://stackoverflow.com/questions/59766558/swiftui-vs-interface-builder-and-storyboards
+https://blog.logrocket.com/storyboard-vs-programmatically-ios-ui-design/
+https://instabug.com/blog/why-we-dont-use-interface-builder-and-storyboards-at-instabug/
+https://medium.com/@matlyles/storyboards-vs-programmatic-ios-development-40c5b5907f85
+https://www.reddit.com/r/iOSProgramming/comments/67nvpj/making_interfaces_using_interface_builder_vs/
+https://developer.apple.com/xcode/interface-builder/
