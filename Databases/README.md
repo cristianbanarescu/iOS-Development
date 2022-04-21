@@ -26,3 +26,4 @@ https://www.raywenderlich.com/6620276-sqlite-with-swift-tutorial-getting-started
 https://github.com/stephencelis/SQLite.swift
 https://medium.com/@sourabhkolekar16/about-sqlite-swift-d637e0fc2171
 https://iosexample.com/easy-to-use-sqlite-orm-library-written-with-swift/
+https://www.raywenderlich.com/6620276-sqlite-with-swift-tutorial-getting-started

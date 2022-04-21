@@ -35,3 +35,4 @@ https://www.hackingwithswift.com/read/1/3/designing-our-interface
 https://www.appypie.com/table-view-controller-uitableviewcontroller-how-to
 https://medium.com/swift2go/building-reusable-generic-uitableviewcontroller-in-ios-app-alfian-losari-cba0fded3740
 https://www.codementor.io/@nguyentruongky/uitableviewcontroller-vs-uiviewcontroller-uitableview-rfxuec34w
+https://www.raywenderlich.com/4363809-uisearchcontroller-tutorial-getting-started

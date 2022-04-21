@@ -26,3 +26,6 @@ https://medium.com/@rr092293/gcd-queues-in-ios-561ed56b65ae
 https://www.raywenderlich.com/books/concurrency-by-tutorials/v2.0/chapters/3-queues-threads
 https://stackoverflow.com/questions/21122842/whats-the-difference-between-synchronous-and-asynchronous-calls-in-objective-c#:~:text=swift%203%2C%204%2C%204%2C,task%20to%20finish%20before%20continuing.&text=Asynchronous%20means%20that%20Completes%20a,means%20it%20will%20not%20wait.
 https://medium.com/@almalehdev/concurrency-visualized-part-1-sync-vs-async-c433ff7b3ebe
+https://www.raywenderlich.com/5370-grand-central-dispatch-tutorial-for-swift-4-part-1-2
+https://www.raywenderlich.com/5293-operation-and-operationqueue-tutorial-in-swift
+https://www.raywenderlich.com/966538-arc-and-memory-management-in-swift

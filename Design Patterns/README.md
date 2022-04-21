@@ -7,3 +7,6 @@ https://gbksoft.com/blog/top-design-patterns-for-developing-ios-apps/
 https://stfalcon.com/en/blog/post/ios-patterns
 https://developer.apple.com/documentation/swift/cocoa_design_patterns
 https://www.spaceotechnologies.com/blog/ios-design-patterns/
+https://www.raywenderlich.com/34-design-patterns-by-tutorials-mvvm
+https://www.raywenderlich.com/477-design-patterns-on-ios-using-swift-part-1-2
+https://www.raywenderlich.com/1000705-model-view-controller-mvc-in-ios-a-modern-approach

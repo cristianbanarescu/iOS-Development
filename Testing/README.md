@@ -14,3 +14,5 @@ https://www.appcoda.com/ui-testing-swiftui-xctest/
 https://developer.apple.com/documentation/xctest/user_interface_tests
 https://www.swiftbysundell.com/articles/getting-started-with-xcode-ui-testing-in-swift/
 https://blog.bitrise.io/post/the-ultimate-guide-to-unit-and-ui-testing-for-beginners-in-swift
+https://www.raywenderlich.com/30227776-swiftui-testing-with-viewinspector-for-ios
+https://www.raywenderlich.com/21020457-ios-unit-testing-and-ui-testing-tutorial

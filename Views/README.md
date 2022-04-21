@@ -28,3 +28,9 @@ https://stackoverflow.com/questions/33234180/uitableview-example-for-swift
 https://programmingwithswift.com/create-a-uitableview-with-swift/
 https://www.codingexplorer.com/getting-started-uitableview-swift/
 https://thomashanning.com/uitableview-tutorial-for-beginners/
+https://www.raywenderlich.com/8549-self-sizing-table-view-cells
+
+https://www.raywenderlich.com/2198310-uistackview-tutorial-for-ios-introducing-stack-views
+https://www.raywenderlich.com/5758454-uiscrollview-tutorial-getting-started
+https://www.raywenderlich.com/5786-uitableview-infinite-scrolling-tutorial
+https://www.raywenderlich.com/4829472-uicollectionview-custom-layout-tutorial-pinterest

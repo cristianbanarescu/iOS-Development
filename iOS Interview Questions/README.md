@@ -9,3 +9,4 @@ https://iosinterviewguide.com/ios-interview-questions-for-senior-developers-in-2
 https://www.fullstack.cafe/blog/ios-interview-questions
 https://codewithchris.com/ios-interview-questions/
 https://www.youtube.com/watch?v=56ZO6Gg68tw&ab_channel=SeanAllen
+https://www.raywenderlich.com/762435-swift-interview-questions-and-answers
