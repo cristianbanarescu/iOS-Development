@@ -23,6 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EC0C0AE12816CB1A001A2102 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EC9A814B27FDEB45004E8ED1 /* Swift Concepts */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Swift Concepts"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9A814E27FDEB45004E8ED1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,6 +42,7 @@
 		EC9A814227FDEB45004E8ED1 = {
 			isa = PBXGroup;
 			children = (
+				EC0C0AE12816CB1A001A2102 /* README.md */,
 				EC9A814D27FDEB45004E8ED1 /* Swift Concepts */,
 				EC9A814C27FDEB45004E8ED1 /* Products */,
 			);
