@@ -14,7 +14,11 @@ It may also contain details about Swift concepts and Demos.
 - Source and binary compatibility 
 - Swift for Server 
 - Swift Package Manager - build, run, test and package Swift libraries and executables; easy to distribute the code 
+- Array vs Set vs Dictionary 
+- Tuples - groups of values 
+- Swift is type-safe: if you need an Int, you can't pass a String by mistake; Swift does not let you pass an Optional String when you actually need a String (ie non-optional String) 
 
+- https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html
 - https://docs.swift.org/swift-book/index.html
 - https://developer.apple.com/swift/
 - https://developer.apple.com/swift/resources/
