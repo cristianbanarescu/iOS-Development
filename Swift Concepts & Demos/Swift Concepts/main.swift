@@ -56,3 +56,13 @@ myVariable = 10 // this is OK, because myVariable is a variable, you can change 
 
 let myConstant = 10
 myConstant = 11 // this is NOK, because myConstant is a constant, you cannot change its value after it was set
+
+// MARK: - Printing Constants and Variables
+
+print(myConstant) // use separator and terminator parameters from the print global function to 'alter' the print
+
+print("the value of my constant is: \(myConstant)") // \() is called String interpolation
+// uses the name of the variable/constant/etc inside the longer String and makes Swift replace that with the actual value behind it
+// this will print: the value of my constant is: 10
+
+
