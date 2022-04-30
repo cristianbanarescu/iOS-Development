@@ -65,4 +65,15 @@ print("the value of my constant is: \(myConstant)") // \() is called String inte
 // uses the name of the variable/constant/etc inside the longer String and makes Swift replace that with the actual value behind it
 // this will print: the value of my constant is: 10
 
+// MARK: - Comments
 
+// This is a comment
+
+/*
+ This is a multiline comment
+ */
+
+/*
+ This is a multiline
+ /* comment nested inside a multiline comment */
+ */
