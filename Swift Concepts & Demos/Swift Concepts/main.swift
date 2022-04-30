@@ -96,3 +96,11 @@ let maxUInt8 = UInt8.max
 /// Same considerations for UInt, but UInt is UNSIGNED (includes only positive numbers and 0)
 
 //let unsignedNumber: UInt = -9 // error because UInt only stores positives and zero
+
+// MARK: - Floating-point numbers
+
+/// Numbers with a fractional component (23.45, -129.3, etc)
+/// Much larger numbers than those included in Int
+/// 2 types: Double and Float
+/// Double > 64-bit numbers (preferred by default, it has greater precision than Float: at least 15 decimal digits vs 6 in Float )
+/// Float > 32-bit numbers
