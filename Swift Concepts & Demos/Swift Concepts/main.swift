@@ -44,9 +44,9 @@ let 🐶🐮 = "dogcow"
 /// You can't use the same name for a variable/constant and just change its type
 /// Nor you can declare it again with the same name
 var myVar: Int = 10
-var myVar: String = "9"
+//var myVar: String = "9"
 
-var default = 9 // You can't directly name a variable/constant using direct Swift keywords
+//var default = 9 // You can't directly name a variable/constant using direct Swift keywords
 
 // If you do want to name it using a Swift keyword, surround your variable/constant name with backticks (`)
 var `default` = 9
@@ -55,7 +55,7 @@ var myVariable = 9
 myVariable = 10 // this is OK, because myVariable is a variable, you can change its value after it was set
 
 let myConstant = 10
-myConstant = 11 // this is NOK, because myConstant is a constant, you cannot change its value after it was set
+//myConstant = 11 // this is NOK, because myConstant is a constant, you cannot change its value after it was set
 
 // MARK: - Printing Constants and Variables
 
@@ -81,9 +81,9 @@ print("the value of my constant is: \(myConstant)") // \() is called String inte
 // MARK: - Integers, Int, UInt
 
 /// Integers = whole numbers without floating component
-/// Can be:
-///     - signed (positive, zero, negative)
-///     - unsigned (positive, zero)
+/// (Not only Integers) Can be:
+///     - signed (positive, zero, negative); ALL NUMBERS (- AND +)
+///     - unsigned (positive, zero); WITHOUT NEGATIVE NUMBERS
 /// Swift has signed and unsigned integers in 8, 16, 32, 64 bit forms
 /// ie UInt8 - unsigned integers in 8 bit form
 /// ie Int32 - signed integers in 32 bit form
@@ -151,3 +151,25 @@ let hexadecimalDouble = 0xC.3p0 // (12(C) * 16^0) + (3 * 16^-1 * 2^0) = 12 + 0.1
 let paddedFloatWithZeros = 000123.456
 let oneMillion = 1_000_000
 let aLittleOverOneMillion = 1_000_000.000_000_1
+
+// MARK: - Numeric Type Conversion
+
+/// Use Int by default
+/// Use other Integer types explicitly when you need performance, optimizations and size data
+/// Int8 values: -128 > 127
+/// UInt8 values: 0 > 255
+
+//let cantBeNegative: UInt8 = -10 // UInt8 stores only values from 0 > 255
+//let isTooBig: Int8 = Int8.max + 1 // Int8 can't store a value that is bigger than its max
+
+let oneThousand: UInt16 = 1_000
+let one: UInt8 = 1
+let oneThousandAndOne = oneThousand + UInt16(one) // convert UInt8 into UInt16 by using UInt16(UInt8_value)
+
+let pointFourteen = 0.14
+let three = 3
+
+let piAddition = Double(three) + pointFourteen // without converting 'three' to Double, the addition won't be possible; the values were not of the same type
+
+print(3 + 0.14) // this works without any type conversion because these 2 are Numeric Literals. The compiler inferres their type when they are evaluated
+
