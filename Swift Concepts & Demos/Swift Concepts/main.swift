@@ -104,3 +104,19 @@ let maxUInt8 = UInt8.max
 /// 2 types: Double and Float
 /// Double > 64-bit numbers (preferred by default, it has greater precision than Float: at least 15 decimal digits vs 6 in Float )
 /// Float > 32-bit numbers
+
+// MARK: - Type Safety & Type Inference
+
+/// Swift is a type-safe language > it 'makes' you be clear about the types you work with.
+/// If you need a String, you can't later pass an Int
+/// Swift performs type checking when compiling your code and finds any 'errors' related to types being used wrong
+/// You don't need tot specify the type for each variable or constant you use. Swift deduces(inferes) the type based on the value of the variable/constant at compile time.
+
+let numberOfApples = 3
+// Int is inferred automatically
+
+let pi = 3.14
+// Double is inferred automatically. Swift always chooses Double over Float by default
+
+let pies = 3 + 3.14
+// Double is inferred automatically
