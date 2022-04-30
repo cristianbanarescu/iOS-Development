@@ -77,3 +77,22 @@ print("the value of my constant is: \(myConstant)") // \() is called String inte
  This is a multiline
  /* comment nested inside a multiline comment */
  */
+
+// MARK: - Integers, Int, UInt
+
+/// Integers = whole numbers without floating component
+/// Can be:
+///     - signed (positive, zero, negative)
+///     - unsigned (positive, zero)
+/// Swift has signed and unsigned integers in 8, 16, 32, 64 bit forms
+/// ie UInt8 - unsigned integers in 8 bit form
+/// ie Int32 - signed integers in 32 bit form
+
+let minUInt8 = UInt8.min
+let maxUInt8 = UInt8.max
+
+/// Use Int by default, even if you know for sure you have only nonnegative numbers. Int is good for code interoperability, matches type inference, etc.
+/// Int is either Int32 or Int64 based on the platform's word-size: 32-bit platform > Int32 ... 64 bit-platform > Int64
+/// Same considerations for UInt, but UInt is UNSIGNED (includes only positive numbers and 0)
+
+//let unsignedNumber: UInt = -9 // error because UInt only stores positives and zero
