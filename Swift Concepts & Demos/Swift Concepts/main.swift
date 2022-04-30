@@ -173,3 +173,20 @@ let piAddition = Double(three) + pointFourteen // without converting 'three' to 
 
 print(3 + 0.14) // this works without any type conversion because these 2 are Numeric Literals. The compiler inferres their type when they are evaluated
 
+// MARK: - Type Aliases
+
+/// Use 'typealias' keyword
+/// You give another name to an existing type
+/// Useful when you want to use other naming that is more appropriate than using an existing type's name
+ 
+typealias AudioSample = UInt16
+
+// instead of this
+let sample: UInt16 = 10
+
+// you can do this
+let audioSample: AudioSample = 10
+
+// you can use the same 'stuff' that the aliased type had
+// like this:
+let minimumAudioSample = AudioSample.min // this actually will call UInt16.min
