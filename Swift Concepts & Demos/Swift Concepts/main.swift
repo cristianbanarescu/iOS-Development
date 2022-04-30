@@ -120,3 +120,34 @@ let pi = 3.14
 
 let pies = 3 + 3.14
 // Double is inferred automatically
+
+// MARK: - Numeric Literals
+
+/// Literal = value that appears directly in source code, like 23, 10, etc
+
+/// Integer Literals
+let decimal = 17 // 17 in decimal notation
+let binary = 0b10001 // 17 in binary notation
+let octal = 0o21 // 17 in octal notation
+let hexadecimal = 0x11 // 17 in hexadecimal notation
+
+/// Floating-point literals can be decimal or hexadecimal
+/// They must have a number (or hexadecimal number) on both sides of the decimal point (left and right of the decimal point)
+/// Decimal floats can have OPTIONAL exponent (e or E); base number will be multiplied by 10^exp
+/// Hexadecimal MUST have an exponent(p or P); base number will be multiplied by 2^exp
+
+let number = 1.25e2 // 1.25 * 10^2 = 1.25 * 100 = 125.0
+let secondNumber = 1.25e-2 // 1.25 * 10^-2 = 0.0125
+
+let hexaNumber = 0xFp2 // 15(F) * 2^2 = 60.0
+let secondHexaNumber = 0xFp-2 // 15 * 2^-2 = 3.75
+
+let decimalDouble = 12.1875
+let exponentDouble = 1.21875e1
+let hexadecimalDouble = 0xC.3p0 // (12(C) * 16^0) + (3 * 16^-1 * 2^0) = 12 + 0.1875 = 12.1875
+
+/// Numeric Literals can have formatting to be read easier
+
+let paddedFloatWithZeros = 000123.456
+let oneMillion = 1_000_000
+let aLittleOverOneMillion = 1_000_000.000_000_1
