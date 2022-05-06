@@ -197,4 +197,32 @@ let waterIsGood = true // infered type > Bool
 
 // useful when used in conditional statements
 
+// MARK: - Tuples
+
+// group multiple, different values into one
+// values can be of any type inside a tuple
+
+let principalAndInterestString = (100, "4.5%") // has type (Int, String)
+
+let (principal, interestString) = principalAndInterestString
+
+print("principal is: \(principal)")
+print("interest is: \(interestString)")
+
+let (justPrincipal, _) = principalAndInterestString // if you want to ignore a part of the tuple
+print("Just the principal is: \(justPrincipal)")
+
+// other way to access parts of the tuple
+print(principalAndInterestString.0)
+print(principalAndInterestString.1)
+
+let secondPrincipalAndInterestString = (principal: 100, interestString: "4.5%") // named parts of the tuple
+
+print("The principal is: \(secondPrincipalAndInterestString.principal)") // access the named parts
+print("The interest is: \(secondPrincipalAndInterestString.interestString)")
+
+// Tuples are useful if you want to know more info when you return something from a function
+// Useful to return a Tuple with multiples values, maybe each value of different type
+// ie when you call some web server method and it returns the error code and the error message (like 404, "Not found")
+
 
