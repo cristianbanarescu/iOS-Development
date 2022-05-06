@@ -190,3 +190,11 @@ let audioSample: AudioSample = 10
 // you can use the same 'stuff' that the aliased type had
 // like this:
 let minimumAudioSample = AudioSample.min // this actually will call UInt16.min
+
+// MARK: - Booleans
+
+let waterIsGood = true // infered type > Bool
+
+// useful when used in conditional statements
+
+
