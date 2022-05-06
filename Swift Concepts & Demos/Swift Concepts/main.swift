@@ -225,4 +225,23 @@ print("The interest is: \(secondPrincipalAndInterestString.interestString)")
 // Useful to return a Tuple with multiples values, maybe each value of different type
 // ie when you call some web server method and it returns the error code and the error message (like 404, "Not found")
 
+// MARK: - Optionals
 
+// Either there is a value and you can unwrap it; either there isn't a value at all
+// Swift optionals work for any type, unlike C or Objective C
+
+let mayBeANumber = "12"
+
+let convertedNumber = Int(mayBeANumber) // Optional Int > Int?; because conversion can fail ; not all Strings can be converted to Int
+
+var myOptionalNumber: Int? = 100 // contains value 100
+myOptionalNumber = nil // contains no value
+myOptionalNumber = 88
+
+var answer: String? // this is nil by default
+
+// force unwrapping
+
+print("My Optional number value is: \(myOptionalNumber!)") // use ! because I know for sure that myOptionalNumber has a value inside
+
+// Optional Binding
