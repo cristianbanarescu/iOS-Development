@@ -245,3 +245,22 @@ var answer: String? // this is nil by default
 print("My Optional number value is: \(myOptionalNumber!)") // use ! because I know for sure that myOptionalNumber has a value inside
 
 // Optional Binding
+
+// use optional binding so that you can check if an optional contains a value and if so, make it available as a temporary variable or constant
+// a.k.a bind a constant/variable with the value from inside an Optional, if there is a value inside
+
+if let myOptionalNumberBinded = myOptionalNumber {
+    print("there is a value: \(myOptionalNumberBinded)")
+} else {
+    print("There is no value here")
+}
+
+// following can be read as: if there is a value inside the myOptionalNumber, set a constant called myOptionalNumberBinded that contains the value from myOptionalNumber
+
+if var mutableBindedNumber = myOptionalNumber { // manipulate the value binded from the Optional
+    print("\(mutableBindedNumber)")
+    mutableBindedNumber = 199
+    print("\(mutableBindedNumber)")
+} else {
+    print("No value at all!")
+}
