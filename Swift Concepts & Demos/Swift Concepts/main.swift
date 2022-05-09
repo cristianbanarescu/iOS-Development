@@ -244,7 +244,7 @@ var answer: String? // this is nil by default
 
 print("My Optional number value is: \(myOptionalNumber!)") // use ! because I know for sure that myOptionalNumber has a value inside
 
-// Optional Binding
+// MARK: - Optional Binding
 
 // use optional binding so that you can check if an optional contains a value and if so, make it available as a temporary variable or constant
 // a.k.a bind a constant/variable with the value from inside an Optional, if there is a value inside
@@ -264,3 +264,24 @@ if var mutableBindedNumber = myOptionalNumber { // manipulate the value binded f
 } else {
     print("No value at all!")
 }
+
+
+// MARK: - Implicitly Unwrapped Optionals
+
+// Optionals can be checked if they exist using an if statement and optional binding to see if the value exists or not.
+
+// implicitly unwrapped = assumes that will have a value all the time (!)
+// place an ! after the type
+
+// useful when the value of the optional exists right after the optional is defined and assume that the Optional won't change its value afterwards
+
+let possibleString: String? = "some string"
+let forcedString: String = possibleString! // requires !
+
+let implicitlyUnwrappedString: String! = "implicit"
+let implicit: String = implicitlyUnwrappedString // does not require !
+
+// implicitly unwrapping = give permission to the Optional to force-unwrap itself if needed
+// implicitlyUnwrappedString is force-unwrapped because its value is put inside 'implicit' which has an explicit type of String
+
+let someOtherString = implicitlyUnwrappedString // someOtherString has Optional type, just like any other optional
