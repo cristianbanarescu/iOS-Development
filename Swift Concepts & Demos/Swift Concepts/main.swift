@@ -324,3 +324,28 @@ do { // propagation
 }
 
 // For more details, see https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html
+
+// MARK: - Assertions and Preconditions
+
+// Swift Standard Library
+// Check something at runtime (These are Boolean checks)
+// If your check is not 'ok', you won't execute the code below it
+// If 'true' > everything is ok, code is further executed
+// If 'false' > code stops > app terminated
+// Assertions for Development code (only on Debug builds)
+// Preconditions for Production code (both on Debug and Release builds)
+
+let money = 10
+//assert(money > 100, "You don't have enough money")
+
+let age = 4
+
+if age > 10 {
+    print("old enough to invest")
+} else if age > 5 {
+    print("pretty close to investing")
+} else {
+    assertionFailure("you need to be older, of course")
+}
+
+// fatalError is also useful. It's better because the compiler always stops execution for a fatalError. In case you use 'unchecked' mode for the compiler, preconditions won't be checked, they will be defaulted to as being 'true'
