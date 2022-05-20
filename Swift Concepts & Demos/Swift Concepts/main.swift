@@ -285,3 +285,42 @@ let implicit: String = implicitlyUnwrappedString // does not require !
 // implicitlyUnwrappedString is force-unwrapped because its value is put inside 'implicit' which has an explicit type of String
 
 let someOtherString = implicitlyUnwrappedString // someOtherString has Optional type, just like any other optional
+
+// MARK: - Error Handling
+
+// Responding to errors your program may have during its execution (ie your program will 'throw' an error)
+// You can propagate the error
+// The caller of a function that throws error can catch the error and deal with it
+
+func canThrow() throws {
+    // this can throw errors
+}
+
+do {
+    try canThrow()
+    // if you're here, no error was thrown, execution of the program continued
+} catch {
+    // error was thrown and caught
+}
+
+enum MoneyError: Error {
+    case noMoney
+    case notEnoughMoney
+    case investmentNotFound(String)
+}
+
+func investMoney() throws {
+    //
+}
+
+do { // propagation
+    try investMoney()
+} catch MoneyError.noMoney {
+    print("add money to your account")
+} catch MoneyError.notEnoughMoney {
+    print("please add more money")
+} catch MoneyError.investmentNotFound(let investmentName) {
+    print("\(investmentName) not found!")
+}
+
+// For more details, see https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html
