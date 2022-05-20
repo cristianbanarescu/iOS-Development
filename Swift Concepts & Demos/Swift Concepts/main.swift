@@ -349,3 +349,46 @@ if age > 10 {
 }
 
 // fatalError is also useful. It's better because the compiler always stops execution for a fatalError. In case you use 'unchecked' mode for the compiler, preconditions won't be checked, they will be defaulted to as being 'true'
+
+// MARK: - Basic Operators
+
+/*
+    Can be:
+ 
+    - Unary > used only on ONE 'target' (!a, -a, a!)
+    - Binary > used on 2 'targets' (a + b)
+    - Ternary > ternary conditional operator: a ? b : c
+ */
+
+let fourty = 40
+let minusFourty = -fourty // -40
+let plusFourty = -minusFourty // 40
+
+let alsoPlusFourty = +minusFourty // 40
+
+(1, "dog") < (2, "cat") // true: 1 < 2
+(1, "dog") < (1, "elbow") // true: 1 == 1 AND "dog" < "elbow"
+
+// Nil-coalescing operator
+// unwrap an Optional and provide the value, if any, or a 'default' value otherwise
+
+let defaultGrade = 5
+var studentGrade: Int?
+let finalGrade = studentGrade ?? defaultGrade // returns 5
+
+studentGrade = 10
+
+let newFinalGrade = studentGrade ?? defaultGrade // returns 10
+
+// Range Operators
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+
+print(numbers[0...5], separator: " ") // 1 2 3 4 5 6
+print(numbers[0..<5], separator: " ") // 1 2 3 4 5
+
+let names = ["Anna", "Alex", "Brian", "Jack"]
+
+print(names[2...]) // Brian, Jack
+print(names[...2]) // Anna, Alex, Brian
+print(names[..<2]) // Anna, Alex
