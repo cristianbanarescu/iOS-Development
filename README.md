@@ -57,6 +57,17 @@ TODOs:
 - Watch OS apps
 - Mac OS apps
 - tvOS apps
+- have published at least one iOS app
+- remote data : REST + JSON 
+- use 3rd party libraries
+- full development lifecycle 
+- working with hardware features (ie Camera)
+- Continuous Integration (Jenkins)
+- good overview of development trends, news sources, podcasts, tutorials
+- very good in source control 
+- multi-threaded, asyncrhonous code 
+- Agile methodologies (Scrum, XP)
+- automated iOS testing
 
 Other useful links:
 
