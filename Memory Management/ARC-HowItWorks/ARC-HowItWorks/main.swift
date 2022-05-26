@@ -21,3 +21,5 @@ otherManager = nil // ARC count = 2 (count of references to ARCMemoryManager)
 anotherManager = nil // ARC count = 1 (count of references to ARCMemoryManager)
 
 manager = nil // ARC Count = 0  (count of references to ARCMemoryManager)
+
+// See tutorial from https://www.raywenderlich.com/966538-arc-and-memory-management-in-swift

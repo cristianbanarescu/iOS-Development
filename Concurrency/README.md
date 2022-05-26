@@ -28,4 +28,3 @@ https://stackoverflow.com/questions/21122842/whats-the-difference-between-synchr
 https://medium.com/@almalehdev/concurrency-visualized-part-1-sync-vs-async-c433ff7b3ebe
 https://www.raywenderlich.com/5370-grand-central-dispatch-tutorial-for-swift-4-part-1-2
 https://www.raywenderlich.com/5293-operation-and-operationqueue-tutorial-in-swift
-https://www.raywenderlich.com/966538-arc-and-memory-management-in-swift
