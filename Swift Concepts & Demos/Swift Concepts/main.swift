@@ -463,3 +463,8 @@ print(threeMoreDoubleQuotationMarks) // use # to NOT invoke the effect of escapi
 
 print(#"Line 1\#nLine 2"#) // breaks the line
 print(#"Line 1\nLine 2"#) // does not break the line
+
+/*
+ String is a value type.
+ When you create a new String, the value created will be copied when it will be passed along for other usages
+ */
