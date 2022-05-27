@@ -392,3 +392,74 @@ let names = ["Anna", "Alex", "Brian", "Jack"]
 print(names[2...]) // Brian, Jack
 print(names[...2]) // Anna, Alex, Brian
 print(names[..<2]) // Anna, Alex
+
+
+// MARK: - Strings and Characters
+
+/*
+ Can be accessed as a collection of Character values
+ String interpolation - include constants, variables, other expressions into longer strings
+ */
+
+let multilineString = """
+This is on
+multiple
+lines
+"""
+
+print(multilineString)
+
+let notOnMultiLineString = """
+This is NOT on \
+multiple \
+lines
+"""
+
+print(notOnMultiLineString) // multiline is escaped by using the \ operator inside the multiline string
+
+let someString = "some" + "\n stringhere"
+print(someString) // also on multiple lines but uses normal string with double-quotes
+
+let otherStringMultiLine = """
+
+this
+starts
+and
+ends
+with
+a
+linebreak
+
+"""
+
+print(otherStringMultiLine)
+
+let linesWithIndent = """
+    Indented ?
+Not indented
+"""
+
+print(linesWithIndent)
+
+
+// Special characters inside String literals
+
+let withQuotations = "This will be some \"nice\" string" // escape " with \
+print(withQuotations)
+
+// Unicode Scalar value; write them with \u{hexValue}; hexValue > 1-8 digits written in HEXA
+
+print("\u{12D}")
+print("\u{AAAA}")
+print("\u{FC2B}")
+
+let threeMoreDoubleQuotationMarks = #"""
+Here are three more double quotes: """
+"""#
+
+print(threeMoreDoubleQuotationMarks) // use # to NOT invoke the effect of escaping some characters (ie NOT apply the 'effect' of special characters)
+
+// Escape some character = actually SHOW it inside the string when printing the value of the string
+
+print(#"Line 1\#nLine 2"#) // breaks the line
+print(#"Line 1\nLine 2"#) // does not break the line
