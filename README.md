@@ -105,3 +105,15 @@ https://www.raywenderlich.com/1343912-adaptive-layout-tutorial-in-ios-12-getting
 https://www.raywenderlich.com/322-custom-uiviewcontroller-transitions-getting-started
 https://www.raywenderlich.com/197-google-maps-ios-sdk-tutorial-getting-started
 https://www.raywenderlich.com/5960-text-kit-tutorial-getting-started
+
+How to become a better iOS Developer:
+
+https://brainstation.io/career-guides/how-to-become-an-ios-developer
+https://www.hackingwithswift.com/articles/230/how-to-become-an-ios-developer
+https://www.techrepublic.com/article/how-to-become-an-ios-developer-a-cheat-sheet/
+https://codewithchris.com/ios-developer/
+https://www.fadel.io/blog/posts/30-tips-to-make-you-a-better-ios-developer/
+https://www.codingem.com/how-to-learn-ios-development/
+https://medium.com/app-coder-io/10-steps-to-become-a-professional-ios-developer-11b82b6aea4c
+https://developer.apple.com/forums/thread/44008
+https://www.simplilearn.com/skills-required-to-become-an-ios-developer-article
