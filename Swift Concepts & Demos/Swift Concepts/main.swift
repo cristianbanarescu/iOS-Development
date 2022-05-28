@@ -345,7 +345,7 @@ if age > 10 {
 } else if age > 5 {
     print("pretty close to investing")
 } else {
-    assertionFailure("you need to be older, of course")
+//    assertionFailure("you need to be older, of course")
 }
 
 // fatalError is also useful. It's better because the compiler always stops execution for a fatalError. In case you use 'unchecked' mode for the compiler, preconditions won't be checked, they will be defaulted to as being 'true'
@@ -468,3 +468,23 @@ print(#"Line 1\nLine 2"#) // does not break the line
  String is a value type.
  When you create a new String, the value created will be copied when it will be passed along for other usages
  */
+
+/*
+ String interpolation = construct a new String with a mix of different values: constants, variables, expressions, etc
+ */
+
+let stringInterpolationExample = "this string uses \(1) interpolation, \(1+2)"
+print(stringInterpolationExample)
+
+/*
+ Unicode = international standard for encoding, representing and processing text in different systems
+ */
+
+let ucl2022Winner = "Real Madrid"
+
+print(ucl2022Winner[ucl2022Winner.startIndex]) // R
+print(ucl2022Winner[ucl2022Winner.index(ucl2022Winner.endIndex, offsetBy: -1)]) // d (the final d)
+print(ucl2022Winner[ucl2022Winner.index(after: ucl2022Winner.startIndex)]) // e
+print(ucl2022Winner[ucl2022Winner.index(before: ucl2022Winner.endIndex)]) // d (the final d)
+
+// endIndex of a String represents the position after the last character of a String
