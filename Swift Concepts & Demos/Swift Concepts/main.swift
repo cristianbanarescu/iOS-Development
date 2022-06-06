@@ -488,3 +488,23 @@ print(ucl2022Winner[ucl2022Winner.index(after: ucl2022Winner.startIndex)]) // e
 print(ucl2022Winner[ucl2022Winner.index(before: ucl2022Winner.endIndex)]) // d (the final d)
 
 // endIndex of a String represents the position after the last character of a String
+
+// MARK: - FizzBuzz challenge
+
+func fizzbuzz(number: Int) -> String {
+    switch (number % 3 == 0, number % 5 == 0) {
+    case (true, true):
+        return "Fizz Buzz"
+    case (true, false):
+        return "Fizz"
+    case (false, true):
+        return "Buzz"
+    default:
+        return "\(number)"
+    }
+}
+
+print(fizzbuzz(number: 3))
+print(fizzbuzz(number: 5))
+print(fizzbuzz(number: 15))
+print(fizzbuzz(number: 16))
