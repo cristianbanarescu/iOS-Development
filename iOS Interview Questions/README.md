@@ -1,12 +1,1 @@
-https://manasaprema04.medium.com/application-life-cycle-in-ios-f7365d8c1636
-https://www.interviewbit.com/ios-interview-questions/
-https://www.edureka.co/blog/interview-questions/ios-interview-questions/
-https://www.simplilearn.com/ios-interview-questions-article
-https://duruldalkanat.medium.com/ios-interview-questions-13840247a57a
-https://www.hackingwithswift.com/interview-questions
-https://www.toptal.com/ios/interview-questions
-https://iosinterviewguide.com/ios-interview-questions-for-senior-developers-in-2020
-https://www.fullstack.cafe/blog/ios-interview-questions
-https://codewithchris.com/ios-interview-questions/
-https://www.youtube.com/watch?v=56ZO6Gg68tw&ab_channel=SeanAllen
-https://www.raywenderlich.com/762435-swift-interview-questions-and-answers
+To be completed with a full, comprehensive list of useful links to iOS interview questions and answers:
