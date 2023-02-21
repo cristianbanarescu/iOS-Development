@@ -16,22 +16,40 @@
                 <rect key="frame" x="0.0" y="0.0" width="497" height="119"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAT-Zo-KhL">
-                        <rect key="frame" x="10" y="10" width="0.0" height="99"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tH8-q2-Yii">
+                        <rect key="frame" x="10" y="10" width="477" height="99"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAT-Zo-KhL" userLabel="Name Label">
+                                <rect key="frame" x="0.0" y="0.0" width="477" height="79"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMj-MM-IBu" userLabel="Street Label">
+                                <rect key="frame" x="0.0" y="89" width="477" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sA-9y-clY" userLabel="Country Label">
+                                <rect key="frame" x="0.0" y="99" width="477" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="PAT-Zo-KhL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="BAf-Sh-Upe"/>
-                    <constraint firstAttribute="bottom" secondItem="PAT-Zo-KhL" secondAttribute="bottom" constant="10" id="ipp-PN-kKg"/>
-                    <constraint firstItem="PAT-Zo-KhL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="oqV-bx-ADS"/>
+                    <constraint firstItem="tH8-q2-Yii" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="3qb-75-8Tz"/>
+                    <constraint firstAttribute="bottom" secondItem="tH8-q2-Yii" secondAttribute="bottom" constant="10" id="6go-0V-sSg"/>
+                    <constraint firstAttribute="trailing" secondItem="tH8-q2-Yii" secondAttribute="trailing" constant="10" id="e8Y-oY-GoT"/>
+                    <constraint firstItem="tH8-q2-Yii" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="tzL-hb-TTh"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="breweryNameLabel" destination="PAT-Zo-KhL" id="jEQ-Ds-L7z"/>
+                <outlet property="nameLabel" destination="PAT-Zo-KhL" id="jEQ-Ds-L7z"/>
             </connections>
             <point key="canvasLocation" x="264.8854961832061" y="13.732394366197184"/>
         </tableViewCell>

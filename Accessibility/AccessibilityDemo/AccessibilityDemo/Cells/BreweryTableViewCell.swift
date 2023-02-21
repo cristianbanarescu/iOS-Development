@@ -11,12 +11,12 @@ class BreweryTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
-    @IBOutlet weak var breweryNameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
     // MARK: - Public
 
     func configure(with breweryName: String) {
-        breweryNameLabel.text = breweryName
+        nameLabel.text = breweryName
     }
 }
 
@@ -26,3 +26,6 @@ extension BreweryTableViewCell: Identifiable {
     static var nibName: String { "BreweryTableViewCell" }
     static var identifier: String { nibName }
 }
+
+// TODO
+// add support for Voice Over and Dynamic Type
