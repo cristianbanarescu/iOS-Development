@@ -24,6 +24,7 @@
 		EC6C655229A50D1C00A077BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC6C655529A50D1C00A077BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC6C655729A50D1C00A077BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC6C655D29A50EF500A077BC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 		EC6C653D29A50D1B00A077BC = {
 			isa = PBXGroup;
 			children = (
+				EC6C655D29A50EF500A077BC /* README.md */,
 				EC6C654829A50D1B00A077BC /* AccessibilityDemo */,
 				EC6C654729A50D1B00A077BC /* Products */,
 			);
