@@ -55,7 +55,7 @@ private extension ViewController {
         tableView.register(UINib(nibName: BreweryTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: BreweryTableViewCell.identifier)
     }
     
-    func fetchData() { // TODO add info about using this API
+    func fetchData() {
         let urlString = "https://api.openbrewerydb.org/breweries"
         
         DispatchQueue.global().async { [weak self] in
