@@ -13,6 +13,10 @@
 		EC6C655129A50D1B00A077BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC6C654F29A50D1B00A077BC /* Main.storyboard */; };
 		EC6C655329A50D1C00A077BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC6C655229A50D1C00A077BC /* Assets.xcassets */; };
 		EC6C655629A50D1C00A077BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC6C655429A50D1C00A077BC /* LaunchScreen.storyboard */; };
+		EC6C655F29A5127300A077BC /* Brewery.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6C655E29A5127300A077BC /* Brewery.swift */; };
+		EC6C656229A514DD00A077BC /* BreweryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6C656029A514DD00A077BC /* BreweryTableViewCell.swift */; };
+		EC6C656329A514DD00A077BC /* BreweryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6C656129A514DD00A077BC /* BreweryTableViewCell.xib */; };
+		EC6C656529A5171300A077BC /* UITableViewCell+NibIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6C656429A5171300A077BC /* UITableViewCell+NibIdentifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,10 @@
 		EC6C655529A50D1C00A077BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC6C655729A50D1C00A077BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC6C655D29A50EF500A077BC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EC6C655E29A5127300A077BC /* Brewery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brewery.swift; sourceTree = "<group>"; };
+		EC6C656029A514DD00A077BC /* BreweryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryTableViewCell.swift; sourceTree = "<group>"; };
+		EC6C656129A514DD00A077BC /* BreweryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreweryTableViewCell.xib; sourceTree = "<group>"; };
+		EC6C656429A5171300A077BC /* UITableViewCell+NibIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+NibIdentifiable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,14 +67,50 @@
 			isa = PBXGroup;
 			children = (
 				EC6C654929A50D1B00A077BC /* AppDelegate.swift */,
-				EC6C654B29A50D1B00A077BC /* SceneDelegate.swift */,
-				EC6C654D29A50D1B00A077BC /* ViewController.swift */,
-				EC6C654F29A50D1B00A077BC /* Main.storyboard */,
 				EC6C655229A50D1C00A077BC /* Assets.xcassets */,
-				EC6C655429A50D1C00A077BC /* LaunchScreen.storyboard */,
+				EC6C656829A5176300A077BC /* Cells */,
 				EC6C655729A50D1C00A077BC /* Info.plist */,
+				EC6C655429A50D1C00A077BC /* LaunchScreen.storyboard */,
+				EC6C654F29A50D1B00A077BC /* Main.storyboard */,
+				EC6C656929A5176800A077BC /* Models */,
+				EC6C654B29A50D1B00A077BC /* SceneDelegate.swift */,
+				EC6C656729A5175200A077BC /* UITableViewCell+Extensions */,
+				EC6C656A29A5177A00A077BC /* ViewControllers */,
 			);
 			path = AccessibilityDemo;
+			sourceTree = "<group>";
+		};
+		EC6C656729A5175200A077BC /* UITableViewCell+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EC6C656429A5171300A077BC /* UITableViewCell+NibIdentifiable.swift */,
+			);
+			path = "UITableViewCell+Extensions";
+			sourceTree = "<group>";
+		};
+		EC6C656829A5176300A077BC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EC6C656029A514DD00A077BC /* BreweryTableViewCell.swift */,
+				EC6C656129A514DD00A077BC /* BreweryTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		EC6C656929A5176800A077BC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EC6C655E29A5127300A077BC /* Brewery.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EC6C656A29A5177A00A077BC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EC6C654D29A50D1B00A077BC /* ViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +171,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC6C656329A514DD00A077BC /* BreweryTableViewCell.xib in Resources */,
 				EC6C655629A50D1C00A077BC /* LaunchScreen.storyboard in Resources */,
 				EC6C655329A50D1C00A077BC /* Assets.xcassets in Resources */,
 				EC6C655129A50D1B00A077BC /* Main.storyboard in Resources */,
@@ -140,6 +185,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC6C655F29A5127300A077BC /* Brewery.swift in Sources */,
+				EC6C656529A5171300A077BC /* UITableViewCell+NibIdentifiable.swift in Sources */,
+				EC6C656229A514DD00A077BC /* BreweryTableViewCell.swift in Sources */,
 				EC6C654E29A50D1B00A077BC /* ViewController.swift in Sources */,
 				EC6C654A29A50D1B00A077BC /* AppDelegate.swift in Sources */,
 				EC6C654C29A50D1B00A077BC /* SceneDelegate.swift in Sources */,
