@@ -49,7 +49,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="countryLabel" destination="0sA-9y-clY" id="5uy-NQ-zYh"/>
                 <outlet property="nameLabel" destination="PAT-Zo-KhL" id="jEQ-Ds-L7z"/>
+                <outlet property="stateLabel" destination="kMj-MM-IBu" id="8Ge-O6-K94"/>
             </connections>
             <point key="canvasLocation" x="264.8854961832061" y="13.732394366197184"/>
         </tableViewCell>

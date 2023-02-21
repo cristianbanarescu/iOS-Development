@@ -41,7 +41,7 @@ extension ViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.configure(with: breweries[indexPath.row].name ?? "Unknown brewery")
+        cell.configure(with: breweries[indexPath.row])
         
         return cell
     }

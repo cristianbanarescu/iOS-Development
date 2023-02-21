@@ -11,12 +11,16 @@ class BreweryTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
-    @IBOutlet weak var nameLabel: UILabel!
-    
+    @IBOutlet weak var nameLabel: UILabel!    
+    @IBOutlet weak var stateLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+
     // MARK: - Public
 
-    func configure(with breweryName: String) {
-        nameLabel.text = breweryName
+    func configure(with brewery: Brewery) {
+        nameLabel.text = brewery.name
+        stateLabel.text = brewery.state
+        countryLabel.text = brewery.country
     }
 }
 

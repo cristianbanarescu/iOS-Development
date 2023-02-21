@@ -9,4 +9,6 @@ import Foundation
 
 struct Brewery: Decodable {
     let name: String?
+    let state: String?
+    let country: String?
 }
