@@ -50,6 +50,7 @@ private extension BreweryTableViewCell {
         contentView.isAccessibilityElement = true
         contentView.accessibilityLabel = "Brewery name: \(nameLabel.text ?? ""). Located in: \(stateLabel.text ?? ""), \(countryLabel.text ?? ""))"
         contentView.accessibilityHint = "You can go there if you want and have a nice beer!"
+        contentView.accessibilityIdentifier = "BreweryTableViewCell"
     }
 }
 
