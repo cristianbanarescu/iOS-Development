@@ -166,8 +166,6 @@ https://www.techaheadcorp.com/blog/build-app-using-agile-development/
 
 https://medium.com/@edeskhub/why-agile-methodology-for-mobile-app-development-e685b41ea462
 
-https://www.esferasoft.com/blog/why-agile-methodology-is-essential-for-mobile-application-development/
-
 https://appinventiv.com/blog/agile-scrum-methodology-in-mobile-app-development/
 
 https://hub.packtpub.com/9-reasons-to-choose-agile-methodology-for-mobile-app-development/
@@ -187,9 +185,13 @@ https://hackernoon.com/application-life-cycle-in-ios-12b6ba6af78b
 ## Controller lifecycle:
 
 https://developer.apple.com/documentation/uikit/uiviewcontroller
+
 https://medium.com/good-morning-swift/ios-view-controller-life-cycle-2a0f02e74ff5
+
 https://guides.codepath.com/ios/View-Controller-Lifecycle
+
 https://mobikul.com/ios-view-controller-life-cycle/
+
 https://stackoverflow.com/questions/5562938/looking-to-understand-the-ios-uiviewcontroller-lifecycle
 
 ## Automation testing: 
