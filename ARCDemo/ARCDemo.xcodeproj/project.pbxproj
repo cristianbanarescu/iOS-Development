@@ -3,15 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ECC78C73283FB58300D1164D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC78C72283FB58300D1164D /* main.swift */; };
+		EC9BBFFE29A6655C00BD8A4B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9BBFFD29A6655C00BD8A4B /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		ECC78C6D283FB58300D1164D /* CopyFiles */ = {
+		EC9BBFF129A6655000BD8A4B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,12 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		ECC78C6F283FB58300D1164D /* ARC-HowItWorks */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ARC-HowItWorks"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ECC78C72283FB58300D1164D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EC9BBFF329A6655000BD8A4B /* ARCDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ARCDemo; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9BBFFD29A6655C00BD8A4B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = "../../Memory Management/ARC-HowItWorks/ARC-HowItWorks/main.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		ECC78C6C283FB58300D1164D /* Frameworks */ = {
+		EC9BBFF029A6655000BD8A4B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,102 +38,102 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		ECC78C66283FB58300D1164D = {
+		EC9BBFEA29A6655000BD8A4B = {
 			isa = PBXGroup;
 			children = (
-				ECC78C71283FB58300D1164D /* ARC-HowItWorks */,
-				ECC78C70283FB58300D1164D /* Products */,
+				EC9BBFF529A6655000BD8A4B /* ARCDemo */,
+				EC9BBFF429A6655000BD8A4B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		ECC78C70283FB58300D1164D /* Products */ = {
+		EC9BBFF429A6655000BD8A4B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ECC78C6F283FB58300D1164D /* ARC-HowItWorks */,
+				EC9BBFF329A6655000BD8A4B /* ARCDemo */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		ECC78C71283FB58300D1164D /* ARC-HowItWorks */ = {
+		EC9BBFF529A6655000BD8A4B /* ARCDemo */ = {
 			isa = PBXGroup;
 			children = (
-				ECC78C72283FB58300D1164D /* main.swift */,
+				EC9BBFFD29A6655C00BD8A4B /* main.swift */,
 			);
-			path = "ARC-HowItWorks";
+			path = ARCDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ECC78C6E283FB58300D1164D /* ARC-HowItWorks */ = {
+		EC9BBFF229A6655000BD8A4B /* ARCDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ECC78C76283FB58300D1164D /* Build configuration list for PBXNativeTarget "ARC-HowItWorks" */;
+			buildConfigurationList = EC9BBFFA29A6655000BD8A4B /* Build configuration list for PBXNativeTarget "ARCDemo" */;
 			buildPhases = (
-				ECC78C6B283FB58300D1164D /* Sources */,
-				ECC78C6C283FB58300D1164D /* Frameworks */,
-				ECC78C6D283FB58300D1164D /* CopyFiles */,
+				EC9BBFEF29A6655000BD8A4B /* Sources */,
+				EC9BBFF029A6655000BD8A4B /* Frameworks */,
+				EC9BBFF129A6655000BD8A4B /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "ARC-HowItWorks";
-			productName = "ARC-HowItWorks";
-			productReference = ECC78C6F283FB58300D1164D /* ARC-HowItWorks */;
+			name = ARCDemo;
+			productName = ARCDemo;
+			productReference = EC9BBFF329A6655000BD8A4B /* ARCDemo */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		ECC78C67283FB58300D1164D /* Project object */ = {
+		EC9BBFEB29A6655000BD8A4B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					ECC78C6E283FB58300D1164D = {
-						CreatedOnToolsVersion = 13.3.1;
+					EC9BBFF229A6655000BD8A4B = {
+						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
-			buildConfigurationList = ECC78C6A283FB58300D1164D /* Build configuration list for PBXProject "ARC-HowItWorks" */;
-			compatibilityVersion = "Xcode 13.0";
+			buildConfigurationList = EC9BBFEE29A6655000BD8A4B /* Build configuration list for PBXProject "ARCDemo" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = ECC78C66283FB58300D1164D;
-			productRefGroup = ECC78C70283FB58300D1164D /* Products */;
+			mainGroup = EC9BBFEA29A6655000BD8A4B;
+			productRefGroup = EC9BBFF429A6655000BD8A4B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ECC78C6E283FB58300D1164D /* ARC-HowItWorks */,
+				EC9BBFF229A6655000BD8A4B /* ARCDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		ECC78C6B283FB58300D1164D /* Sources */ = {
+		EC9BBFEF29A6655000BD8A4B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECC78C73283FB58300D1164D /* main.swift in Sources */,
+				EC9BBFFE29A6655C00BD8A4B /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		ECC78C74283FB58300D1164D /* Debug */ = {
+		EC9BBFF829A6655000BD8A4B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -177,7 +177,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -187,13 +187,13 @@
 			};
 			name = Debug;
 		};
-		ECC78C75283FB58300D1164D /* Release */ = {
+		EC9BBFF929A6655000BD8A4B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -231,7 +231,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -240,7 +240,7 @@
 			};
 			name = Release;
 		};
-		ECC78C77283FB58300D1164D /* Debug */ = {
+		EC9BBFFB29A6655000BD8A4B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -251,7 +251,7 @@
 			};
 			name = Debug;
 		};
-		ECC78C78283FB58300D1164D /* Release */ = {
+		EC9BBFFC29A6655000BD8A4B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -265,25 +265,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ECC78C6A283FB58300D1164D /* Build configuration list for PBXProject "ARC-HowItWorks" */ = {
+		EC9BBFEE29A6655000BD8A4B /* Build configuration list for PBXProject "ARCDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ECC78C74283FB58300D1164D /* Debug */,
-				ECC78C75283FB58300D1164D /* Release */,
+				EC9BBFF829A6655000BD8A4B /* Debug */,
+				EC9BBFF929A6655000BD8A4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ECC78C76283FB58300D1164D /* Build configuration list for PBXNativeTarget "ARC-HowItWorks" */ = {
+		EC9BBFFA29A6655000BD8A4B /* Build configuration list for PBXNativeTarget "ARCDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ECC78C77283FB58300D1164D /* Debug */,
-				ECC78C78283FB58300D1164D /* Release */,
+				EC9BBFFB29A6655000BD8A4B /* Debug */,
+				EC9BBFFC29A6655000BD8A4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = ECC78C67283FB58300D1164D /* Project object */;
+	rootObject = EC9BBFEB29A6655000BD8A4B /* Project object */;
 }
