@@ -49,4 +49,4 @@ extension BreweryTableViewCell: Identifiable {
 }
 
 // TODO
-// add support for Voice Over and Dynamic Type
+// add support for Voice Over
