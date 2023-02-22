@@ -47,21 +47,11 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-// MARK: - UITableViewDelegate
-
-extension ViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO open a new view controller that contains a map (MapKit) with the coordinates of the brewery and a pin for it.
-        // support voice over for this 
-    }
-}
-
 // MARK: - Private methods
 
 private extension ViewController {
     func setupTableView() {
         tableView.dataSource = self
-        tableView.delegate = self
         tableView.register(UINib(nibName: BreweryTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: BreweryTableViewCell.identifier)
     }
     
