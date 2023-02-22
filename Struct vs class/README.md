@@ -1,9 +1,0 @@
-https://www.appypie.com/struct-vs-class-swift-how-to#:~:text=In%20Swift%2C%20structs%20are%20value,choice%20between%20classes%20or%20structs.
-https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html
-https://medium.com/@burakakyalcin/class-vs-struct-in-swift-f8c48eaacdba
-https://abhimuralidharan.medium.com/difference-between-a-struct-and-a-class-in-swift-53e08df73714
-https://developer.apple.com/documentation/swift/choosing_between_structures_and_classes
-https://www.avanderlee.com/swift/struct-class-differences/
-https://betterprogramming.pub/struct-vs-classes-in-swift-the-differences-explained-1e164a22efa6
-https://blog.logrocket.com/introduction-to-classes-and-structs-in-swift/
-https://levelup.gitconnected.com/class-vs-struct-8e4dafa66ae9
