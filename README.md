@@ -1,73 +1,72 @@
 # iOS-Development
-Repository containing small iOS Demos &amp; Projects.
-This is a work in progress. Right now, this repo only contains links to useful information about different topics.
 
-## TODOs:
+Repository containing small iOS Demos &amp; Projects. These projects are used to showcase the usage of different iOS concepts and frameworks.
 
-- start with Swift Concepts & Demos 
-- creating custom UI 
-- full lifecycle of mobile development, testing, publishing and devops.
-- networks and distributed systems.
-- clean code.
-- general mobile landscape, design, trends, and emerging technologies.
-- iOS third-party libraries and APIs.
-- secured REST api’s
+## iOS useful concepts & topics
+
+The following is a list of nice to know and mandatory subjects that an iOS engineer should approach and study:
+
+- Creating custom UI 
+- Full lifecycle of mobile development, testing, publishing and devops
+- Networks and distributed systems
+- Clean code
+- General mobile landscape, design, trends, and emerging technologies
+- iOS third-party libraries and APIs
+- Secured REST api’s
 - Gitflow or similar
-- awareness of code reviewing best practices;
-- access management and identity management solutions;
+- Awareness of code reviewing best practices
 - OAuth and OpenID Connect
 - Keycloak, Okta
-- applying security in software development and a security-by-design attitude
+- Applying security in software development and a security-by-design attitude
 - CI/CD 
 - TDD
 - RxSwift
 - RxCocoa
-- asynchronous requests
-- dependency injection
-- reactive programming
-- Apple design guidelines.
+- Asynchronous requests
+- Dependency injection
+- Reactive programming
+- Apple design guidelines
 - Scrum and Agile
 - Lean
-- Core Animation, UIKit, Autolayout, Interface Builder, CocoaTouch;
-- knowledge in HTTP, REST API and API testing tools.
-- offline storage, threading, and performance tuning;
-- unit and integration testing (XCTest)
+- Core Animation, UIKit, Autolayout, Interface Builder, CocoaTouch
+- Knowledge in HTTP, REST API and API testing tools
+- Offline storage
+- Threading
+- Performance tuning
+- Unit and integration testing (XCTest)
 - iOS APIs and Capabilities
 - Understanding of app signing, provisioning, etc
-- fastlane 
-- fastlane swift 
+- Fastlane; fastlane swift 
 - SOLID, KISS, DRY Principles
 - BDD
 - SwiftUI
 - Combine
-- Xcode, CocoaPods, Swift Package Manager
+- CocoaPods
+- Swift Package Manager
+- Carthage 
 - Firebase tools (Remote Config, Analytics, Test Lab etc)
-- how to implement 3rd party SDK into a mobile application
-- code obfuscation
-- using HW modules for a specific purpose (e.g., camera for QR/EAN reading)
-- High level functions(map, flatMap, filter, reduce)
+- How to implement 3rd party SDK into a mobile application
+- Code obfuscation
+- Using HW modules for a specific purpose (e.g., camera for QR/EAN reading)
+- High level functions (map, flatMap, filter, reduce)
 - Closures
 - Generics
 - Keychain
 - Swiftlint
 - Moya
-- SwinJect used for dependency Injection
-- SwiftyMocky used for unit tests mocked data
+- SwinJect
+- SwiftyMocky
 - Games 
 - Watch OS apps
 - Mac OS apps
 - tvOS apps
-- have published at least one iOS app
-- remote data : REST + JSON 
-- use 3rd party libraries
-- full development lifecycle 
-- working with hardware features (ie Camera)
-- Continuous Integration (Jenkins)
-- good overview of development trends, news sources, podcasts, tutorials
-- very good in source control 
-- multi-threaded, asyncrhonous code 
+- iOS app publishing
+- Accessing and modelling of remote data : REST + JSON 
+- Continuous Integration (Jenkins, Azure DevOps, Github Actions, etc)
+- Good overview of development trends, news sources, podcasts, tutorials
+- Source control
 - Agile methodologies (Scrum, XP)
-- automated iOS testing
+- Automated iOS testing
 
 ## Other useful links:
 
@@ -158,7 +157,3 @@ https://medium.com/app-coder-io/10-steps-to-become-a-professional-ios-developer-
 https://developer.apple.com/forums/thread/44008
 
 https://www.simplilearn.com/skills-required-to-become-an-ios-developer-article
-
-## Interview Questions: 
-
-To be completed with a full, comprehensive list of useful links to iOS interview questions and answers:
