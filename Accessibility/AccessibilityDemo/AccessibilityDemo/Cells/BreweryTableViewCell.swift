@@ -43,9 +43,13 @@ private extension BreweryTableViewCell {
     }
     
     func setupAccessibility() {
-        nameLabel.accessibilityLabel = "Brewery name: \(nameLabel.text ?? "")"
-        stateLabel.accessibilityLabel = "From state: \(stateLabel.text ?? "")"
-        countryLabel.accessibilityLabel = "From country: \(countryLabel.text ?? "")"
+        nameLabel.isAccessibilityElement = false
+        stateLabel.isAccessibilityElement = false
+        countryLabel.isAccessibilityElement = false
+        
+        contentView.isAccessibilityElement = true
+        contentView.accessibilityLabel = "Brewery name: \(nameLabel.text ?? ""). Located in: \(stateLabel.text ?? ""), \(countryLabel.text ?? ""))"
+        contentView.accessibilityHint = "You can go there if you want and have a nice beer!"
     }
 }
 
@@ -55,6 +59,3 @@ extension BreweryTableViewCell: Identifiable {
     static var nibName: String { "BreweryTableViewCell" }
     static var identifier: String { nibName }
 }
-
-// TODO
-// add support for Voice Over
