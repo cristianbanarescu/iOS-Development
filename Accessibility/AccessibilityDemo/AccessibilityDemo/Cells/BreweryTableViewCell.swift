@@ -28,6 +28,8 @@ class BreweryTableViewCell: UITableViewCell {
         nameLabel.text = brewery.name
         stateLabel.text = brewery.state
         countryLabel.text = brewery.country
+        
+        setupAccessibility()
     }
 }
 
@@ -38,6 +40,12 @@ private extension BreweryTableViewCell {
         nameLabel.font = UIFont.preferredFont(forTextStyle: .title2, compatibleWith: nil)
         stateLabel.font = UIFont.preferredFont(forTextStyle: .body, compatibleWith: nil)
         countryLabel.font = UIFont.preferredFont(forTextStyle: .body, compatibleWith: nil)
+    }
+    
+    func setupAccessibility() {
+        nameLabel.accessibilityLabel = "Brewery name: \(nameLabel.text ?? "")"
+        stateLabel.accessibilityLabel = "From state: \(stateLabel.text ?? "")"
+        countryLabel.accessibilityLabel = "From country: \(countryLabel.text ?? "")"
     }
 }
 
