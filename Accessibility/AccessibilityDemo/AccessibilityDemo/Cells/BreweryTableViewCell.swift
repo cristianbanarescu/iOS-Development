@@ -9,11 +9,18 @@ import UIKit
 
 class BreweryTableViewCell: UITableViewCell {
     
-    // MARK: - Properties
+    // MARK: - IBOutlets
     
     @IBOutlet weak var nameLabel: UILabel!    
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
+    
+    // MARK: - Lifecycle
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupFonts()
+    }
 
     // MARK: - Public
 
@@ -21,6 +28,16 @@ class BreweryTableViewCell: UITableViewCell {
         nameLabel.text = brewery.name
         stateLabel.text = brewery.state
         countryLabel.text = brewery.country
+    }
+}
+
+// MARK: - Private
+
+private extension BreweryTableViewCell {
+    func setupFonts() {
+        nameLabel.font = UIFont.preferredFont(forTextStyle: .title2, compatibleWith: nil)
+        stateLabel.font = UIFont.preferredFont(forTextStyle: .body, compatibleWith: nil)
+        countryLabel.font = UIFont.preferredFont(forTextStyle: .body, compatibleWith: nil)
     }
 }
 
