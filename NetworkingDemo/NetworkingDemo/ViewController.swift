@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         setupPostsCollectionView()
+        fetchPosts()
     }
 }
 
@@ -42,5 +43,9 @@ private extension ViewController {
         ])
         
         hostingVC.didMove(toParent: self)
+    }
+    
+    func fetchPosts() {
+        
     }
 }
