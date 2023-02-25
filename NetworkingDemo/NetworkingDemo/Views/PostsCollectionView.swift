@@ -36,6 +36,7 @@ struct PostsCollectionView: View {
 
 private extension PostsCollectionView {
     func columns() -> [GridItem] {
+        // TODO make the LazyVGrid show 3 cells instead of 2 when in landscape mode 
         let numberOfColumns: Int = UIDevice().isPortraitOrientation ? 2: 3
         
         var columns: [GridItem] = []
