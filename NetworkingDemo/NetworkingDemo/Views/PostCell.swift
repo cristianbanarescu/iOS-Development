@@ -36,7 +36,7 @@ struct PostCell: View {
         }
         .frame(height: 150)
         .font(Font.title3)
-        .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+        .padding(.all)
         .background(Color.mint)
         .cornerRadius(25)
     }
