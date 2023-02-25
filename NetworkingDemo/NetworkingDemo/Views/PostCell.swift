@@ -27,13 +27,14 @@ struct PostCell: View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(alignment: .top) {
                 Text("Title:")
-                Text(title.prefix(20))
+                Text(title.prefix(20)).lineLimit(2)
             }
             HStack(alignment: .top) {
                 Text("Body:")
-                Text(bodyString.prefix(20))
+                Text(bodyString.prefix(20)).lineLimit(2)
             }
         }
+        .frame(height: 150)
         .font(Font.title3)
         .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
         .background(Color.mint)
