@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     // https://jsonplaceholder.typicode.com > needs to be in a central place (a String constant) and just use it everywhere
     // try to refactor duplicate code
     // use a dedicated object (maybe called 'NetworkService') that ONLY performs requests; inject this object here and use it; use a protocol for 'NetworkService'
+    // perform the other 2 requests (PUT and POST) using Alamofire (integrated via SPM) 
 }
 
 // MARK: - Private
