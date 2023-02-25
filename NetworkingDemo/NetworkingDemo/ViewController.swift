@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupPostsCollectionView()
         fetchPosts()
     }
 }
@@ -28,7 +27,7 @@ class ViewController: UIViewController {
 
 private extension ViewController {
     func setupPostsCollectionView() {
-        let hostingVC = UIHostingController(rootView: PostsCollectionView(numberOfPosts: 30))
+        let hostingVC = UIHostingController(rootView: PostsCollectionView(posts: posts))
         
         guard let swiftuiView = hostingVC.view else {
             return
@@ -77,7 +76,9 @@ private extension ViewController {
                                 return
                             }
                             self.posts = posts
-                            self.reloadData()
+                            self.setupPostsCollectionView()
+                            // TODO do not recreate whole collection view;
+                            // just 'reload' the posts inside it 
                         }
                     } catch {
                         print("Could not decode Post from data, error: \(error.localizedDescription)")
@@ -86,9 +87,5 @@ private extension ViewController {
             }
             dataTask.resume()
         }
-    }
-    
-    func reloadData() {
-        // TODO 
     }
 }

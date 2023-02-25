@@ -11,12 +11,12 @@ struct PostsCollectionView: View {
     
     // MARK: - Properties
     
-    private var numberOfPosts: Int
+    private let posts: [Post]
     
     // MARK: - init
 
-    init(numberOfPosts: Int) {
-        self.numberOfPosts = numberOfPosts
+    init(posts: [Post]) {
+        self.posts = posts
     }
     
     // MARK: - View
@@ -24,8 +24,8 @@ struct PostsCollectionView: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns(), spacing: 30) {
-                ForEach(0...numberOfPosts - 1, id: \.self) { _ in
-                    PostCell(title: "x", bodyString: "y")
+                ForEach(posts) { post in
+                    PostCell(title: post.title, bodyString: post.body)
                 }
             }
         }
@@ -52,6 +52,6 @@ private extension PostsCollectionView {
 
 struct PostsCollectionView_Previews: PreviewProvider {
     static var previews: some View {
-        PostsCollectionView(numberOfPosts: 40)
+        PostsCollectionView(posts: [])
     }
 }
