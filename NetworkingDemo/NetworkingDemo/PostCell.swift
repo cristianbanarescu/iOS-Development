@@ -9,14 +9,20 @@ import SwiftUI
 
 struct PostCell: View {
     
+    // MARK: - Properties
+    
     private let title: String
     private let bodyString: String
+    
+    // MARK: - init
     
     init(title: String, bodyString: String) {
         self.title = title
         self.bodyString = bodyString
     }
     
+    // MARK: - View
+
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
@@ -34,6 +40,8 @@ struct PostCell: View {
         .cornerRadius(25)
     }
 }
+
+// MARK: - PreviewProvider
 
 struct PostCell_Previews: PreviewProvider {
     static var previews: some View {
