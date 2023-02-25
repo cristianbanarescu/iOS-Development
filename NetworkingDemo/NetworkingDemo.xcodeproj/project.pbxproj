@@ -44,6 +44,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC6132BB29AA5FA3003B8B01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EC6132B429AA5277003B8B01 /* PostCell.swift */,
+				EC6132B629AA54A8003B8B01 /* PostsCollectionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EC6132BC29AA5FB5003B8B01 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EC6132B929AA5D1E003B8B01 /* UIDevice+Orientation.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		EC9BBFFF29A6661C00BD8A4B = {
 			isa = PBXGroup;
 			children = (
@@ -65,15 +82,14 @@
 			isa = PBXGroup;
 			children = (
 				EC9BC00B29A6661D00BD8A4B /* AppDelegate.swift */,
+				EC9BC01429A6661D00BD8A4B /* Assets.xcassets */,
+				EC6132BC29AA5FB5003B8B01 /* Extensions */,
+				EC9BC01929A6661D00BD8A4B /* Info.plist */,
+				EC9BC01629A6661D00BD8A4B /* LaunchScreen.storyboard */,
+				EC9BC01129A6661D00BD8A4B /* Main.storyboard */,
 				EC9BC00D29A6661D00BD8A4B /* SceneDelegate.swift */,
 				EC9BC00F29A6661D00BD8A4B /* ViewController.swift */,
-				EC9BC01129A6661D00BD8A4B /* Main.storyboard */,
-				EC9BC01429A6661D00BD8A4B /* Assets.xcassets */,
-				EC9BC01629A6661D00BD8A4B /* LaunchScreen.storyboard */,
-				EC9BC01929A6661D00BD8A4B /* Info.plist */,
-				EC6132B429AA5277003B8B01 /* PostCell.swift */,
-				EC6132B629AA54A8003B8B01 /* PostsCollectionView.swift */,
-				EC6132B929AA5D1E003B8B01 /* UIDevice+Orientation.swift */,
+				EC6132BB29AA5FA3003B8B01 /* Views */,
 			);
 			path = NetworkingDemo;
 			sourceTree = "<group>";

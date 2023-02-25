@@ -13,6 +13,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupPostsCollectionView()
+    }
+}
+
+// MARK: - Private
+
+private extension ViewController {
+    func setupPostsCollectionView() {
         let hostingVC = UIHostingController(rootView: PostsCollectionView(numberOfPosts: 30))
         
         guard let swiftuiView = hostingVC.view else {
