@@ -25,13 +25,13 @@ struct PostCell: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            HStack {
+            HStack(alignment: .top) {
                 Text("Title:")
-                Text(title)
+                Text(title.prefix(20))
             }
-            HStack {
+            HStack(alignment: .top) {
                 Text("Body:")
-                Text(bodyString)
+                Text(bodyString.prefix(20))
             }
         }
         .font(Font.title3)
