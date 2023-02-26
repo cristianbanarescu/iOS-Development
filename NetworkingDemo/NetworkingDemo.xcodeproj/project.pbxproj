@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		EC2189EA29AB71EB002058E6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EC2189E929AB71EB002058E6 /* Alamofire */; };
+		EC2189EC29AB7269002058E6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2189EB29AB7269002058E6 /* NetworkService.swift */; };
+		EC2189EF29AB74C4002058E6 /* URLSessionNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2189EE29AB74C4002058E6 /* URLSessionNetworkService.swift */; };
+		EC2189F129AB74DE002058E6 /* AlamofireNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2189F029AB74DE002058E6 /* AlamofireNetworkService.swift */; };
 		EC6132B529AA5277003B8B01 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6132B429AA5277003B8B01 /* PostCell.swift */; };
 		EC6132B729AA54A8003B8B01 /* PostsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6132B629AA54A8003B8B01 /* PostsCollectionView.swift */; };
 		EC6132BA29AA5D1E003B8B01 /* UIDevice+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6132B929AA5D1E003B8B01 /* UIDevice+Orientation.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC2189EB29AB7269002058E6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		EC2189EE29AB74C4002058E6 /* URLSessionNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkService.swift; sourceTree = "<group>"; };
+		EC2189F029AB74DE002058E6 /* AlamofireNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkService.swift; sourceTree = "<group>"; };
 		EC6132B429AA5277003B8B01 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		EC6132B629AA54A8003B8B01 /* PostsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCollectionView.swift; sourceTree = "<group>"; };
 		EC6132B929AA5D1E003B8B01 /* UIDevice+Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Orientation.swift"; sourceTree = "<group>"; };
@@ -48,6 +54,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC2189ED29AB74B4002058E6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EC2189EB29AB7269002058E6 /* NetworkService.swift */,
+				EC2189EE29AB74C4002058E6 /* URLSessionNetworkService.swift */,
+				EC2189F029AB74DE002058E6 /* AlamofireNetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		EC6132BB29AA5FA3003B8B01 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +119,7 @@
 				EC9BC00F29A6661D00BD8A4B /* ViewController.swift */,
 				EC6132BB29AA5FA3003B8B01 /* Views */,
 				EC6132BF29AA613E003B8B01 /* Model */,
+				EC2189ED29AB74B4002058E6 /* Services */,
 			);
 			path = NetworkingDemo;
 			sourceTree = "<group>";
@@ -186,8 +203,11 @@
 			files = (
 				EC6132BA29AA5D1E003B8B01 /* UIDevice+Orientation.swift in Sources */,
 				EC9BC01029A6661D00BD8A4B /* ViewController.swift in Sources */,
+				EC2189EC29AB7269002058E6 /* NetworkService.swift in Sources */,
 				EC6132B729AA54A8003B8B01 /* PostsCollectionView.swift in Sources */,
 				EC9BC00C29A6661D00BD8A4B /* AppDelegate.swift in Sources */,
+				EC2189F129AB74DE002058E6 /* AlamofireNetworkService.swift in Sources */,
+				EC2189EF29AB74C4002058E6 /* URLSessionNetworkService.swift in Sources */,
 				EC9BC00E29A6661D00BD8A4B /* SceneDelegate.swift in Sources */,
 				EC6132BE29AA613B003B8B01 /* Post.swift in Sources */,
 				EC6132B529AA5277003B8B01 /* PostCell.swift in Sources */,
