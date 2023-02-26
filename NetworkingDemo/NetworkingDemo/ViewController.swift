@@ -30,7 +30,6 @@ class ViewController: UIViewController {
     }
     
     // TODO
-    // https://jsonplaceholder.typicode.com > needs to be in a central place (a String constant) and just use it everywhere
     // try to refactor duplicate code
 }
 

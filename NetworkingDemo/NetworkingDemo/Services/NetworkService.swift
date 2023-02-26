@@ -8,8 +8,15 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
+    var baseURLString: String { get }
     func fetchPosts() -> [Post]
     func deletePosts()
     func createPost()
     func updatePost() -> Post
+}
+
+extension NetworkServiceProtocol {
+    var baseURLString: String {
+        "https://jsonplaceholder.typicode.com"
+    }
 }
