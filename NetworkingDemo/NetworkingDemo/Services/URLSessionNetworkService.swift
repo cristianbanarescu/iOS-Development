@@ -23,9 +23,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
         
         dispatchQueue.async {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-                if let error = error {
-                    print("Couldn't perform \(urlRequest.httpMethod ?? "unknown http method") request. Error: \(error.localizedDescription)")
-                }
+                handleError(error, requestHTTPMethod: urlRequest.httpMethod)
                 
                 if let response = response as? HTTPURLResponse {
                     print("Response with status code: \(response.statusCode)")
@@ -51,9 +49,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
         
         dispatchQueue.async {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-                if let error = error {
-                    print("Couldn't perform \(urlRequest.httpMethod ?? "unknown http method") request. Error: \(error.localizedDescription)")
-                }
+                handleError(error, requestHTTPMethod: urlRequest.httpMethod)
                 
                 if let response = response as? HTTPURLResponse {
                     print("Response with status code: \(response.statusCode)")
@@ -80,9 +76,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
         
         dispatchQueue.async {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-                if let error = error {
-                    print("Couldn't perform \(urlRequest.httpMethod ?? "unknown http method") request. Error: \(error.localizedDescription)")
-                }
+                handleError(error, requestHTTPMethod: urlRequest.httpMethod)
                 
                 if let response = response as? HTTPURLResponse {
                     print("Response with status code: \(response.statusCode)")
@@ -118,9 +112,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
         
         dispatchQueue.async {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-                if let error = error {
-                    print("Couldn't perform \(urlRequest.httpMethod ?? "unknown http method") request. Error: \(error.localizedDescription)")
-                }
+                handleError(error, requestHTTPMethod: urlRequest.httpMethod)
                 
                 if let response = response as? HTTPURLResponse {
                     print("Response with status code: \(response.statusCode)")
@@ -154,5 +146,11 @@ private extension URLSessionNetworkService {
         urlRequest.httpMethod = httpMethod
         
         return urlRequest
-    }    
+    }
+    
+    func handleError(_ error: Error?, requestHTTPMethod httpMethod: String?) {
+        if let error = error {
+            print("Couldn't perform \(httpMethod ?? "unknown http method") request. Error: \(error.localizedDescription)")
+        }
+    }
 }
