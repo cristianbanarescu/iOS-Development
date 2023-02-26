@@ -74,18 +74,18 @@ private extension ViewController {
         networkService.deletePosts()
     }
     
-    @objc func updatePostAction() {
+    @objc func updatePost() {
         networkService.updatePost()
     }
     
-    @objc func createPostAction() {
+    @objc func createPost() {
         networkService.createPost()
     }
     
     func setupNavigationBarButtons() {
         let deletePostsButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deletePosts))
-        let updatePostsButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(updatePostAction))
-        let createPostsButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createPostAction))
+        let updatePostsButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(updatePost))
+        let createPostsButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createPost))
         
         navigationItem.setLeftBarButtonItems([updatePostsButton, deletePostsButton], animated: true)
         navigationItem.setRightBarButtonItems([createPostsButton], animated: true)
