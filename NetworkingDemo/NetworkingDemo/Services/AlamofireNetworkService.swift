@@ -20,7 +20,7 @@ struct AlamofireNetworkService: NetworkServiceProtocol {
         
     }
     
-    func updatePost() -> Post {
-        Post(userId: 1, id: 1, title: "", body: "")
+    func updatePost(completion: @escaping (Post?) -> Void) {
+        completion(nil)
     }
 }

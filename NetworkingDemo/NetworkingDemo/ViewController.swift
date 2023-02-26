@@ -75,7 +75,9 @@ private extension ViewController {
     }
     
     @objc func updatePost() {
-        networkService.updatePost()
+        networkService.updatePost { _ in
+            // TODO
+        }
     }
     
     @objc func createPost() {

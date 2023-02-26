@@ -17,7 +17,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
         DispatchQueue.global(qos: .userInitiated).async {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 if let error = error {
-                    print("Couldn't fetch data. Error: \(error.localizedDescription)")
+                    print("Couldn't perform \(urlRequest.httpMethod ?? "unknown http method") request. Error: \(error.localizedDescription)")
                 }
                 
                 if let response = response as? HTTPURLResponse {
@@ -46,7 +46,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
         DispatchQueue.global(qos: .userInitiated).async {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 if let error = error {
-                    print("Couldn't perform delete request. Error: \(error.localizedDescription)")
+                    print("Couldn't perform \(urlRequest.httpMethod ?? "unknown http method") request. Error: \(error.localizedDescription)")
                 }
                 
                 if let response = response as? HTTPURLResponse {
@@ -75,7 +75,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
         DispatchQueue.global(qos: .userInitiated).async {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 if let error = error {
-                    print("Couldn't perform POST request. Error: \(error.localizedDescription)")
+                    print("Couldn't perform \(urlRequest.httpMethod ?? "unknown http method") request. Error: \(error.localizedDescription)")
                 }
                 
                 if let response = response as? HTTPURLResponse {
@@ -95,24 +95,50 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
         }
     }
     
-    func updatePost() -> Post {
-        /*
-         fetch('https://jsonplaceholder.typicode.com/posts/1', {
-           method: 'PUT',
-           body: JSON.stringify({
-             id: 1,
-             title: 'foo',
-             body: 'bar',
-             userId: 1,
-           }),
-           headers: {
-             'Content-type': 'application/json; charset=UTF-8',
-           },
-         })
-         */
-        Post(userId: 1, id: 1, title: "", body: "")
+    func updatePost(completion: @escaping (Post?) -> Void) {
+        guard var urlRequest = urlRequest(with: "\(baseURLString)/1", httpMethod: "PUT") else {
+            return
+        }
+                
+        let post = Post(userId: 1, id: 1, title: "foo", body: "bar")
+        
+        do {
+            let data = try JSONEncoder().encode(post)
+            
+            urlRequest.httpBody = data
+        } catch {
+            print("Could not encode post object into Data")
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+                if let error = error {
+                    print("Couldn't perform \(urlRequest.httpMethod ?? "unknown http method") request. Error: \(error.localizedDescription)")
+                }
+                
+                if let response = response as? HTTPURLResponse {
+                    print("Response with status code: \(response.statusCode)")
+                }
+                
+                if let data = data {
+                    do {
+                        let createdPostDictionary = try JSONSerialization.jsonObject(with: data) as? [String: Any] ?? [:]
+                        print("Updating the Post object is OK. The new id is: \(createdPostDictionary["id"] ?? "")")
+                        completion(post)
+                    } catch {
+                        print("Could not decode updated post. Error: \(error.localizedDescription)")
+                    }
+                }
+            }
+            dataTask.resume()
+        }
+        completion(nil)
     }
-    
+}
+
+// MARK: - Private
+
+private extension URLSessionNetworkService {
     func urlRequest(with urlString: String, httpMethod: String? = nil) -> URLRequest? {
         guard let url = URL(string: urlString) else {
             return nil

@@ -12,7 +12,7 @@ protocol NetworkServiceProtocol {
     func fetchPosts(completion: @escaping ([Post]) -> Void)
     func deletePosts()
     func createPost()
-    func updatePost() -> Post
+    func updatePost(completion: @escaping (Post?) -> Void)
 }
 
 extension NetworkServiceProtocol {
