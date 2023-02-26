@@ -58,19 +58,41 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
     }
     
     func createPost() {
-        /*
-         fetch('https://jsonplaceholder.typicode.com/posts', {
-           method: 'POST',
-           body: JSON.stringify({
-             title: 'foo',
-             body: 'bar',
-             userId: 1,
-           }),
-           headers: {
-             'Content-type': 'application/json; charset=UTF-8',
-           },
-         })
-         */
+        guard var urlRequest = urlRequest(with: "\(baseURLString)", httpMethod: "POST") else {
+            return
+        }
+                
+        let post = Post(userId: 1, id: 1, title: "foo", body: "bar")
+        
+        do {
+            let data = try JSONEncoder().encode(post)
+            
+            urlRequest.httpBody = data
+        } catch {
+            print("Could not encode post object into Data")
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+                if let error = error {
+                    print("Couldn't perform POST request. Error: \(error.localizedDescription)")
+                }
+                
+                if let response = response as? HTTPURLResponse {
+                    print("Response with status code: \(response.statusCode)")
+                }
+                
+                if let data = data {
+                    do {
+                        let createdPostDictionary = try JSONSerialization.jsonObject(with: data) as? [String: Any] ?? [:]
+                        print("Creating new Post object is OK. The new id is: \(createdPostDictionary["id"] ?? "")")
+                    } catch {
+                        print("Could not decode created post. Error: \(error.localizedDescription)")
+                    }
+                }
+            }
+            dataTask.resume()
+        }
     }
     
     func updatePost() -> Post {
