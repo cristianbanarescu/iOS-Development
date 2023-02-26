@@ -9,6 +9,15 @@ import Foundation
 
 struct URLSessionNetworkService: NetworkServiceProtocol {
     
+    // MARK: - Nested types
+    
+    enum HTTPMethod: String {
+        case get
+        case delete
+        case put
+        case post
+    }
+    
     // MARK: - Properties
     
     private let dispatchQueue: DispatchQueue = DispatchQueue.global(qos: .userInitiated)
@@ -16,7 +25,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
     // MARK: - Public
     
     func fetchPosts(completion: @escaping ([Post]) -> Void) {
-        guard let urlRequest = urlRequest(with: "\(baseURLString)") else {
+        guard let urlRequest = urlRequest(with: "\(baseURLString)", httpMethod: .get) else {
             completion([])
             return
         }
@@ -40,7 +49,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
     }
     
     func deletePosts() {
-        guard let urlRequest = urlRequest(with: "\(baseURLString)/1", httpMethod: "DELETE") else {
+        guard let urlRequest = urlRequest(with: "\(baseURLString)/1", httpMethod: .delete) else {
             return
         }
         
@@ -54,7 +63,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
     }
     
     func createPost() {
-        guard var urlRequest = urlRequest(with: "\(baseURLString)", httpMethod: "POST") else {
+        guard var urlRequest = urlRequest(with: "\(baseURLString)", httpMethod: .post) else {
             return
         }
                 
@@ -87,7 +96,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
     }
     
     func updatePost(completion: @escaping (Post?) -> Void) {
-        guard var urlRequest = urlRequest(with: "\(baseURLString)/1", httpMethod: "PUT") else {
+        guard var urlRequest = urlRequest(with: "\(baseURLString)/1", httpMethod: .put) else {
             return
         }
                 
@@ -125,13 +134,13 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
 // MARK: - Private
 
 private extension URLSessionNetworkService {
-    func urlRequest(with urlString: String, httpMethod: String? = nil) -> URLRequest? {
+    func urlRequest(with urlString: String, httpMethod: URLSessionNetworkService.HTTPMethod) -> URLRequest? {
         guard let url = URL(string: urlString) else {
             return nil
         }
         
         var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = httpMethod
+        urlRequest.httpMethod = httpMethod.rawValue.capitalized
         
         return urlRequest
     }
