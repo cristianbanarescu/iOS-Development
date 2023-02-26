@@ -24,10 +24,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
         dispatchQueue.async {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 handleError(error, requestHTTPMethod: urlRequest.httpMethod)
-                
-                if let response = response as? HTTPURLResponse {
-                    print("Response with status code: \(response.statusCode)")
-                }
+                handleResponse(response: response)
                 
                 if let data = data {
                     do {
@@ -50,10 +47,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
         dispatchQueue.async {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 handleError(error, requestHTTPMethod: urlRequest.httpMethod)
-                
-                if let response = response as? HTTPURLResponse {
-                    print("Response with status code: \(response.statusCode)")
-                }
+                handleResponse(response: response)
             }
             dataTask.resume()
         }
@@ -77,10 +71,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
         dispatchQueue.async {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 handleError(error, requestHTTPMethod: urlRequest.httpMethod)
-                
-                if let response = response as? HTTPURLResponse {
-                    print("Response with status code: \(response.statusCode)")
-                }
+                handleResponse(response: response)
                 
                 if let data = data {
                     do {
@@ -113,10 +104,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
         dispatchQueue.async {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 handleError(error, requestHTTPMethod: urlRequest.httpMethod)
-                
-                if let response = response as? HTTPURLResponse {
-                    print("Response with status code: \(response.statusCode)")
-                }
+                handleResponse(response: response)
                 
                 if let data = data {
                     do {
@@ -151,6 +139,12 @@ private extension URLSessionNetworkService {
     func handleError(_ error: Error?, requestHTTPMethod httpMethod: String?) {
         if let error = error {
             print("Couldn't perform \(httpMethod ?? "unknown http method") request. Error: \(error.localizedDescription)")
+        }
+    }
+    
+    func handleResponse(response: URLResponse?) {
+        if let response = response as? HTTPURLResponse {
+            print("Got response with status code: \(response.statusCode)")
         }
     }
 }
