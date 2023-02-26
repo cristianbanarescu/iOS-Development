@@ -59,7 +59,15 @@ private extension ViewController {
     }
     
     func fetchPosts() {
-        networkService.fetchPosts()
+        networkService.fetchPosts { posts in
+            DispatchQueue.main.async { [weak self] in
+                guard let self else {
+                    return
+                }
+                self.posts = posts
+                self.setupPostsCollectionView()
+            }
+        }
     }
     
     @objc func deletePosts() {

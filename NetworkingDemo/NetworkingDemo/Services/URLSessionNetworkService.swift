@@ -8,61 +8,53 @@
 import Foundation
 
 struct URLSessionNetworkService: NetworkServiceProtocol {
-    func fetchPosts() -> [Post] {
-        //        guard let urlRequest = urlRequest(with: "https://jsonplaceholder.typicode.com/posts") else {
-        //            return
-        //        }
-        //
-        //        DispatchQueue.global(qos: .userInitiated).async {
-        //            let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-        //                if let error = error {
-        //                    print("Couldn't fetch data. Error: \(error.localizedDescription)")
-        //                }
-        //
-        //                if let response = response as? HTTPURLResponse {
-        //                    print("Response with status code: \(response.statusCode)")
-        //                }
-        //
-        //                if let data = data {
-        //                    do {
-        //                        let posts = try JSONDecoder().decode([Post].self, from: data)
-        //
-        //                        DispatchQueue.main.async { [weak self] in
-        //                            guard let self = self else {
-        //                                return
-        //                            }
-        //                            self.posts = posts
-        //                            self.setupPostsCollectionView()
-        //                            // TODO do not recreate whole collection view;
-        //                            // just 'reload' the posts inside it
-        //                        }
-        //                    } catch {
-        //                        print("Could not decode Post from data, error: \(error.localizedDescription)")
-        //                    }
-        //                }
-        //            }
-        //            dataTask.resume()
-        //        }
-        []
+    func fetchPosts(completion: @escaping ([Post]) -> Void) {
+        guard let urlRequest = urlRequest(with: "\(baseURLString)/posts") else {
+            completion([])
+            return
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+                if let error = error {
+                    print("Couldn't fetch data. Error: \(error.localizedDescription)")
+                }
+                
+                if let response = response as? HTTPURLResponse {
+                    print("Response with status code: \(response.statusCode)")
+                }
+                
+                if let data = data {
+                    do {
+                        let posts = try JSONDecoder().decode([Post].self, from: data)
+
+                        completion(posts)                        
+                    } catch {
+                        print("Could not decode Post from data, error: \(error.localizedDescription)")
+                    }
+                }
+            }
+            dataTask.resume()
+        }
     }
     
     func deletePosts() {
-//        guard let urlRequest = urlRequest(with: "https://jsonplaceholder.typicode.com/posts/1", httpMethod: "DELETE") else {
-        //            return
-        //        }
-        //
-        //        DispatchQueue.global(qos: .userInitiated).async {
-        //            let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-        //                if let error = error {
-        //                    print("Couldn't perform delete request. Error: \(error.localizedDescription)")
-        //                }
-        //
-        //                if let response = response as? HTTPURLResponse {
-        //                    print("Response with status code: \(response.statusCode)")
-        //                }
-        //            }
-        //            dataTask.resume()
-        //        }
+        guard let urlRequest = urlRequest(with: "\(baseURLString)/posts/1", httpMethod: "DELETE") else {
+            return
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+                if let error = error {
+                    print("Couldn't perform delete request. Error: \(error.localizedDescription)")
+                }
+                
+                if let response = response as? HTTPURLResponse {
+                    print("Response with status code: \(response.statusCode)")
+                }
+            }
+            dataTask.resume()
+        }
     }
     
     func createPost() {

@@ -8,8 +8,8 @@
 import Foundation
 
 struct AlamofireNetworkService: NetworkServiceProtocol {
-    func fetchPosts() -> [Post] {
-        []
+    func fetchPosts(completion: @escaping ([Post]) -> Void) {
+        completion([])
     }
     
     func deletePosts() {

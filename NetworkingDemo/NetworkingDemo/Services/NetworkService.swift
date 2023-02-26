@@ -9,7 +9,7 @@ import Foundation
 
 protocol NetworkServiceProtocol {
     var baseURLString: String { get }
-    func fetchPosts() -> [Post]
+    func fetchPosts(completion: @escaping ([Post]) -> Void)
     func deletePosts()
     func createPost()
     func updatePost() -> Post
