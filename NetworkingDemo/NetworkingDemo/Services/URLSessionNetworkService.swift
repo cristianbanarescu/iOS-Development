@@ -71,7 +71,6 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
         
         do {
             let data = try JSONEncoder().encode(post)
-            
             urlRequest.httpBody = data
         } catch {
             print("Could not encode post object into Data")
@@ -104,7 +103,6 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
         
         do {
             let data = try JSONEncoder().encode(post)
-            
             urlRequest.httpBody = data
         } catch {
             print("Could not encode post object into Data")
