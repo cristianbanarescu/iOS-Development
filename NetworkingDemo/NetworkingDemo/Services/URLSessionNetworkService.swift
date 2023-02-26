@@ -8,13 +8,20 @@
 import Foundation
 
 struct URLSessionNetworkService: NetworkServiceProtocol {
+    
+    // MARK: - Properties
+    
+    private let dispatchQueue: DispatchQueue = DispatchQueue.global(qos: .userInitiated)
+    
+    // MARK: - Public
+    
     func fetchPosts(completion: @escaping ([Post]) -> Void) {
         guard let urlRequest = urlRequest(with: "\(baseURLString)") else {
             completion([])
             return
         }
         
-        DispatchQueue.global(qos: .userInitiated).async {
+        dispatchQueue.async {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 if let error = error {
                     print("Couldn't perform \(urlRequest.httpMethod ?? "unknown http method") request. Error: \(error.localizedDescription)")
@@ -27,8 +34,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
                 if let data = data {
                     do {
                         let posts = try JSONDecoder().decode([Post].self, from: data)
-
-                        completion(posts)                        
+                        completion(posts)
                     } catch {
                         print("Could not decode Post from data, error: \(error.localizedDescription)")
                     }
@@ -43,7 +49,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
             return
         }
         
-        DispatchQueue.global(qos: .userInitiated).async {
+        dispatchQueue.async {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 if let error = error {
                     print("Couldn't perform \(urlRequest.httpMethod ?? "unknown http method") request. Error: \(error.localizedDescription)")
@@ -72,7 +78,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
             print("Could not encode post object into Data")
         }
         
-        DispatchQueue.global(qos: .userInitiated).async {
+        dispatchQueue.async {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 if let error = error {
                     print("Couldn't perform \(urlRequest.httpMethod ?? "unknown http method") request. Error: \(error.localizedDescription)")
@@ -110,7 +116,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
             print("Could not encode post object into Data")
         }
         
-        DispatchQueue.global(qos: .userInitiated).async {
+        dispatchQueue.async {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 if let error = error {
                     print("Couldn't perform \(urlRequest.httpMethod ?? "unknown http method") request. Error: \(error.localizedDescription)")
@@ -148,5 +154,5 @@ private extension URLSessionNetworkService {
         urlRequest.httpMethod = httpMethod
         
         return urlRequest
-    }
+    }    
 }
