@@ -9,7 +9,7 @@ import Foundation
 
 struct URLSessionNetworkService: NetworkServiceProtocol {
     func fetchPosts(completion: @escaping ([Post]) -> Void) {
-        guard let urlRequest = urlRequest(with: "\(baseURLString)/posts") else {
+        guard let urlRequest = urlRequest(with: "\(baseURLString)") else {
             completion([])
             return
         }
@@ -39,7 +39,7 @@ struct URLSessionNetworkService: NetworkServiceProtocol {
     }
     
     func deletePosts() {
-        guard let urlRequest = urlRequest(with: "\(baseURLString)/posts/1", httpMethod: "DELETE") else {
+        guard let urlRequest = urlRequest(with: "\(baseURLString)/1", httpMethod: "DELETE") else {
             return
         }
         
