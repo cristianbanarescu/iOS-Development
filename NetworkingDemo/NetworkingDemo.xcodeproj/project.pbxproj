@@ -57,9 +57,9 @@
 		EC2189ED29AB74B4002058E6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EC2189F029AB74DE002058E6 /* AlamofireNetworkService.swift */,
 				EC2189EB29AB7269002058E6 /* NetworkService.swift */,
 				EC2189EE29AB74C4002058E6 /* URLSessionNetworkService.swift */,
-				EC2189F029AB74DE002058E6 /* AlamofireNetworkService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -92,9 +92,9 @@
 		EC9BBFFF29A6661C00BD8A4B = {
 			isa = PBXGroup;
 			children = (
-				EC9BC01F29A6663300BD8A4B /* README.md */,
 				EC9BC00A29A6661C00BD8A4B /* NetworkingDemo */,
 				EC9BC00929A6661C00BD8A4B /* Products */,
+				EC9BC01F29A6663300BD8A4B /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
