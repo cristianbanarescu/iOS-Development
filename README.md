@@ -108,6 +108,8 @@ https://www.raywenderlich.com/120-how-to-submit-an-app-to-apple-from-no-account-
 
 https://www.raywenderlich.com/35-alamofire-tutorial-getting-started
 
+https://www.kodeco.com/6587213-alamofire-5-tutorial-for-ios-getting-started#toc-anchor-014
+
 https://www.raywenderlich.com/10868372-testflight-tutorial-ios-beta-testing
 
 https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started
