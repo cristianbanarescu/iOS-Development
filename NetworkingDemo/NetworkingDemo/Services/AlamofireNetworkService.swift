@@ -23,7 +23,9 @@ struct AlamofireNetworkService: NetworkServiceProtocol {
             }
         }
         
-        request.responseDecodable(completionHandler: dataResponseCompletionHandler)
+        request
+        .validate()
+        .responseDecodable(completionHandler: dataResponseCompletionHandler)
     }
     
     func deletePosts() {
