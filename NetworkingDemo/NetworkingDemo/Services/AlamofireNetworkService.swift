@@ -24,12 +24,23 @@ struct AlamofireNetworkService: NetworkServiceProtocol {
         }
         
         request
-        .validate()
-        .responseDecodable(completionHandler: dataResponseCompletionHandler)
+            .validate()
+            .responseDecodable(completionHandler: dataResponseCompletionHandler)
     }
     
     func deletePosts() {
+        let request = AF.request("\(baseURLString)/1", method: .delete)
         
+        request.response { response in
+            let result = response.result
+            
+            switch result {
+            case .success(_):
+                print("Performing Alamofire DELETE request was OK")
+            case .failure(let error):
+                print("Performing Alamofire DELETE request for Post ojects failed with error: \(error.localizedDescription)")
+            }
+        }
     }
     
     func createPost() {
