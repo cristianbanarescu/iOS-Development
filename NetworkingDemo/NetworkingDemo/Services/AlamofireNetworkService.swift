@@ -11,6 +11,13 @@ import Alamofire
 // TODO refactor to remove code duplication
 
 struct AlamofireNetworkService: NetworkServiceProtocol {
+    
+    // MARK: - Properties
+
+    private let mockPost = Post(userId: 1, id: 1, title: "foo", body: "bar")
+
+    // MARK: - Public
+
     func fetchPosts(completion: @escaping ([Post]) -> Void) {
         let request = AF.request(baseURLString)
         
@@ -48,20 +55,11 @@ struct AlamofireNetworkService: NetworkServiceProtocol {
     }
     
     func createPost() {
-        guard let url = URL(string: baseURLString) else {
+        guard var request = urlRequest(with: "\(baseURLString)", httpMethod: "POST") else {
             return
         }
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        
-        let post = Post(userId: 1, id: 1, title: "foo", body: "bar")
-        
-        do {
-            let data = try JSONEncoder().encode(post)
-            request.httpBody = data
-        } catch {
-            print("Could not encode post object into Data")
-        }
+                
+        setHTTPBodyFor(&request)
         
         AF
             .request(request)
@@ -84,21 +82,11 @@ struct AlamofireNetworkService: NetworkServiceProtocol {
     }
     
     func updatePost(completion: @escaping (Post?) -> Void) {
-        guard let url = URL(string: "\(baseURLString)/1") else {
+        guard var request = urlRequest(with: "\(baseURLString)/1", httpMethod: "PUT") else {
             return
         }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "PUT"
-        
-        let post = Post(userId: 1, id: 1, title: "foo", body: "bar")
-        
-        do {
-            let data = try JSONEncoder().encode(post)
-            request.httpBody = data
-        } catch {
-            print("Could not encode post object into Data")
-        }
+                
+        setHTTPBodyFor(&request)
         
         AF
             .request(request)
@@ -126,5 +114,25 @@ struct AlamofireNetworkService: NetworkServiceProtocol {
 private extension AlamofireNetworkService {
     func handle(error: AFError, for requestTypeString: String) {
         print("Performing Alamofire \(requestTypeString) request for Post ojects failed with error: \(error.localizedDescription)")
+    }
+    
+    func setHTTPBodyFor(_ request: inout URLRequest) {
+        do {
+            let data = try JSONEncoder().encode(mockPost)
+            request.httpBody = data
+        } catch {
+            print("Could not encode mockPost object into Data")
+        }
+    }
+    
+    func urlRequest(with urlString: String, httpMethod: String) -> URLRequest? {
+        guard let url = URL(string: urlString) else {
+            return nil
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = httpMethod
+        
+        return request
     }
 }
