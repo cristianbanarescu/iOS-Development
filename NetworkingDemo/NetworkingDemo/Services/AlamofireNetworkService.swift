@@ -47,8 +47,11 @@ struct AlamofireNetworkService: NetworkServiceProtocol {
             }
     }
     
-    func createPost() {        
-        var request = URLRequest(url: URL(string: baseURLString)!)
+    func createPost() {
+        guard let url = URL(string: baseURLString) else {
+            return
+        }
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
         let post = Post(userId: 1, id: 1, title: "foo", body: "bar")
@@ -81,7 +84,11 @@ struct AlamofireNetworkService: NetworkServiceProtocol {
     }
     
     func updatePost(completion: @escaping (Post?) -> Void) {
-        var request = URLRequest(url: URL(string: "\(baseURLString)/1")!)
+        guard let url = URL(string: "\(baseURLString)/1") else {
+            return
+        }
+        
+        var request = URLRequest(url: url)
         request.httpMethod = "PUT"
         
         let post = Post(userId: 1, id: 1, title: "foo", body: "bar")
