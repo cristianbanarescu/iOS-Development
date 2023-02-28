@@ -21,7 +21,7 @@ struct AlamofireNetworkService: NetworkServiceProtocol {
             case .success(let posts):
                 completion(posts)
             case .failure(let error):
-                print("Performing Alamofire GET request for Post ojects failed with error: \(error.localizedDescription)")
+                handle(error: error, for: "GET")
             }
         }
         
@@ -42,7 +42,7 @@ struct AlamofireNetworkService: NetworkServiceProtocol {
                 case .success(_):
                     print("Performing Alamofire DELETE request was OK")
                 case .failure(let error):
-                    print("Performing Alamofire DELETE request for Post ojects failed with error: \(error.localizedDescription)")
+                    handle(error: error, for: "DELETE")
                 }
             }
     }
@@ -75,7 +75,7 @@ struct AlamofireNetworkService: NetworkServiceProtocol {
                         print("Could not decode created post. Error: \(error.localizedDescription)")
                     }
                 case .failure(let error):
-                    print("Performing Alamofire POST request for Post ojects failed with error: \(error.localizedDescription)")
+                    handle(error: error, for: "POST")
                 }
             }
     }
@@ -108,8 +108,16 @@ struct AlamofireNetworkService: NetworkServiceProtocol {
                         print("Could not decode updated post. Error: \(error.localizedDescription)")
                     }
                 case .failure(let error):
-                    print("Performing Alamofire POST request for Post ojects failed with error: \(error.localizedDescription)")
+                    handle(error: error, for: "PUT")
                 }
             }
+    }
+}
+
+// MARK: - Private
+
+private extension AlamofireNetworkService {
+    func handle(error: AFError, for requestTypeString: String) {
+        print("Performing Alamofire \(requestTypeString) request for Post ojects failed with error: \(error.localizedDescription)")
     }
 }
