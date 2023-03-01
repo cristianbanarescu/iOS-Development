@@ -54,6 +54,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC1B2F6929AF319400F236AE /* Application Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				EC9BC00B29A6661D00BD8A4B /* AppDelegate.swift */,
+				EC9BC00D29A6661D00BD8A4B /* SceneDelegate.swift */,
+			);
+			path = "Application Delegates";
+			sourceTree = "<group>";
+		};
 		EC2189ED29AB74B4002058E6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,17 +118,16 @@
 		EC9BC00A29A6661C00BD8A4B /* NetworkingDemo */ = {
 			isa = PBXGroup;
 			children = (
-				EC9BC00B29A6661D00BD8A4B /* AppDelegate.swift */,
+				EC1B2F6929AF319400F236AE /* Application Delegates */,
 				EC9BC01429A6661D00BD8A4B /* Assets.xcassets */,
 				EC6132BC29AA5FB5003B8B01 /* Extensions */,
 				EC9BC01929A6661D00BD8A4B /* Info.plist */,
 				EC9BC01629A6661D00BD8A4B /* LaunchScreen.storyboard */,
 				EC9BC01129A6661D00BD8A4B /* Main.storyboard */,
-				EC9BC00D29A6661D00BD8A4B /* SceneDelegate.swift */,
-				EC9BC00F29A6661D00BD8A4B /* ViewController.swift */,
-				EC6132BB29AA5FA3003B8B01 /* Views */,
 				EC6132BF29AA613E003B8B01 /* Model */,
 				EC2189ED29AB74B4002058E6 /* Services */,
+				EC9BC00F29A6661D00BD8A4B /* ViewController.swift */,
+				EC6132BB29AA5FA3003B8B01 /* Views */,
 			);
 			path = NetworkingDemo;
 			sourceTree = "<group>";

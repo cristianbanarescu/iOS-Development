@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
-        viewController.config(with: URLSessionNetworkService())
+        viewController.config(with: AlamofireNetworkService())
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
