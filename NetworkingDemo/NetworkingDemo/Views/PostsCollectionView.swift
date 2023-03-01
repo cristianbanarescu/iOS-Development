@@ -12,15 +12,18 @@ struct PostsCollectionView: View {
     // MARK: - Properties
     
     private let posts: [Post]
+    private let orientationChanged = NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)
+
+    @State var orientation = UIDevice.current.orientation    
     
     // MARK: - init
-
+    
     init(posts: [Post]) {
         self.posts = posts
     }
     
     // MARK: - View
-        
+    
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns(), spacing: 30) {
@@ -28,6 +31,8 @@ struct PostsCollectionView: View {
                     PostCell(title: post.title, bodyString: post.body)
                 }
             }
+        }.onReceive(orientationChanged) { _ in
+            self.orientation = UIDevice.current.orientation
         }
     }
 }
@@ -36,8 +41,7 @@ struct PostsCollectionView: View {
 
 private extension PostsCollectionView {
     func columns() -> [GridItem] {
-        // TODO make the LazyVGrid show 3 cells instead of 2 when in landscape mode 
-        let numberOfColumns: Int = UIDevice().isPortraitOrientation ? 2: 3
+        let numberOfColumns: Int = self.orientation.isPortraitOrientation ? 2: 3
         
         var columns: [GridItem] = []
         
