@@ -12,9 +12,9 @@ struct PostsCollectionView: View {
     // MARK: - Properties
     
     private let posts: [Post]
-    private let orientationChanged = NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)
+    private let orientationChangedPublisher = NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)
 
-    @State var orientation = UIDevice.current.orientation    
+    @State var currentOrientation = UIDevice.current.orientation
     
     // MARK: - init
     
@@ -31,8 +31,8 @@ struct PostsCollectionView: View {
                     PostCell(title: post.title, bodyString: post.body)
                 }
             }
-        }.onReceive(orientationChanged) { _ in
-            self.orientation = UIDevice.current.orientation
+        }.onReceive(orientationChangedPublisher) { _ in
+            self.currentOrientation = UIDevice.current.orientation
         }
     }
 }
@@ -41,11 +41,11 @@ struct PostsCollectionView: View {
 
 private extension PostsCollectionView {
     func columns() -> [GridItem] {
-        let numberOfColumns: Int = self.orientation.isPortraitOrientation ? 2: 3
+        let numberOfColumns: Int = self.currentOrientation.isPortraitOrientation ? 2: 3
         
         var columns: [GridItem] = []
         
-        for _ in 0...numberOfColumns - 1 {
+        for _ in 0..<numberOfColumns {
             columns.append(GridItem(.flexible()))
         }
         
