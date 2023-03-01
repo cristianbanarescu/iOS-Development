@@ -25,6 +25,8 @@ class ViewController: UIViewController {
         fetchPosts()
     }
     
+    // MARK: - Public 
+    
     func config(with networkService: NetworkServiceProtocol) {
         self.networkService = networkService
     }
