@@ -34,7 +34,7 @@ struct PostCell: View {
                 Text(bodyString.prefix(20)).lineLimit(2)
             }
         }
-        .frame(height: 150)
+        .frame(width: 150, height: 150)
         .font(Font.title3)
         .padding(.all)
         .background(Color.mint)
