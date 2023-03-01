@@ -9,3 +9,7 @@
 
 - This project uses the JSON Placeholder `posts` API from https://jsonplaceholder.typicode.com/ in order to perform network requests
 - This project uses a table view built using SwiftUI in order to display data fetched from the API
+
+## Implementation 
+
+- The UI elements of this demo project were created using SwiftUI - check the [Views](./NetworkingDemo/Views/) folder for more details.
