@@ -10,10 +10,12 @@ import SwiftUI
 extension UIDeviceOrientation {
     var isPortraitOrientation: Bool {
         switch self {
-        case .unknown, .portrait, .portraitUpsideDown:
+        case .portrait, .portraitUpsideDown:
             return true
         case .landscapeLeft, .landscapeRight:
             return false
+        case .unknown:
+            return false 
         default:
             return true
         }
