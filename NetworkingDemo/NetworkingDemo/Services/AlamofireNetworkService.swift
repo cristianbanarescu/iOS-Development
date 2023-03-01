@@ -8,8 +8,6 @@
 import Foundation
 import Alamofire
 
-// TODO refactor to remove code duplication
-
 struct AlamofireNetworkService: NetworkServiceProtocol {
     
     // MARK: - Properties
@@ -99,6 +97,7 @@ struct AlamofireNetworkService: NetworkServiceProtocol {
                     do {
                         let createdPostDictionary = try JSONSerialization.jsonObject(with: postData ?? Data()) as? [String: Any] ?? [:]
                         print("Updating new Post object is OK. The new id is: \(createdPostDictionary["id"] ?? "")")
+                        completion(mockPost)
                     } catch {
                         print("Could not decode updated post. Error: \(error.localizedDescription)")
                     }

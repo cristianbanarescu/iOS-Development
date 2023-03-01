@@ -28,14 +28,46 @@ class ViewController: UIViewController {
     func config(with networkService: NetworkServiceProtocol) {
         self.networkService = networkService
     }
-    
-    // TODO
-    // try to refactor duplicate code
 }
 
 // MARK: - Private
 
 private extension ViewController {
+    func setupNavigationBarButtons() {
+        let deletePostsButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deletePosts))
+        let updatePostsButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(updatePost))
+        let createPostsButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createPost))
+        
+        navigationItem.setLeftBarButtonItems([updatePostsButton, deletePostsButton], animated: true)
+        navigationItem.setRightBarButtonItems([createPostsButton], animated: true)
+    }
+    
+    func fetchPosts() {
+        networkService.fetchPosts { posts in
+            DispatchQueue.main.async { [weak self] in
+                guard let self else {
+                    return
+                }
+                self.posts = posts
+                self.setupPostsCollectionView()
+            }
+        }
+    }
+    
+    @objc func deletePosts() {
+        networkService.deletePosts()
+    }
+    
+    @objc func updatePost() {
+        networkService.updatePost { post in
+            print("Post updated successfully: \(post?.id ?? -1)")
+        }
+    }
+    
+    @objc func createPost() {
+        networkService.createPost()
+    }
+    
     func setupPostsCollectionView() {
         let hostingVC = UIHostingController(rootView: PostsCollectionView(posts: posts))
         
@@ -56,40 +88,5 @@ private extension ViewController {
         ])
         
         hostingVC.didMove(toParent: self)
-    }
-    
-    func fetchPosts() {
-        networkService.fetchPosts { posts in
-            DispatchQueue.main.async { [weak self] in
-                guard let self else {
-                    return
-                }
-                self.posts = posts
-                self.setupPostsCollectionView()
-            }
-        }
-    }
-    
-    @objc func deletePosts() {
-        networkService.deletePosts()
-    }
-    
-    @objc func updatePost() {
-        networkService.updatePost { _ in
-            // TODO
-        }
-    }
-    
-    @objc func createPost() {
-        networkService.createPost()
-    }
-    
-    func setupNavigationBarButtons() {
-        let deletePostsButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deletePosts))
-        let updatePostsButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(updatePost))
-        let createPostsButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createPost))
-        
-        navigationItem.setLeftBarButtonItems([updatePostsButton, deletePostsButton], animated: true)
-        navigationItem.setRightBarButtonItems([createPostsButton], animated: true)
     }
 }
