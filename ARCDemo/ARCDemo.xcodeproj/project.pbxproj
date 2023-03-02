@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC9BBFFE29A6655C00BD8A4B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9BBFFD29A6655C00BD8A4B /* main.swift */; };
+		EC22D7D829B0FE7F00B5C1E0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22D7D729B0FE7F00B5C1E0 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +23,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EC22D7D729B0FE7F00B5C1E0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EC22D7D929B0FE9C00B5C1E0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EC9BBFF329A6655000BD8A4B /* ARCDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ARCDemo; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC9BBFFD29A6655C00BD8A4B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = "../../Memory Management/ARC-HowItWorks/ARC-HowItWorks/main.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +42,7 @@
 		EC9BBFEA29A6655000BD8A4B = {
 			isa = PBXGroup;
 			children = (
+				EC22D7D929B0FE9C00B5C1E0 /* README.md */,
 				EC9BBFF529A6655000BD8A4B /* ARCDemo */,
 				EC9BBFF429A6655000BD8A4B /* Products */,
 			);
@@ -57,7 +59,7 @@
 		EC9BBFF529A6655000BD8A4B /* ARCDemo */ = {
 			isa = PBXGroup;
 			children = (
-				EC9BBFFD29A6655C00BD8A4B /* main.swift */,
+				EC22D7D729B0FE7F00B5C1E0 /* main.swift */,
 			);
 			path = ARCDemo;
 			sourceTree = "<group>";
@@ -94,6 +96,7 @@
 				TargetAttributes = {
 					EC9BBFF229A6655000BD8A4B = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -120,7 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC9BBFFE29A6655C00BD8A4B /* main.swift in Sources */,
+				EC22D7D829B0FE7F00B5C1E0 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,10 +246,17 @@
 		EC9BBFFB29A6655000BD8A4B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H86P7K84DY;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -254,9 +264,15 @@
 		EC9BBFFC29A6655000BD8A4B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H86P7K84DY;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
