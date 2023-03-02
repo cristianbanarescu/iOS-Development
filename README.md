@@ -2,6 +2,12 @@
 
 Repository containing small iOS Demos &amp; Projects. These projects are used to showcase the usage of different iOS concepts and frameworks.
 
+## Demo projects
+
+- For accessibility (Voice Over and Dynamic Type) please check out [AccessibilityDemo](./AccessibilityDemo/)
+- For general Swift concepts please check out [SwiftDemo](./SwiftDemo/)
+- For networking (URLSession and Alamofire) please check out [NetworkingDemo](./NetworkingDemo/)
+
 ## iOS useful concepts & topics
 
 The following is a list of nice to know and mandatory subjects that an iOS engineer should approach and study:
