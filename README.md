@@ -7,6 +7,7 @@ Repository containing small iOS Demos &amp; Projects. These projects are used to
 - For accessibility (Voice Over and Dynamic Type) please check out [AccessibilityDemo](./AccessibilityDemo/)
 - For general Swift concepts please check out [SwiftDemo](./SwiftDemo/)
 - For networking (URLSession and Alamofire) please check out [NetworkingDemo](./NetworkingDemo/)
+- For cocoapods and Lottie-ios usage please check out [CocoaPodsDemo](./CocoaPodsDemo/)
 
 ## iOS useful concepts & topics
 
