@@ -11,6 +11,9 @@
 		EC0102A229B7B24300A5F35D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0102A129B7B24300A5F35D /* ContentView.swift */; };
 		EC0102A429B7B24400A5F35D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC0102A329B7B24400A5F35D /* Assets.xcassets */; };
 		EC0102A729B7B24400A5F35D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC0102A629B7B24400A5F35D /* Preview Assets.xcassets */; };
+		EC0102AE29B7B5BC00A5F35D /* 9501-icons-package-setting.json in Resources */ = {isa = PBXBuildFile; fileRef = EC0102AD29B7B5BC00A5F35D /* 9501-icons-package-setting.json */; };
+		EC0102B029B7B9B600A5F35D /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0102AF29B7B9B600A5F35D /* LottieView.swift */; };
+		EC0102B229B7B9F200A5F35D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EC0102B129B7B9F200A5F35D /* README.md */; };
 		FC0FF390E388EB217F8E2B48 /* Pods_CocoaPodsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED1714ED0A27F8F76790209 /* Pods_CocoaPodsDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +25,9 @@
 		EC0102A129B7B24300A5F35D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EC0102A329B7B24400A5F35D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC0102A629B7B24400A5F35D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EC0102AD29B7B5BC00A5F35D /* 9501-icons-package-setting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9501-icons-package-setting.json"; sourceTree = "<group>"; };
+		EC0102AF29B7B9B600A5F35D /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		EC0102B129B7B9F200A5F35D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FF47568A8AD2A9FEE5DB1D0C /* Pods-CocoaPodsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPodsDemo.release.xcconfig"; path = "Target Support Files/Pods-CocoaPodsDemo/Pods-CocoaPodsDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,7 +49,6 @@
 				44AF1B3DBB73CA79D0F2BA1E /* Pods-CocoaPodsDemo.debug.xcconfig */,
 				FF47568A8AD2A9FEE5DB1D0C /* Pods-CocoaPodsDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -58,6 +63,7 @@
 		EC01029329B7B24300A5F35D = {
 			isa = PBXGroup;
 			children = (
+				EC0102B129B7B9F200A5F35D /* README.md */,
 				EC01029E29B7B24300A5F35D /* CocoaPodsDemo */,
 				EC01029D29B7B24300A5F35D /* Products */,
 				3912973F7CDDC7BABC6266F3 /* Pods */,
@@ -76,9 +82,11 @@
 		EC01029E29B7B24300A5F35D /* CocoaPodsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				EC0102AD29B7B5BC00A5F35D /* 9501-icons-package-setting.json */,
+				EC0102A329B7B24400A5F35D /* Assets.xcassets */,
 				EC01029F29B7B24300A5F35D /* CocoaPodsDemoApp.swift */,
 				EC0102A129B7B24300A5F35D /* ContentView.swift */,
-				EC0102A329B7B24400A5F35D /* Assets.xcassets */,
+				EC0102AF29B7B9B600A5F35D /* LottieView.swift */,
 				EC0102A529B7B24400A5F35D /* Preview Content */,
 			);
 			path = CocoaPodsDemo;
@@ -154,6 +162,8 @@
 			files = (
 				EC0102A729B7B24400A5F35D /* Preview Assets.xcassets in Resources */,
 				EC0102A429B7B24400A5F35D /* Assets.xcassets in Resources */,
+				EC0102B229B7B9F200A5F35D /* README.md in Resources */,
+				EC0102AE29B7B5BC00A5F35D /* 9501-icons-package-setting.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +218,7 @@
 			files = (
 				EC0102A229B7B24300A5F35D /* ContentView.swift in Sources */,
 				EC0102A029B7B24300A5F35D /* CocoaPodsDemoApp.swift in Sources */,
+				EC0102B029B7B9B600A5F35D /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

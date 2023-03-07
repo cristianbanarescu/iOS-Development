@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        VStack(alignment: .leading) {
+            Text("Lottie animation:")
+            LottieView(fileName: "9501-icons-package-setting")
+                .frame(height: 300)
+            Text("Credits to https://lottiefiles.com/9501-icons-package-setting")
         }
         .padding()
     }
