@@ -2,7 +2,7 @@
 
 ## Purpose 
 
-This project is an iOS application created using SwiftUI. It includes a basic animation created using Lottie iOS. (https://github.com/airbnb/lottie-ios)
+This project is an iOS application created using SwiftUI. It includes a basic animation created using Lottie iOS (https://github.com/airbnb/lottie-ios), integrated with the help of CocoaPods.
 
 ## Implementation 
 
