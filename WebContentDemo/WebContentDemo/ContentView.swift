@@ -17,12 +17,16 @@ struct ContentView: View {
                 List {
                     Section("WKWebView based") {
                         ForEach(networkService.news) { data in
-                            Text(data.title)
+                            NavigationLink(data.title) {
+                                DetailView(text: "\(data.numberOfComments)")
+                            }
                         }
                     }
                     Section("SFSafariViewController based") {
                         ForEach(networkService.stories) { data in
-                            Text(data.title)
+                            NavigationLink(data.title) {
+                                DetailView(text: "\(data.numberOfComments)")
+                            }
                         }
                     }
                 }
