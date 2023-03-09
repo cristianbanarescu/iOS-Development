@@ -62,8 +62,8 @@
 				EC45FA6329BA47FC00689C75 /* ContentView.swift */,
 				EC45FA6529BA47FD00689C75 /* Assets.xcassets */,
 				EC45FA6729BA47FD00689C75 /* Preview Content */,
-				ECF14C8E29BA65E800311D9F /* NetworkService.swift */,
-				ECF14C9029BA6A7200311D9F /* Results.swift */,
+				ECF14C9229BA6DE100311D9F /* Services */,
+				ECF14C9329BA6DEB00311D9F /* Models */,
 			);
 			path = WebContentDemo;
 			sourceTree = "<group>";
@@ -74,6 +74,22 @@
 				EC45FA6829BA47FD00689C75 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ECF14C9229BA6DE100311D9F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ECF14C8E29BA65E800311D9F /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ECF14C9329BA6DEB00311D9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ECF14C9029BA6A7200311D9F /* Results.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
