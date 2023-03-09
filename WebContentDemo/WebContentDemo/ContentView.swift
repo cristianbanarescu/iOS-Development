@@ -10,10 +10,23 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            List {
+                Section("WKWebView based") {
+                    Text("Present data using WKWebView")
+                    Text("Present data using WKWebView")
+                    Text("Present data using WKWebView")
+                    Text("Present data using WKWebView")
+                    Text("Present data using WKWebView")
+                }
+                Section("SFSafariViewController based") {
+                    Text("Present data using SFSafariViewController")
+                    Text("Present data using SFSafariViewController")
+                    Text("Present data using SFSafariViewController")
+                    Text("Present data using SFSafariViewController")
+                    Text("Present data using SFSafariViewController")
+                    Text("Present data using SFSafariViewController")
+                }
+            }
         }
         .padding()
     }
