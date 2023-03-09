@@ -12,21 +12,23 @@ struct ContentView: View {
     @ObservedObject var networkService = NetworkService()
     
     var body: some View {
-        VStack {
-            List {
-                Section("WKWebView based") {
-                    ForEach(networkService.news) { data in
-                        Text(data.title)
+        NavigationView {
+            VStack {
+                List {
+                    Section("WKWebView based") {
+                        ForEach(networkService.news) { data in
+                            Text(data.title)
+                        }
                     }
-                }
-                Section("SFSafariViewController based") {
-                    ForEach(networkService.stories) { data in
-                        Text(data.title)
+                    Section("SFSafariViewController based") {
+                        ForEach(networkService.stories) { data in
+                            Text(data.title)
+                        }
                     }
                 }
             }
+            .navigationTitle("My awesome news")
         }
-        .padding()
         .onAppear {
             networkService.fetchDataFromFrontPageAndStories()
         }
