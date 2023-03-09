@@ -12,19 +12,14 @@ struct ContentView: View {
         VStack {
             List {
                 Section("WKWebView based") {
-                    Text("Present data using WKWebView")
-                    Text("Present data using WKWebView")
-                    Text("Present data using WKWebView")
-                    Text("Present data using WKWebView")
-                    Text("Present data using WKWebView")
+                    ForEach(webViewData) { data in
+                        Text(data.title)
+                    }
                 }
                 Section("SFSafariViewController based") {
-                    Text("Present data using SFSafariViewController")
-                    Text("Present data using SFSafariViewController")
-                    Text("Present data using SFSafariViewController")
-                    Text("Present data using SFSafariViewController")
-                    Text("Present data using SFSafariViewController")
-                    Text("Present data using SFSafariViewController")
+                    ForEach(safariVCData) { data in
+                        Text(data.title)
+                    }
                 }
             }
         }
@@ -37,3 +32,18 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+struct Data: Identifiable { // TODO to rename and move to separate file after fetching data from an API 
+    let id: String = UUID().uuidString
+    let title: String
+}
+
+let webViewData: [Data] = [
+    Data(title: "1"),
+    Data(title: "1"),
+    Data(title: "1"),
+    Data(title: "1"),
+    Data(title: "1")
+]
+
+let safariVCData: [Data] = webViewData
