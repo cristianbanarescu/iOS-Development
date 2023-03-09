@@ -20,7 +20,7 @@ struct ContentView: View {
                     }
                 }
                 Section("SFSafariViewController based") {
-                    ForEach(networkService.news) { data in
+                    ForEach(networkService.stories) { data in
                         Text(data.title)
                     }
                 }
@@ -28,7 +28,7 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
-            networkService.fetchData()
+            networkService.fetchDataFromFrontPageAndStories()
         }
     }
 }
