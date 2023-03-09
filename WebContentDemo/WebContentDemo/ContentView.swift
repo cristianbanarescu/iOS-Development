@@ -8,22 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var networkService = NetworkService()
+    
     var body: some View {
         VStack {
             List {
                 Section("WKWebView based") {
-                    ForEach(webViewData) { data in
+                    ForEach(networkService.news) { data in
                         Text(data.title)
                     }
                 }
                 Section("SFSafariViewController based") {
-                    ForEach(safariVCData) { data in
+                    ForEach(networkService.news) { data in
                         Text(data.title)
                     }
                 }
             }
         }
         .padding()
+        .onAppear {
+            networkService.fetchData()
+        }
     }
 }
 
@@ -32,18 +38,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-struct Data: Identifiable { // TODO to rename and move to separate file after fetching data from an API 
-    let id: String = UUID().uuidString
-    let title: String
-}
-
-let webViewData: [Data] = [
-    Data(title: "1"),
-    Data(title: "1"),
-    Data(title: "1"),
-    Data(title: "1"),
-    Data(title: "1")
-]
-
-let safariVCData: [Data] = webViewData
