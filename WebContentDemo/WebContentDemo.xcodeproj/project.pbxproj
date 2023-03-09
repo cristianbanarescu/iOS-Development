@@ -14,6 +14,7 @@
 		EC45FA7029BA480E00689C75 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EC45FA6F29BA480E00689C75 /* README.md */; };
 		ECF14C8F29BA65E800311D9F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF14C8E29BA65E800311D9F /* NetworkService.swift */; };
 		ECF14C9129BA6A7200311D9F /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF14C9029BA6A7200311D9F /* Results.swift */; };
+		ECF14C9629BA6E8700311D9F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF14C9529BA6E8700311D9F /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		EC45FA6F29BA480E00689C75 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		ECF14C8E29BA65E800311D9F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		ECF14C9029BA6A7200311D9F /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		ECF14C9529BA6E8700311D9F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				EC45FA6129BA47FC00689C75 /* WebContentDemoApp.swift */,
 				EC45FA6329BA47FC00689C75 /* ContentView.swift */,
+				ECF14C9529BA6E8700311D9F /* DetailView.swift */,
 				EC45FA6529BA47FD00689C75 /* Assets.xcassets */,
 				EC45FA6729BA47FD00689C75 /* Preview Content */,
 				ECF14C9229BA6DE100311D9F /* Services */,
@@ -166,6 +169,7 @@
 				EC45FA6429BA47FC00689C75 /* ContentView.swift in Sources */,
 				ECF14C8F29BA65E800311D9F /* NetworkService.swift in Sources */,
 				ECF14C9129BA6A7200311D9F /* Results.swift in Sources */,
+				ECF14C9629BA6E8700311D9F /* DetailView.swift in Sources */,
 				EC45FA6229BA47FC00689C75 /* WebContentDemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
