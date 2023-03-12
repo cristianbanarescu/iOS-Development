@@ -49,9 +49,9 @@
 		EC45FA5529BA47FC00689C75 = {
 			isa = PBXGroup;
 			children = (
+				EC45FA5F29BA47FC00689C75 /* Products */,
 				EC45FA6F29BA480E00689C75 /* README.md */,
 				EC45FA6029BA47FC00689C75 /* WebContentDemo */,
-				EC45FA5F29BA47FC00689C75 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,13 +66,13 @@
 		EC45FA6029BA47FC00689C75 /* WebContentDemo */ = {
 			isa = PBXGroup;
 			children = (
-				EC45FA6129BA47FC00689C75 /* WebContentDemoApp.swift */,
+				EC45FA6529BA47FD00689C75 /* Assets.xcassets */,
 				EC45FA6329BA47FC00689C75 /* ContentView.swift */,
 				ECF14C9529BA6E8700311D9F /* DetailView.swift */,
-				EC45FA6529BA47FD00689C75 /* Assets.xcassets */,
+				ECF14C9329BA6DEB00311D9F /* Models */,
 				EC45FA6729BA47FD00689C75 /* Preview Content */,
 				ECF14C9229BA6DE100311D9F /* Services */,
-				ECF14C9329BA6DEB00311D9F /* Models */,
+				EC45FA6129BA47FC00689C75 /* WebContentDemoApp.swift */,
 			);
 			path = WebContentDemo;
 			sourceTree = "<group>";
@@ -89,9 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				ECF14C8E29BA65E800311D9F /* NetworkService.swift */,
+				ECAEA0C329BE66F800DD722F /* SafariViewControllerService.swift */,
 				ECAEA0BF29BE66C600DD722F /* WebContentService.swift */,
 				ECAEA0C129BE66DD00DD722F /* WKWebViewService.swift */,
-				ECAEA0C329BE66F800DD722F /* SafariViewControllerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
