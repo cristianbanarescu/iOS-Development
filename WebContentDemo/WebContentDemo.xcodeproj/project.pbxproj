@@ -12,6 +12,9 @@
 		EC45FA6629BA47FD00689C75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC45FA6529BA47FD00689C75 /* Assets.xcassets */; };
 		EC45FA6929BA47FD00689C75 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC45FA6829BA47FD00689C75 /* Preview Assets.xcassets */; };
 		EC45FA7029BA480E00689C75 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EC45FA6F29BA480E00689C75 /* README.md */; };
+		ECAEA0C029BE66C600DD722F /* WebContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAEA0BF29BE66C600DD722F /* WebContentService.swift */; };
+		ECAEA0C229BE66DD00DD722F /* WKWebViewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAEA0C129BE66DD00DD722F /* WKWebViewService.swift */; };
+		ECAEA0C429BE66F800DD722F /* SafariViewControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAEA0C329BE66F800DD722F /* SafariViewControllerService.swift */; };
 		ECF14C8F29BA65E800311D9F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF14C8E29BA65E800311D9F /* NetworkService.swift */; };
 		ECF14C9129BA6A7200311D9F /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF14C9029BA6A7200311D9F /* Results.swift */; };
 		ECF14C9629BA6E8700311D9F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF14C9529BA6E8700311D9F /* DetailView.swift */; };
@@ -24,6 +27,9 @@
 		EC45FA6529BA47FD00689C75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC45FA6829BA47FD00689C75 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EC45FA6F29BA480E00689C75 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		ECAEA0BF29BE66C600DD722F /* WebContentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContentService.swift; sourceTree = "<group>"; };
+		ECAEA0C129BE66DD00DD722F /* WKWebViewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewService.swift; sourceTree = "<group>"; };
+		ECAEA0C329BE66F800DD722F /* SafariViewControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewControllerService.swift; sourceTree = "<group>"; };
 		ECF14C8E29BA65E800311D9F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		ECF14C9029BA6A7200311D9F /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		ECF14C9529BA6E8700311D9F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -83,6 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				ECF14C8E29BA65E800311D9F /* NetworkService.swift */,
+				ECAEA0BF29BE66C600DD722F /* WebContentService.swift */,
+				ECAEA0C129BE66DD00DD722F /* WKWebViewService.swift */,
+				ECAEA0C329BE66F800DD722F /* SafariViewControllerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -166,10 +175,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECAEA0C029BE66C600DD722F /* WebContentService.swift in Sources */,
 				EC45FA6429BA47FC00689C75 /* ContentView.swift in Sources */,
 				ECF14C8F29BA65E800311D9F /* NetworkService.swift in Sources */,
+				ECAEA0C229BE66DD00DD722F /* WKWebViewService.swift in Sources */,
 				ECF14C9129BA6A7200311D9F /* Results.swift in Sources */,
 				ECF14C9629BA6E8700311D9F /* DetailView.swift in Sources */,
+				ECAEA0C429BE66F800DD722F /* SafariViewControllerService.swift in Sources */,
 				EC45FA6229BA47FC00689C75 /* WebContentDemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

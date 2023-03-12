@@ -18,14 +18,20 @@ struct ContentView: View {
                     Section("WKWebView based") {
                         ForEach(networkService.news) { data in
                             NavigationLink(data.title) {
-                                DetailView(urlString: "\(data.url ?? "unknown string")")
+                                DetailView(
+                                    urlString: "\(data.url ?? "unknown string")",
+                                    webBasedService: WKWebViewService()
+                                )
                             }
                         }
                     }
                     Section("SFSafariViewController based") {
                         ForEach(networkService.stories) { data in
                             NavigationLink(data.title) {
-                                DetailView(urlString: "\(data.url ?? "unknown string")")
+                                DetailView(
+                                    urlString: "\(data.url ?? "unknown string")",
+                                    webBasedService: SafariViewControllerService()
+                                )
                             }
                         }
                     }
