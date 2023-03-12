@@ -15,9 +15,11 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 List {
+                    // TODO refactor this code inside some 'service' class
                     Section("WKWebView based") {
                         ForEach(networkService.news) { data in
                             NavigationLink(data.title) {
+                                // TODO open a WebView - using WKWebView
                                 DetailView(
                                     urlString: "\(data.url ?? "unknown string")",
                                     webBasedService: WKWebViewService()
@@ -28,6 +30,7 @@ struct ContentView: View {
                     Section("SFSafariViewController based") {
                         ForEach(networkService.stories) { data in
                             NavigationLink(data.title) {
+                                // TODO open a SafariView that loads a SafariVC with the URL String
                                 DetailView(
                                     urlString: "\(data.url ?? "unknown string")",
                                     webBasedService: SafariViewControllerService()
