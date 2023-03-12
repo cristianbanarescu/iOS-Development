@@ -8,7 +8,7 @@
 import Foundation
 
 struct WKWebViewService: WebContentService {
-    func loadURL() {
+    func loadURL(using urlString: String) {
         // load using WKWebView
     }
 }

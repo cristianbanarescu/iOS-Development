@@ -15,7 +15,7 @@ struct DetailView: View {
     var body: some View {
         Text(urlString)
             .onAppear {
-                webBasedService.loadURL()
+                webBasedService.loadURL(using: urlString)
             }
     }
 }
