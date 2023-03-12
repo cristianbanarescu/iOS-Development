@@ -9,15 +9,15 @@ import SwiftUI
 
 struct DetailView: View {
     
-    var text: String
+    var urlString: String
     
     var body: some View {
-        Text(text)
+        Text(urlString)
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(text: "test")
+        DetailView(urlString: "https://google.com")
     }
 }
