@@ -7,29 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC1AA63929C0FB7E00D09A57 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1AA63829C0FB7E00D09A57 /* WebView.swift */; };
+		EC1AA63B29C0FBA300D09A57 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1AA63A29C0FBA300D09A57 /* SafariView.swift */; };
 		EC45FA6229BA47FC00689C75 /* WebContentDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45FA6129BA47FC00689C75 /* WebContentDemoApp.swift */; };
 		EC45FA6429BA47FC00689C75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45FA6329BA47FC00689C75 /* ContentView.swift */; };
 		EC45FA6629BA47FD00689C75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC45FA6529BA47FD00689C75 /* Assets.xcassets */; };
 		EC45FA6929BA47FD00689C75 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC45FA6829BA47FD00689C75 /* Preview Assets.xcassets */; };
 		EC45FA7029BA480E00689C75 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EC45FA6F29BA480E00689C75 /* README.md */; };
-		ECAEA0C029BE66C600DD722F /* WebContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAEA0BF29BE66C600DD722F /* WebContentService.swift */; };
-		ECAEA0C229BE66DD00DD722F /* WKWebViewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAEA0C129BE66DD00DD722F /* WKWebViewService.swift */; };
-		ECAEA0C429BE66F800DD722F /* SafariViewControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAEA0C329BE66F800DD722F /* SafariViewControllerService.swift */; };
+		ECAEA0C029BE66C600DD722F /* WebContentViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAEA0BF29BE66C600DD722F /* WebContentViewProvider.swift */; };
+		ECAEA0C229BE66DD00DD722F /* WKWebViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAEA0C129BE66DD00DD722F /* WKWebViewProvider.swift */; };
+		ECAEA0C429BE66F800DD722F /* SafariViewControllerViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAEA0C329BE66F800DD722F /* SafariViewControllerViewProvider.swift */; };
 		ECF14C8F29BA65E800311D9F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF14C8E29BA65E800311D9F /* NetworkService.swift */; };
 		ECF14C9129BA6A7200311D9F /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF14C9029BA6A7200311D9F /* Results.swift */; };
 		ECF14C9629BA6E8700311D9F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF14C9529BA6E8700311D9F /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC1AA63829C0FB7E00D09A57 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		EC1AA63A29C0FBA300D09A57 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		EC45FA5E29BA47FC00689C75 /* WebContentDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebContentDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC45FA6129BA47FC00689C75 /* WebContentDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContentDemoApp.swift; sourceTree = "<group>"; };
 		EC45FA6329BA47FC00689C75 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EC45FA6529BA47FD00689C75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC45FA6829BA47FD00689C75 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EC45FA6F29BA480E00689C75 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		ECAEA0BF29BE66C600DD722F /* WebContentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContentService.swift; sourceTree = "<group>"; };
-		ECAEA0C129BE66DD00DD722F /* WKWebViewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewService.swift; sourceTree = "<group>"; };
-		ECAEA0C329BE66F800DD722F /* SafariViewControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewControllerService.swift; sourceTree = "<group>"; };
+		ECAEA0BF29BE66C600DD722F /* WebContentViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContentViewProvider.swift; sourceTree = "<group>"; };
+		ECAEA0C129BE66DD00DD722F /* WKWebViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewProvider.swift; sourceTree = "<group>"; };
+		ECAEA0C329BE66F800DD722F /* SafariViewControllerViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewControllerViewProvider.swift; sourceTree = "<group>"; };
 		ECF14C8E29BA65E800311D9F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		ECF14C9029BA6A7200311D9F /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		ECF14C9529BA6E8700311D9F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -46,6 +50,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC1AA63C29C0FC2100D09A57 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ECF14C9529BA6E8700311D9F /* DetailView.swift */,
+				EC1AA63829C0FB7E00D09A57 /* WebView.swift */,
+				EC1AA63A29C0FBA300D09A57 /* SafariView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EC1AA63D29C0FC7E00D09A57 /* View Providers */ = {
+			isa = PBXGroup;
+			children = (
+				ECAEA0C329BE66F800DD722F /* SafariViewControllerViewProvider.swift */,
+				ECAEA0BF29BE66C600DD722F /* WebContentViewProvider.swift */,
+				ECAEA0C129BE66DD00DD722F /* WKWebViewProvider.swift */,
+			);
+			path = "View Providers";
+			sourceTree = "<group>";
+		};
 		EC45FA5529BA47FC00689C75 = {
 			isa = PBXGroup;
 			children = (
@@ -68,10 +92,11 @@
 			children = (
 				EC45FA6529BA47FD00689C75 /* Assets.xcassets */,
 				EC45FA6329BA47FC00689C75 /* ContentView.swift */,
-				ECF14C9529BA6E8700311D9F /* DetailView.swift */,
 				ECF14C9329BA6DEB00311D9F /* Models */,
 				EC45FA6729BA47FD00689C75 /* Preview Content */,
 				ECF14C9229BA6DE100311D9F /* Services */,
+				EC1AA63D29C0FC7E00D09A57 /* View Providers */,
+				EC1AA63C29C0FC2100D09A57 /* Views */,
 				EC45FA6129BA47FC00689C75 /* WebContentDemoApp.swift */,
 			);
 			path = WebContentDemo;
@@ -89,9 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				ECF14C8E29BA65E800311D9F /* NetworkService.swift */,
-				ECAEA0C329BE66F800DD722F /* SafariViewControllerService.swift */,
-				ECAEA0BF29BE66C600DD722F /* WebContentService.swift */,
-				ECAEA0C129BE66DD00DD722F /* WKWebViewService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -175,13 +197,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECAEA0C029BE66C600DD722F /* WebContentService.swift in Sources */,
+				ECAEA0C029BE66C600DD722F /* WebContentViewProvider.swift in Sources */,
 				EC45FA6429BA47FC00689C75 /* ContentView.swift in Sources */,
 				ECF14C8F29BA65E800311D9F /* NetworkService.swift in Sources */,
-				ECAEA0C229BE66DD00DD722F /* WKWebViewService.swift in Sources */,
+				ECAEA0C229BE66DD00DD722F /* WKWebViewProvider.swift in Sources */,
+				EC1AA63B29C0FBA300D09A57 /* SafariView.swift in Sources */,
 				ECF14C9129BA6A7200311D9F /* Results.swift in Sources */,
 				ECF14C9629BA6E8700311D9F /* DetailView.swift in Sources */,
-				ECAEA0C429BE66F800DD722F /* SafariViewControllerService.swift in Sources */,
+				EC1AA63929C0FB7E00D09A57 /* WebView.swift in Sources */,
+				ECAEA0C429BE66F800DD722F /* SafariViewControllerViewProvider.swift in Sources */,
 				EC45FA6229BA47FC00689C75 /* WebContentDemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

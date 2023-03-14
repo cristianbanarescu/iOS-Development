@@ -21,8 +21,7 @@ struct ContentView: View {
                             NavigationLink(data.title) {
                                 // TODO open a WebView - using WKWebView
                                 DetailView(
-                                    urlString: "\(data.url ?? "unknown string")",
-                                    webBasedService: WKWebViewService()
+                                    webBasedService: WKWebViewProvider(urlString: "\(data.url ?? "unknown string")")
                                 )
                             }
                         }
@@ -32,8 +31,7 @@ struct ContentView: View {
                             NavigationLink(data.title) {
                                 // TODO open a SafariView that loads a SafariVC with the URL String
                                 DetailView(
-                                    urlString: "\(data.url ?? "unknown string")",
-                                    webBasedService: SafariViewControllerService()
+                                    webBasedService: SafariViewControllerViewProvider(urlString: "\(data.url ?? "unknown string")")
                                 )
                             }
                         }
