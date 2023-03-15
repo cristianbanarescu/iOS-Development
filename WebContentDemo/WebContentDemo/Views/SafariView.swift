@@ -9,7 +9,7 @@ import SwiftUI
 import SafariServices
 
 struct SafariView: UIViewControllerRepresentable {
-    @Binding var urlString: String
+    var urlString: String
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
         guard let url = URL(string: urlString) else {

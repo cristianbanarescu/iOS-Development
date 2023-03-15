@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct WKWebViewProvider: WebContentViewProvider {
-    @State var urlString: String
+    var urlString: String
 
     var view: AnyView {
-        AnyView(WebView(urlString: $urlString))
+        AnyView(WebView(urlString: urlString))
     }
 }

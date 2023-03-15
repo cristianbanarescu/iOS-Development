@@ -10,7 +10,7 @@ import WebKit
 
 struct WebView: UIViewRepresentable {
     
-    @Binding var urlString: String
+    var urlString: String
     
     typealias UIViewType = WKWebView
     
