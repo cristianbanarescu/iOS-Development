@@ -10,6 +10,10 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var networkService = NetworkService()
+    @State var wkWebViewPresented: Bool
+    @State var safariPresented: Bool
+    @State var webBasedViewProvider: WebContentViewProvider
+    @State var safariBasedViewProvider: WebContentViewProvider
     
     var body: some View {
         NavigationView {
@@ -18,21 +22,23 @@ struct ContentView: View {
                     // TODO refactor this code inside some 'service' class
                     Section("WKWebView based") {
                         ForEach(networkService.news) { data in
-                            NavigationLink(data.title) {
-                                // TODO open a WebView - using WKWebView
-                                DetailView(
-                                    webBasedViewProvider: WKWebViewProvider(urlString: "\(data.url ?? "unknown string")")
-                                )
+                            Button(data.title) {
+                                wkWebViewPresented.toggle()
+                                webBasedViewProvider = WKWebViewProvider(urlString: "\(data.url ?? "unknown string")")
+                            }
+                            .sheet(isPresented: $wkWebViewPresented) {
+                                DetailView(webBasedViewProvider: $webBasedViewProvider)
                             }
                         }
                     }
                     Section("SFSafariViewController based") {
                         ForEach(networkService.stories) { data in
-                            NavigationLink(data.title) {
-                                // TODO open a SafariView that loads a SafariVC with the URL String
-                                DetailView(
-                                    webBasedViewProvider: SafariViewControllerViewProvider(urlString: "\(data.url ?? "unknown string")")
-                                )
+                            Button(data.title) {
+                                safariPresented.toggle()
+                                safariBasedViewProvider = SafariViewControllerViewProvider(urlString: "\(data.url ?? "unknown string")")
+                            }
+                            .sheet(isPresented: $safariPresented) {
+                                DetailView(webBasedViewProvider: $safariBasedViewProvider)
                             }
                         }
                     }
@@ -48,6 +54,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(wkWebViewPresented: false, safariPresented: false, webBasedViewProvider: WKWebViewProvider(urlString: ""), safariBasedViewProvider: SafariViewControllerViewProvider(urlString: ""))
     }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct WebContentDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(wkWebViewPresented: false, safariPresented: false, webBasedViewProvider: WKWebViewProvider(urlString: ""), safariBasedViewProvider: SafariViewControllerViewProvider(urlString: ""))
         }
     }
 }

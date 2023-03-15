@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     
-    var webBasedViewProvider: any WebContentViewProvider
+    @Binding var webBasedViewProvider: any WebContentViewProvider
     
     var body: some View {
         webBasedViewProvider.view
@@ -18,6 +18,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(webBasedViewProvider: WKWebViewProvider(urlString: "https://google.com"))
+        DetailView(webBasedViewProvider: .constant(WKWebViewProvider(urlString: "https://google.com")))
     }
 }

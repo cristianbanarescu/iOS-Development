@@ -7,12 +7,10 @@
 
 import SwiftUI
 
-// TODO 
-
 struct SafariViewControllerViewProvider: WebContentViewProvider {    
     @State var urlString: String
     
     var view: AnyView {
-        AnyView(SafariView(urlString: urlString))
+        AnyView(SafariView(urlString: $urlString))
     }
 }

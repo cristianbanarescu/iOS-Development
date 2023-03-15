@@ -8,16 +8,15 @@
 import SwiftUI
 import SafariServices
 
-// TODO fix this in order to actually load the SFSafariView from the controller
-
-struct SafariView: UIViewRepresentable {
-    typealias UIViewType = UIView
+struct SafariView: UIViewControllerRepresentable {
+    @Binding var urlString: String
     
-    let urlString: String
-    
-    func makeUIView(context: Context) -> UIView {
-        SFSafariViewController(url: URL(string: urlString)!).view
+    func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
+        guard let url = URL(string: urlString) else {
+            return SFSafariViewController(url: URL(string: "https://google.com")!) // TODO fix this 
+        }
+        return SFSafariViewController(url: url)
     }
     
-    func updateUIView(_ uiView: UIView, context: Context) { }
+    func updateUIViewController(_ uiViewController: SFSafariViewController, context: UIViewControllerRepresentableContext<SafariView>) { }
 }
