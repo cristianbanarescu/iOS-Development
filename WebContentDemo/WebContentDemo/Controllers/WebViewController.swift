@@ -14,6 +14,7 @@ class WebViewController: UIViewController {
     
     private var webView: WKWebView!
     private var urlString: String = ""
+    private static var webViewObservedKeyPath: String = "estimatedProgress"
     
     // MARK: - Lifecycle
 
@@ -33,9 +34,17 @@ class WebViewController: UIViewController {
         
         webView.load(URLRequest(url: url))
         
-        title = "Loading..."
+        title = "Loading: 0%"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissView))
+        
+        webView.addObserver(self, forKeyPath: Self.webViewObservedKeyPath, options: .new, context: nil)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == Self.webViewObservedKeyPath {
+            title = String(format: "Loading: %.0f", Float(webView.estimatedProgress) * 100) + "%"
+        }
     }
     
     // MARK: - Public
@@ -49,7 +58,7 @@ class WebViewController: UIViewController {
 
 extension WebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        title = webView.url?.host() ?? "Loading host"
+        title = "Loaded: 100%"
     }
 }
 
