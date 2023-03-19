@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController, WKNavigationDelegate {
+class WebViewController: UIViewController {
     
     // MARK: - Properties
     
@@ -33,7 +33,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
         
         webView.load(URLRequest(url: url))
         
-        title = url.host()
+        title = "Loading..."
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissView))
     }
@@ -42,6 +42,14 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     
     func config(with urlString: String) {
         self.urlString = urlString
+    }
+}
+
+// MARK: - WKNavigationDelegate
+
+extension WebViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        title = webView.url?.host() ?? "Loading host"
     }
 }
 
