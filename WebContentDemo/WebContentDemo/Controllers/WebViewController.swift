@@ -36,7 +36,7 @@ class WebViewController: UIViewController {
         
         title = "Loading: 0%"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissView))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissView))
         
         webView.addObserver(self, forKeyPath: Self.webViewObservedKeyPath, options: .new, context: nil)
     }
