@@ -4,10 +4,12 @@ Repository containing small iOS Demos &amp; Projects. These projects are used to
 
 ## Demo projects
 
-- For accessibility (Voice Over and Dynamic Type) please check out [AccessibilityDemo](./AccessibilityDemo/)
-- For general Swift concepts please check out [SwiftDemo](./SwiftDemo/)
-- For networking (URLSession and Alamofire) please check out [NetworkingDemo](./NetworkingDemo/)
-- For cocoapods and Lottie-ios usage please check out [CocoaPodsDemo](./CocoaPodsDemo/)
+- For `accessibility` (Voice Over and Dynamic Type) please check out [AccessibilityDemo](./AccessibilityDemo/)
+- For general `Swift concepts` please check out [SwiftDemo](./SwiftDemo/)
+- For `networking` (URLSession and Alamofire) please check out [NetworkingDemo](./NetworkingDemo/)
+- For `Cocoapods` and `Lottie-ios` usage please check out [CocoaPodsDemo](./CocoaPodsDemo/)
+- For `ARC(Automatic reference counting)` in Swift, please check out [ARCDemo](./ARCDemo/)
+- For `WKWebView` or `SFSafariViewController` please check out [WebContentDemo](./WebContentDemo/)
 
 ## iOS useful concepts & topics
 
