@@ -3,7 +3,7 @@
 ## Purpose 
 
 - This project is an iOS application created using SwiftUI.
-- Using URLSession, this application shows news data fetched from Algolia's API and displays it either using a WKWebView or a SFSafariViewController.
+- Using URLSession, this application shows news data fetched from Algolia's API and displays it either using a `WKWebView` or a `SFSafariViewController`.
 
 ## Implementation 
 
