@@ -14,6 +14,8 @@
 		EC45FA6629BA47FD00689C75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC45FA6529BA47FD00689C75 /* Assets.xcassets */; };
 		EC45FA6929BA47FD00689C75 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC45FA6829BA47FD00689C75 /* Preview Assets.xcassets */; };
 		EC45FA7029BA480E00689C75 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EC45FA6F29BA480E00689C75 /* README.md */; };
+		ECA4BBA429C75350001D09A4 /* WKWebViewBasedSectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA4BBA329C75350001D09A4 /* WKWebViewBasedSectionProvider.swift */; };
+		ECA4BBA629C7536C001D09A4 /* SafariBasedSectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA4BBA529C7536C001D09A4 /* SafariBasedSectionProvider.swift */; };
 		ECAEA0C029BE66C600DD722F /* WebContentViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAEA0BF29BE66C600DD722F /* WebContentViewProvider.swift */; };
 		ECAEA0C229BE66DD00DD722F /* WKWebViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAEA0C129BE66DD00DD722F /* WKWebViewProvider.swift */; };
 		ECAEA0C429BE66F800DD722F /* SafariViewControllerViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAEA0C329BE66F800DD722F /* SafariViewControllerViewProvider.swift */; };
@@ -31,6 +33,8 @@
 		EC45FA6529BA47FD00689C75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC45FA6829BA47FD00689C75 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EC45FA6F29BA480E00689C75 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		ECA4BBA329C75350001D09A4 /* WKWebViewBasedSectionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewBasedSectionProvider.swift; sourceTree = "<group>"; };
+		ECA4BBA529C7536C001D09A4 /* SafariBasedSectionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariBasedSectionProvider.swift; sourceTree = "<group>"; };
 		ECAEA0BF29BE66C600DD722F /* WebContentViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContentViewProvider.swift; sourceTree = "<group>"; };
 		ECAEA0C129BE66DD00DD722F /* WKWebViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewProvider.swift; sourceTree = "<group>"; };
 		ECAEA0C329BE66F800DD722F /* SafariViewControllerViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewControllerViewProvider.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 				EC45FA6729BA47FD00689C75 /* Preview Content */,
 				ECF14C9229BA6DE100311D9F /* Services */,
 				EC1AA63D29C0FC7E00D09A57 /* View Providers */,
+				ECA4BBA229C75334001D09A4 /* Section Providers */,
 				EC1AA63C29C0FC2100D09A57 /* Views */,
 				EC45FA6129BA47FC00689C75 /* WebContentDemoApp.swift */,
 			);
@@ -108,6 +113,15 @@
 				EC45FA6829BA47FD00689C75 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ECA4BBA229C75334001D09A4 /* Section Providers */ = {
+			isa = PBXGroup;
+			children = (
+				ECA4BBA529C7536C001D09A4 /* SafariBasedSectionProvider.swift */,
+				ECA4BBA329C75350001D09A4 /* WKWebViewBasedSectionProvider.swift */,
+			);
+			path = "Section Providers";
 			sourceTree = "<group>";
 		};
 		ECF14C9229BA6DE100311D9F /* Services */ = {
@@ -205,6 +219,8 @@
 				ECF14C9129BA6A7200311D9F /* Results.swift in Sources */,
 				ECF14C9629BA6E8700311D9F /* DetailView.swift in Sources */,
 				EC1AA63929C0FB7E00D09A57 /* WebView.swift in Sources */,
+				ECA4BBA629C7536C001D09A4 /* SafariBasedSectionProvider.swift in Sources */,
+				ECA4BBA429C75350001D09A4 /* WKWebViewBasedSectionProvider.swift in Sources */,
 				ECAEA0C429BE66F800DD722F /* SafariViewControllerViewProvider.swift in Sources */,
 				EC45FA6229BA47FC00689C75 /* WebContentDemoApp.swift in Sources */,
 			);

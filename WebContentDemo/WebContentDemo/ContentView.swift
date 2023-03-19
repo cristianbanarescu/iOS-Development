@@ -19,29 +19,16 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 List {
-                    // TODO refactor this code inside some 'service' class
-                    Section("WKWebView based") {
-                        ForEach(networkService.news) { data in
-                            Button(data.title) {
-                                wkWebViewPresented.toggle()
-                                webBasedViewProvider = WKWebViewProvider(urlString: "\(data.url ?? "unknown string")")
-                            }
-                            .sheet(isPresented: $wkWebViewPresented) {
-                                DetailView(webBasedViewProvider: $webBasedViewProvider)
-                            }
-                        }
-                    }
-                    Section("SFSafariViewController based") {
-                        ForEach(networkService.stories) { data in
-                            Button(data.title) {
-                                safariPresented.toggle()
-                                safariBasedViewProvider = SafariViewControllerViewProvider(urlString: "\(data.url ?? "unknown string")")
-                            }
-                            .sheet(isPresented: $safariPresented) {
-                                DetailView(webBasedViewProvider: $safariBasedViewProvider)
-                            }
-                        }
-                    }
+                    WKWebViewBasedSectionProvider(
+                        networkService: networkService,
+                        isPresented: $wkWebViewPresented,
+                        viewProvider: $webBasedViewProvider
+                    )
+                    SafariBasedSectionProvider(
+                        networkService: networkService,
+                        isPresented: $safariPresented,
+                        viewProvider: $safariBasedViewProvider
+                    )
                 }
             }
             .navigationTitle("My awesome news")

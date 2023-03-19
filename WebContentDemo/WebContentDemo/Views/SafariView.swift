@@ -13,7 +13,7 @@ struct SafariView: UIViewControllerRepresentable {
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
         guard let url = URL(string: urlString) else {
-            return SFSafariViewController(url: URL(string: "https://google.com")!) // TODO fix this 
+            return SFSafariViewController(url: URL(string: "https://google.com")!)
         }
         return SFSafariViewController(url: url)
     }
