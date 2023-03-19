@@ -12,6 +12,18 @@ struct Results: Decodable {
 }
 
 struct News: Decodable, Identifiable {
+    
+    // MARK: - Nested Types
+    
+    enum CodingKeys: String, CodingKey {
+        case objectID
+        case title
+        case url
+        case numberOfComments = "num_comments"
+    }
+    
+    // MARK: - Properties
+    
     var id: String {
         objectID
     }
@@ -20,11 +32,4 @@ struct News: Decodable, Identifiable {
     let title: String
     let numberOfComments: Int
     let url: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case objectID
-        case title
-        case url
-        case numberOfComments = "num_comments"
-    }
 }

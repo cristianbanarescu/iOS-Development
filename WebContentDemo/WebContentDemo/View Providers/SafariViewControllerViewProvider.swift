@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-struct SafariViewControllerViewProvider: WebContentViewProvider {    
+struct SafariViewControllerViewProvider: WebContentViewProvider {
+    
+    // MARK: - Properties
+
     var urlString: String
     
     var view: AnyView {

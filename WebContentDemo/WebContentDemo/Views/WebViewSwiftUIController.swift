@@ -9,7 +9,11 @@ import SwiftUI
 
 struct WebViewSwiftUIController: UIViewControllerRepresentable {
     
+    // MARK: - Properties
+
     var urlString: String
+    
+    // MARK: - UIViewControllerRepresentable
     
     func makeUIViewController(context: Context) -> UINavigationController {
         let webViewController = WebViewController()

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DetailView: View {
     
+    // MARK: - Properties
+    
     @Binding var webBasedViewProvider: any WebContentViewProvider
     
     var body: some View {

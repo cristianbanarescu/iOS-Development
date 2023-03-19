@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SafariBasedSectionProvider: View {
+    
+    // MARK: - Properties
+
     @ObservedObject var networkService: NetworkService
     @Binding var isPresented: Bool
     @Binding var viewProvider: WebContentViewProvider

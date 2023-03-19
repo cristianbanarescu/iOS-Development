@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct WKWebViewProvider: WebContentViewProvider {
+    
+    // MARK: - Properties
+
     var urlString: String
 
     var view: AnyView {
