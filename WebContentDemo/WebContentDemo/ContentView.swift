@@ -41,6 +41,11 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(wkWebViewPresented: false, safariPresented: false, webBasedViewProvider: WKWebViewProvider(urlString: ""), safariBasedViewProvider: SafariViewControllerViewProvider(urlString: ""))
+        ContentView(
+            wkWebViewPresented: false,
+            safariPresented: false,
+            webBasedViewProvider: WKWebViewProvider(urlString: ""),
+            safariBasedViewProvider: SafariViewControllerViewProvider(urlString: "")
+        )
     }
 }
