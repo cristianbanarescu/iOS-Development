@@ -11,6 +11,6 @@ struct WKWebViewProvider: WebContentViewProvider {
     var urlString: String
 
     var view: AnyView {
-        AnyView(WebView(urlString: urlString))
+        AnyView(WebViewSwiftUIController(urlString: urlString))
     }
 }
