@@ -17,12 +17,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gZ-xx-gRl">
-                                <rect key="frame" x="158" y="409" width="77" height="35"/>
+                                <rect key="frame" x="157" y="167" width="77" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Table 1"/>
                                 <connections>
                                     <segue destination="dOT-5f-2Rm" kind="show" id="WAc-eZ-nWu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tlh-G2-rOf">
+                                <rect key="frame" x="157" y="251" width="79" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Table 2"/>
+                                <connections>
+                                    <segue destination="tTW-wJ-jD4" kind="show" id="shu-GC-5iQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -34,6 +43,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1063.3587786259541" y="3.5211267605633805"/>
+        </scene>
+        <!--UIViewController-->
+        <scene sceneID="cc8-PO-8Ee">
+            <objects>
+                <viewController id="tTW-wJ-jD4" customClass="CustomTableViewController" customModule="TableViewUIKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pJl-HG-q82">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2RW-tq-IOj">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hBN-HH-ryl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="2RW-tq-IOj" secondAttribute="bottom" id="0vj-mH-OWd"/>
+                            <constraint firstItem="2RW-tq-IOj" firstAttribute="leading" secondItem="hBN-HH-ryl" secondAttribute="leading" id="QRr-kM-jR7"/>
+                            <constraint firstItem="hBN-HH-ryl" firstAttribute="trailing" secondItem="2RW-tq-IOj" secondAttribute="trailing" id="eO6-Ub-d6h"/>
+                            <constraint firstItem="2RW-tq-IOj" firstAttribute="top" secondItem="hBN-HH-ryl" secondAttribute="top" id="yV7-B2-Ixe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="UIViewController" id="YAh-Pq-zUA"/>
+                    <connections>
+                        <outlet property="tableView" destination="2RW-tq-IOj" id="xkc-Mw-xRN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6eT-kA-uAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1894" y="737"/>
         </scene>
         <!--UITableViewController-->
         <scene sceneID="lkh-5a-ZYW">

@@ -17,6 +17,7 @@
 		EC5783A229EB02780077D9B0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5783A129EB02780077D9B0 /* TableViewController.swift */; };
 		EC5783A529EB03F20077D9B0 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5783A329EB03F20077D9B0 /* CustomTableViewCell.swift */; };
 		EC5783A629EB03F20077D9B0 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC5783A429EB03F20077D9B0 /* CustomTableViewCell.xib */; };
+		EC5783AA29EB09570077D9B0 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5783A929EB09570077D9B0 /* CustomTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		EC5783A129EB02780077D9B0 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		EC5783A329EB03F20077D9B0 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		EC5783A429EB03F20077D9B0 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		EC5783A929EB09570077D9B0 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +82,9 @@
 		EC5783A729EB089E0077D9B0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				EC57838F29EAFE5B0077D9B0 /* ViewController.swift */,
+				EC5783A929EB09570077D9B0 /* CustomTableViewController.swift */,
 				EC5783A129EB02780077D9B0 /* TableViewController.swift */,
+				EC57838F29EAFE5B0077D9B0 /* ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				EC5783A529EB03F20077D9B0 /* CustomTableViewCell.swift in Sources */,
 				EC57838C29EAFE5B0077D9B0 /* AppDelegate.swift in Sources */,
 				EC57838E29EAFE5B0077D9B0 /* SceneDelegate.swift in Sources */,
+				EC5783AA29EB09570077D9B0 /* CustomTableViewController.swift in Sources */,
 				EC5783A229EB02780077D9B0 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
