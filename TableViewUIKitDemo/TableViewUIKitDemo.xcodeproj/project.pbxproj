@@ -65,18 +65,34 @@
 			isa = PBXGroup;
 			children = (
 				EC57838B29EAFE5B0077D9B0 /* AppDelegate.swift */,
-				EC57838D29EAFE5B0077D9B0 /* SceneDelegate.swift */,
-				EC57838F29EAFE5B0077D9B0 /* ViewController.swift */,
-				EC5783A129EB02780077D9B0 /* TableViewController.swift */,
-				EC5783A329EB03F20077D9B0 /* CustomTableViewCell.swift */,
-				EC5783A429EB03F20077D9B0 /* CustomTableViewCell.xib */,
-				EC57839129EAFE5B0077D9B0 /* Main.storyboard */,
 				EC57839429EAFE5C0077D9B0 /* Assets.xcassets */,
-				EC57839629EAFE5C0077D9B0 /* LaunchScreen.storyboard */,
+				EC5783A829EB08A60077D9B0 /* Cells */,
 				EC57839929EAFE5C0077D9B0 /* Info.plist */,
+				EC57839629EAFE5C0077D9B0 /* LaunchScreen.storyboard */,
+				EC57839129EAFE5B0077D9B0 /* Main.storyboard */,
 				EC57839F29EAFE730077D9B0 /* README.md */,
+				EC57838D29EAFE5B0077D9B0 /* SceneDelegate.swift */,
+				EC5783A729EB089E0077D9B0 /* ViewControllers */,
 			);
 			path = TableViewUIKitDemo;
+			sourceTree = "<group>";
+		};
+		EC5783A729EB089E0077D9B0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EC57838F29EAFE5B0077D9B0 /* ViewController.swift */,
+				EC5783A129EB02780077D9B0 /* TableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EC5783A829EB08A60077D9B0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EC5783A329EB03F20077D9B0 /* CustomTableViewCell.swift */,
+				EC5783A429EB03F20077D9B0 /* CustomTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
