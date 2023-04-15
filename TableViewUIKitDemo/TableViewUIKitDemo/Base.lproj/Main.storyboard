@@ -34,6 +34,15 @@
                                     <segue destination="tTW-wJ-jD4" kind="show" id="shu-GC-5iQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qx-QV-SEt">
+                                <rect key="frame" x="157" y="323" width="80" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Table 3"/>
+                                <connections>
+                                    <segue destination="p6F-Va-8aM" kind="show" id="Ru4-sn-ouy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -43,6 +52,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1063.3587786259541" y="3.5211267605633805"/>
+        </scene>
+        <!--UIViewController - table-->
+        <scene sceneID="p3O-TJ-uaJ">
+            <objects>
+                <viewController id="p6F-Va-8aM" customClass="EmptyViewController" customModule="TableViewUIKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7ST-gm-HZV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="PyB-LA-M16"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="UIViewController - table" id="cQv-bv-YmT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="41l-Nu-thj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1063" y="784"/>
         </scene>
         <!--UIViewController-->
         <scene sceneID="cc8-PO-8Ee">
@@ -73,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6eT-kA-uAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1894" y="737"/>
+            <point key="canvasLocation" x="1894" y="784"/>
         </scene>
         <!--UITableViewController-->
         <scene sceneID="lkh-5a-ZYW">
