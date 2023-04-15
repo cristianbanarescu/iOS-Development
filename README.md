@@ -10,6 +10,7 @@ Repository containing small iOS Demos &amp; Projects. These projects are used to
 - For `Cocoapods` and `Lottie-ios` usage please check out [CocoaPodsDemo](./CocoaPodsDemo/)
 - For `ARC(Automatic reference counting)` in Swift, please check out [ARCDemo](./ARCDemo/)
 - For `WKWebView` or `SFSafariViewController` please check out [WebContentDemo](./WebContentDemo/)
+- For `UITableView` please check out [TableViewUIKitDemo](./TableViewUIKitDemo/)
 
 ## iOS useful concepts & topics
 
