@@ -9,6 +9,6 @@
 ## Implementation 
 
 - UITableViews used in this project are created and used in different ways:
-    - UITableView inside a `UITableViewController`; the controller is created inside the Main storyboard
-    - UITableView inside a classic `UIViewController`; the controller is created inside the Main storyboard
-    - UITableView created from `scratch`, `programatically`; no storyboard used
+    - UITableView inside a `UITableViewController`; the controller is created inside the Main storyboard. For more details, please see [TableViewController](./ViewControllers/TableViewController.swift)
+    - UITableView inside a classic `UIViewController`; the controller is created inside the Main storyboard. For more details, please see [TableViewController](./ViewControllers/CustomTableViewController.swift) 
+    - UITableView created from `scratch`, `programatically`; no storyboard used. For more details, please see [TableViewController](./ViewControllers/EmptyViewController.swift) 
