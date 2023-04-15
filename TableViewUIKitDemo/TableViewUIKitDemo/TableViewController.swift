@@ -64,4 +64,8 @@ class TableViewController: UITableViewController {
         
         return UISwipeActionsConfiguration(actions: actions)
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Did tap row \(indexPath.row)")
+    }
 }
