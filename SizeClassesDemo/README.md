@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This little iOS project was created in order to demonstrate how iOS Size classes work.
+This little iOS project was created in order to demonstrate how iOS Size classes work. The project just shows 2 rectangular views (placed side by side) that have different widths and heights based on different size classes.
 
 ## Size Classes - nice to know:
 
