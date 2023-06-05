@@ -11,6 +11,7 @@ This little iOS project was created in order to demonstrate how iOS Size classes
 * There are 2 size classes and both can be used for the width(horizontal) and height(vertical) axes of a device:
     - **Regular** -> to be used when you have **lots** of available space for your UI; mainly used for width
     - **Compact** -> to be used when you have **limited** space available for your UI; mainly used for height 
+* iPads have both regular widht and height size class so a change in an iPad's orientation won't change the size class.
 
 Examples: 
 
@@ -18,6 +19,8 @@ Examples:
 - an iPad with Split Screen or Slide Over ON can have a regular and compact width size class 
 - you can create constraints in Interface Builder and make them 'available' only for a specific size class
 - you can arrange 2 views side by side in a regular width size class and have them one on top of the other one in a compact width size class
+- have a different font size when using an iPad, compared to when using an iPhone
+- add aditional UI elements only when on iPad
 
 ## Useful links
 
