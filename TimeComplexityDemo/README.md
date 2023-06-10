@@ -1,4 +1,4 @@
-Time Complexity Demo
+# Time Complexity Demo
 
 # Purpose
 
