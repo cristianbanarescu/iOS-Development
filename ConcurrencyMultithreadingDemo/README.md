@@ -6,21 +6,21 @@ This iOS project showcases the usef of concurrency and multi-threading in iOS ap
 
 # Topics
 
-Serial Queue
-Concurrent Queue
-Main Thread vs. Background Thread (Global Thread)
-GCD:
+- Serial Queue
+- Concurrent Queue
+- Main Thread vs. Background Thread (Global Thread)
+- GCD:
     - DispatchGroup
     - DispatchSemaphore
     - DispatchWorkItem
     - Dispatch Barrier
     - DispatchSource (How To Handle Files and Folders)
 
-AsyncAfter
-(NS)Operation and (NS)OperationQueue
-Deadlock
-Main Thread Checker
-Async / Await / Actor Is iOS13+
+- AsyncAfter
+- (NS)Operation and (NS)OperationQueue
+- Deadlock
+- Main Thread Checker
+- Async / Await / Actor Is iOS13+
 
 # Useful links
 
