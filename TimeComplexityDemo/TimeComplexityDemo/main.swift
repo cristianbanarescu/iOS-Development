@@ -60,16 +60,12 @@ func exponential(n: Int) -> Int {
 }
 
 class Simulator {
-    enum ComplexityType: String, CustomStringConvertible {
+    enum ComplexityType: String {
         case constant
         case linear
         case logarithmic
         case quadratic
         case exponential
-        
-        var description: String {
-            self.rawValue
-        }
     }
     
     func calculateTime(for algorithmComplexityType: ComplexityType) {
@@ -96,7 +92,7 @@ class Simulator {
         let endTime = CFAbsoluteTimeGetCurrent()
         let executionTime = endTime - startTime
         
-        print("executionTime for \(algorithmComplexityType) is: \(executionTime)")
+        print("executionTime for \(algorithmComplexityType.rawValue) is: \(executionTime)")
         print(Date())
     }
 }
