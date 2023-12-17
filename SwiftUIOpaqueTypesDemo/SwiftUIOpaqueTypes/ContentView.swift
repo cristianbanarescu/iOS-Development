@@ -22,3 +22,18 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
+struct ContentViewWithError: View {
+    var isEnabled = true
+
+    /*
+     Function declares an opaque return type 'some View', but the return statements in its body do not have matching underlying types
+     */
+    var body: some View {
+        if isEnabled {
+            return Color.red
+        } else {
+            return Text("Hello, world!")
+        }
+    }
+}
