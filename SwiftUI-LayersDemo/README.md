@@ -17,6 +17,7 @@
                 .foregroundStyle(.white)
         }
 ``` 
+- See more here: https://developer.apple.com/documentation/swiftui/view/overlay(alignment:content:)
 
 ### Adding a layer behind a view 
 
@@ -32,3 +33,4 @@
                 .foregroundStyle(.red)
         )
 ``` 
+- See more here: https://developer.apple.com/documentation/swiftui/view/background(alignment:content:)
