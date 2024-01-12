@@ -16,7 +16,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 // use NavigationLink to navigate to other views
                 NavigationLink(destination: SecondView()) {
@@ -34,6 +34,7 @@ struct ContentView: View {
                 // in this case, navigation will be performed to a Text view
             }
             .padding()
+            .navigationTitle("NavigationLink Demo")
         }
     }
 }
@@ -42,13 +43,17 @@ struct SecondView: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        VStack {
-            Text("Destination")
-            Button("Pop/Dismiss") {
-                dismiss()
+        NavigationStack {
+            VStack {
+                Text("Destination")
+                Button("Pop/Dismiss") {
+                    dismiss()
+                }
+                .buttonStyle(BorderedProminentButtonStyle())
+                .font(.title)
             }
-            .buttonStyle(BorderedProminentButtonStyle())
-            .font(.title)
+            .navigationTitle("Second View")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
