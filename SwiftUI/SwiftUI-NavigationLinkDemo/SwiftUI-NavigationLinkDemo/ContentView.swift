@@ -12,6 +12,11 @@ import SwiftUI
  
  - use a NavigationLink to navigate to SecondView
  - use a button inside SecondView to 'pop' back to the 'root' view
+ 
+ TODO: Pop to root with multiple views:
+ - https://sarunw.com/posts/how-to-pop-to-root-view-in-swiftui/
+ - https://www.hackingwithswift.com/forums/swiftui/navigationstack-pop-to-root/24439
+ - https://stackoverflow.com/questions/57334455/how-can-i-pop-to-the-root-view-using-swiftui
  */
 
 struct ContentView: View {
