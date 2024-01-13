@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftUI_NavigationLinkDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MultipleNavigationView()
         }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC3DD4B02B52CD4E00D472B3 /* MultipleNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DD4AF2B52CD4E00D472B3 /* MultipleNavigationView.swift */; };
 		ECE14E492B51DC6C001F73A6 /* SwiftUI_NavigationLinkDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE14E482B51DC6C001F73A6 /* SwiftUI_NavigationLinkDemoApp.swift */; };
 		ECE14E4B2B51DC6C001F73A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE14E4A2B51DC6C001F73A6 /* ContentView.swift */; };
 		ECE14E4D2B51DC6D001F73A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECE14E4C2B51DC6D001F73A6 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC3DD4AF2B52CD4E00D472B3 /* MultipleNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleNavigationView.swift; sourceTree = "<group>"; };
 		ECE14E452B51DC6C001F73A6 /* SwiftUI-NavigationLinkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-NavigationLinkDemo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE14E482B51DC6C001F73A6 /* SwiftUI_NavigationLinkDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_NavigationLinkDemoApp.swift; sourceTree = "<group>"; };
 		ECE14E4A2B51DC6C001F73A6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				ECE14E482B51DC6C001F73A6 /* SwiftUI_NavigationLinkDemoApp.swift */,
 				ECE14E4A2B51DC6C001F73A6 /* ContentView.swift */,
+				EC3DD4AF2B52CD4E00D472B3 /* MultipleNavigationView.swift */,
 				ECE14E4C2B51DC6D001F73A6 /* Assets.xcassets */,
 				ECE14E4E2B51DC6D001F73A6 /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				ECE14E4B2B51DC6C001F73A6 /* ContentView.swift in Sources */,
 				ECE14E492B51DC6C001F73A6 /* SwiftUI_NavigationLinkDemoApp.swift in Sources */,
+				EC3DD4B02B52CD4E00D472B3 /* MultipleNavigationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
