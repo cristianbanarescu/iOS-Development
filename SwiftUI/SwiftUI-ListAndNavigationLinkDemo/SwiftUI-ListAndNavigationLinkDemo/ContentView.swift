@@ -11,6 +11,7 @@ import SwiftUI
  - Show a 'table' (List) with data inside;
  - Tap on a row goes to a 'DetailView' from where you can go back either using navigation bar or using a button
  - toolbar button to add new item to the 'table'
+ - DetailView with a button together with a navigationDestination modifier in order to push another view and then be able to pop it, using .navigationDestination(isPresented: ..) modifier
  */
 
 struct ContentView: View {
@@ -47,15 +48,20 @@ struct DetailView: View {
     var body: some View {
         VStack {
             Spacer()
+            
             Text("\(language) programming language")
+            
             Spacer()
+            
             Button(action: {
                 dismiss()
             }, label: {
                 Text("Close view/Go back")
             })
             .buttonStyle(BorderedProminentButtonStyle())
+            
             Spacer()
+            
             Button(action: {
                 isPresented.toggle()
             }, label: {
@@ -64,6 +70,7 @@ struct DetailView: View {
             .buttonStyle(BorderedProminentButtonStyle())
             .navigationDestination(isPresented: $isPresented) {
                 Text("Deeper")
+                
                 Button(action: {
                     isPresented = false
                 }, label: {
