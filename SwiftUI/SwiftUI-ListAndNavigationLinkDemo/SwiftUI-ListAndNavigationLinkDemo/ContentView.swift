@@ -42,6 +42,7 @@ struct ContentView: View {
 struct DetailView: View {
     let language: String
     @Environment(\.dismiss) var dismiss
+    @State var isPresented: Bool = false
     
     var body: some View {
         VStack {
@@ -55,6 +56,21 @@ struct DetailView: View {
             })
             .buttonStyle(BorderedProminentButtonStyle())
             Spacer()
+            Button(action: {
+                isPresented.toggle()
+            }, label: {
+                Text("Go deeper")
+            })
+            .buttonStyle(BorderedProminentButtonStyle())
+            .navigationDestination(isPresented: $isPresented) {
+                Text("Deeper")
+                Button(action: {
+                    isPresented = false
+                }, label: {
+                    Text("Pop")
+                })
+                .buttonStyle(BorderedProminentButtonStyle())
+            }
         }
         .frame(height: 200)
     }
