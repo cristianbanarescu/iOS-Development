@@ -13,10 +13,12 @@ import SwiftUI
  - can have multiple sections inside a picker
  - need to use a row's tag (if not using a ForEach) in order to correctly bind the picker's selection to your variable
  - picker's selection can be changed programatically > just change the value of your binded variable
+ - SegmentedControl = Picker with .pickerStyle(.segmented)
  */
 
 struct ContentView: View {
     @State var selectedLanguage: String = "German" // bind Picker to this value
+    @State var segmentedSelection: String = "German"
     
     var body: some View {
         VStack {
@@ -65,7 +67,21 @@ struct ContentView: View {
                         selectedLanguage = "Chineese"
                     }
             }
-            .frame(height: 400)
+            .frame(height: 200)
+            
+            Spacer()
+            
+            Picker(selection: $segmentedSelection) { // Picker with .pickerStyle(.segmented) = SegmentedControl
+                Text("German").tag("German")
+                Text("French").tag("French")
+                Text("Italian").tag("Italian")
+            } label: {
+                Text("Segmented picker")
+            }
+            .pickerStyle(.segmented)
+            
+            Spacer()
+
         }
         .padding()
     }
