@@ -12,6 +12,7 @@ Repository containing small iOS Demos &amp; Projects. These projects are used to
 - For `WKWebView` or `SFSafariViewController` please check out [WebContentDemo](./WebContentDemo/)
 - For `UITableView` please check out [TableViewUIKitDemo](./TableViewUIKitDemo/)
 - For `SwiftUI` related projects and examples, please see [SwiftUI folder](./SwiftUI)
+- For `Data structures and algorithms` please see [Data structures and algorithms](./Data structures and algorithms)
 
 ## iOS useful concepts & topics
 
