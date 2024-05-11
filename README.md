@@ -82,153 +82,151 @@ The following is a list of nice to know and mandatory subjects that an iOS engin
 
 ## Other useful links:
 
-https://www.linkedin.com/pulse/other-things-ios-developer-should-know-scott-gardner/?trackingId=3bsA1vNGAbF%2F6c54IIUXrw%3D%3D
+### General iOS Engineer knowledge:
 
-https://medium.com/@PavloShadov/best-resources-for-advanced-ios-developer-swift-ade30374593d
+- https://www.linkedin.com/pulse/other-things-ios-developer-should-know-scott-gardner/?trackingId=3bsA1vNGAbF%2F6c54IIUXrw%3D%3D
+- https://medium.com/@PavloShadov/best-resources-for-advanced-ios-developer-swift-ade30374593d
+- https://www.hackingwithswift.com/example-code
+- https://refactoring.guru/refactoring
+- https://www.raywenderlich.com/ios/paths/iossoftware
+- https://www.raywenderlich.com/718-6-best-practices-for-mobile-app-search-filtering
+- https://www.raywenderlich.com/5817-background-modes-tutorial-getting-started
 
-https://www.hackingwithswift.com/example-code
+### iOS IDEs & Tools:
 
-https://refactoring.guru/refactoring
+- https://www.raywenderlich.com/ios/paths/iostools
 
-https://www.raywenderlich.com/ios/paths/iosdatanetworking
+### Combine:
 
-https://www.raywenderlich.com/ios/paths/iostools
+- https://www.raywenderlich.com/ios/paths/combine
 
-https://www.raywenderlich.com/ios/paths/iossoftware
+### Swift:
 
-https://www.raywenderlich.com/ios/paths/combine
+- https://www.raywenderlich.com/ios/paths/advancedswift
 
-https://www.raywenderlich.com/ios/paths/advancedswift
+### Data Storage (offline/online):
 
-https://www.raywenderlich.com/27184225-cloudkit
+- https://www.raywenderlich.com/27184225-cloudkit
 
-https://www.raywenderlich.com/books/real-world-ios-by-tutorials
+### Books: 
 
-https://www.raywenderlich.com/30195423-core-image-tutorial-getting-started
+- https://www.raywenderlich.com/books/real-world-ios-by-tutorials
 
-https://www.raywenderlich.com/books/macos-by-tutorials
+### CoreImage:
 
-https://www.raywenderlich.com/books/metal-by-tutorials
+- https://www.raywenderlich.com/30195423-core-image-tutorial-getting-started
 
-https://www.raywenderlich.com/5817-background-modes-tutorial-getting-started
+### MacOS:
 
-https://www.raywenderlich.com/11395893-push-notifications-tutorial-getting-started
+- https://www.raywenderlich.com/books/macos-by-tutorials
 
-https://www.raywenderlich.com/3418439-encoding-and-decoding-in-swift
+### Metal:
 
-https://www.raywenderlich.com/120-how-to-submit-an-app-to-apple-from-no-account-to-app-store-part-1
+- https://www.raywenderlich.com/books/metal-by-tutorials
 
-https://www.raywenderlich.com/35-alamofire-tutorial-getting-started
+### Push notifications:
 
-https://www.kodeco.com/6587213-alamofire-5-tutorial-for-ios-getting-started#toc-anchor-014
+- https://www.raywenderlich.com/11395893-push-notifications-tutorial-getting-started
 
-https://www.raywenderlich.com/10868372-testflight-tutorial-ios-beta-testing
+### Networking: 
 
-https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started
+- https://www.raywenderlich.com/35-alamofire-tutorial-getting-started
+- https://www.kodeco.com/6587213-alamofire-5-tutorial-for-ios-getting-started#toc-anchor-014
+- https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started
+- https://www.raywenderlich.com/ios/paths/iosdatanetworking
 
-https://www.raywenderlich.com/71-spritekit-tutorial-for-beginners
+### Encoding & Decoding:
 
-https://www.raywenderlich.com/236-how-to-secure-ios-user-data-the-keychain-and-biometrics-face-id-or-touch-id
+- https://www.raywenderlich.com/3418439-encoding-and-decoding-in-swift
 
-https://www.raywenderlich.com/718-6-best-practices-for-mobile-app-search-filtering
+### App submission, TestFlight, AppStore Connect:
 
-https://www.raywenderlich.com/7738344-mapkit-tutorial-getting-started
+- https://www.raywenderlich.com/120-how-to-submit-an-app-to-apple-from-no-account-to-app-store-part-1
+- https://www.raywenderlich.com/10868372-testflight-tutorial-ios-beta-testing
 
-https://www.raywenderlich.com/1276414-callkit-tutorial-for-ios
+### VoIP and calls:
 
-https://www.raywenderlich.com/5255-basic-uiview-animation-tutorial-getting-started
+- https://www.raywenderlich.com/1276414-callkit-tutorial-for-ios
 
-https://www.raywenderlich.com/1484288-preventing-man-in-the-middle-attacks-in-ios-with-ssl-pinning
+### SpriteKit:
 
-https://www.raywenderlich.com/129-basic-ios-security-keychain-and-hashing
+- https://www.raywenderlich.com/71-spritekit-tutorial-for-beginners
 
-https://www.raywenderlich.com/6080-universal-links-make-the-connection
+### Maps:
 
-https://www.raywenderlich.com/1343912-adaptive-layout-tutorial-in-ios-12-getting-started
+- https://www.raywenderlich.com/7738344-mapkit-tutorial-getting-started
+- https://www.raywenderlich.com/197-google-maps-ios-sdk-tutorial-getting-started
 
-https://www.raywenderlich.com/322-custom-uiviewcontroller-transitions-getting-started
+### Security: 
 
-https://www.raywenderlich.com/197-google-maps-ios-sdk-tutorial-getting-started
+- https://www.raywenderlich.com/1484288-preventing-man-in-the-middle-attacks-in-ios-with-ssl-pinning
+- https://www.raywenderlich.com/129-basic-ios-security-keychain-and-hashing
+- https://www.raywenderlich.com/236-how-to-secure-ios-user-data-the-keychain-and-biometrics-face-id-or-touch-id
 
-https://www.raywenderlich.com/5960-text-kit-tutorial-getting-started
+### UI & Layout:
 
-## How to become a better iOS Developer:
+- https://www.raywenderlich.com/5255-basic-uiview-animation-tutorial-getting-started
+- https://www.raywenderlich.com/1343912-adaptive-layout-tutorial-in-ios-12-getting-started
+- https://www.raywenderlich.com/322-custom-uiviewcontroller-transitions-getting-started
 
-https://brainstation.io/career-guides/how-to-become-an-ios-developer
+### Universal links:
 
-https://www.hackingwithswift.com/articles/230/how-to-become-an-ios-developer
+- https://www.raywenderlich.com/6080-universal-links-make-the-connection
 
-https://www.techrepublic.com/article/how-to-become-an-ios-developer-a-cheat-sheet/
+### TextKit:
 
-https://codewithchris.com/ios-developer/
+- https://www.raywenderlich.com/5960-text-kit-tutorial-getting-started
 
-https://www.fadel.io/blog/posts/30-tips-to-make-you-a-better-ios-developer/
+### How to become a better iOS Developer:
 
-https://www.codingem.com/how-to-learn-ios-development/
-
-https://medium.com/app-coder-io/10-steps-to-become-a-professional-ios-developer-11b82b6aea4c
-
-https://developer.apple.com/forums/thread/44008
-
-https://www.simplilearn.com/skills-required-to-become-an-ios-developer-article
-
-## Agile:
-
-https://medium.flutterdevs.com/what-is-agile-methodology-in-mobile-app-development-4fa83ed6ac09
-
-https://www.techaheadcorp.com/blog/build-app-using-agile-development/
-
-https://medium.com/@edeskhub/why-agile-methodology-for-mobile-app-development-e685b41ea462
-
-https://appinventiv.com/blog/agile-scrum-methodology-in-mobile-app-development/
-
-https://hub.packtpub.com/9-reasons-to-choose-agile-methodology-for-mobile-app-development/
-
-## Application lifecycle: 
-
-https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle
-
-https://manasaprema04.medium.com/application-life-cycle-in-ios-f7365d8c1636
-
-https://medium.com/@neroxiao/ios-app-life-cycle-ec1b31cee9dc
-
-https://www.javatpoint.com/ios-app-lifecycle
-
-https://hackernoon.com/application-life-cycle-in-ios-12b6ba6af78b
-
-## Controller lifecycle:
-
-https://developer.apple.com/documentation/uikit/uiviewcontroller
-
-https://medium.com/good-morning-swift/ios-view-controller-life-cycle-2a0f02e74ff5
-
-https://guides.codepath.com/ios/View-Controller-Lifecycle
-
-https://mobikul.com/ios-view-controller-life-cycle/
-
-https://stackoverflow.com/questions/5562938/looking-to-understand-the-ios-uiviewcontroller-lifecycle
-
-## Automation testing: 
-
-https://bitbar.com/blog/top-5-ios-testing-frameworks-with-examples/
-
-https://bugfender.com/blog/best-automated-testing-tools-ios/
-
-https://www.toptal.com/ios/how-to-write-automated-tests-for-ios
-
-https://blog.kobiton.com/ios-automation-testing-best-practices
-
-https://www.headspin.io/blog/ios-automation-testing-top-frameworks
-
-https://www.browserstack.com/guide/how-to-perform-ios-ui-test-automation
-
-## Concurrency:
-
-https://docs.swift.org/swift-book/LanguageGuide/Concurrency.html
-
-https://developer.apple.com/documentation/swift/swift_standard_library/concurrency
-
-https://medium.com/shakuro/introduction-to-ios-concurrency-a5db1cf18fa6
+- https://brainstation.io/career-guides/how-to-become-an-ios-developer
+- https://www.hackingwithswift.com/articles/230/how-to-become-an-ios-developer
+- https://www.techrepublic.com/article/how-to-become-an-ios-developer-a-cheat-sheet/
+- https://codewithchris.com/ios-developer/
+- https://www.fadel.io/blog/posts/30-tips-to-make-you-a-better-ios-developer/
+- https://www.codingem.com/how-to-learn-ios-development/
+- https://medium.com/app-coder-io/10-steps-to-become-a-professional-ios-developer-11b82b6aea4c
+- https://developer.apple.com/forums/thread/44008
+- https://www.simplilearn.com/skills-required-to-become-an-ios-developer-article
+
+### Agile:
+
+- https://medium.flutterdevs.com/what-is-agile-methodology-in-mobile-app-development-4fa83ed6ac09
+- https://www.techaheadcorp.com/blog/build-app-using-agile-development/
+- https://medium.com/@edeskhub/why-agile-methodology-for-mobile-app-development-e685b41ea462
+- https://appinventiv.com/blog/agile-scrum-methodology-in-mobile-app-development/
+- https://hub.packtpub.com/9-reasons-to-choose-agile-methodology-for-mobile-app-development/
+
+### Application lifecycle: 
+
+- https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle
+- https://manasaprema04.medium.com/application-life-cycle-in-ios-f7365d8c1636
+- https://medium.com/@neroxiao/ios-app-life-cycle-ec1b31cee9dc
+- https://www.javatpoint.com/ios-app-lifecycle
+- https://hackernoon.com/application-life-cycle-in-ios-12b6ba6af78b
+
+### Controller lifecycle:
+
+- https://developer.apple.com/documentation/uikit/uiviewcontroller
+- https://medium.com/good-morning-swift/ios-view-controller-life-cycle-2a0f02e74ff5
+- https://guides.codepath.com/ios/View-Controller-Lifecycle
+- https://mobikul.com/ios-view-controller-life-cycle/
+- https://stackoverflow.com/questions/5562938/looking-to-understand-the-ios-uiviewcontroller-lifecycle
+
+### Automation testing: 
+
+- https://bitbar.com/blog/top-5-ios-testing-frameworks-with-examples/
+- https://bugfender.com/blog/best-automated-testing-tools-ios/
+- https://www.toptal.com/ios/how-to-write-automated-tests-for-ios
+- https://blog.kobiton.com/ios-automation-testing-best-practices
+- https://www.headspin.io/blog/ios-automation-testing-top-frameworks
+- https://www.browserstack.com/guide/how-to-perform-ios-ui-test-automation
+
+### Concurrency:
+
+- https://docs.swift.org/swift-book/LanguageGuide/Concurrency.html
+- https://developer.apple.com/documentation/swift/swift_standard_library/concurrency
+- https://medium.com/shakuro/introduction-to-ios-concurrency-a5db1cf18fa6
 
 https://www.viget.com/articles/concurrency-multithreading-in-ios/
 
@@ -294,7 +292,7 @@ https://dennis-xlc.gitbooks.io/swift-algorithms-data-structures/content/chapter5
 
 https://www.swiftbysundell.com/articles/picking-the-right-data-structure-in-swift/
 
-## Databases:
+### Databases:
 
 https://trio.dev/blog/best-ios-database
 
@@ -354,7 +352,7 @@ https://iosexample.com/easy-to-use-sqlite-orm-library-written-with-swift/
 
 https://www.raywenderlich.com/6620276-sqlite-with-swift-tutorial-getting-started
 
-## Dependency Management:
+### Dependency Management:
 
 https://cocoapods.org/
 
@@ -418,7 +416,7 @@ https://gist.github.com/gitaarik/8735255
 
 https://chrisjean.com/git-submodules-adding-using-removing-and-updating/
 
-## Design Patterns:
+### Design Patterns:
 
 https://refactoring.guru/design-patterns
 
@@ -444,7 +442,7 @@ https://www.raywenderlich.com/477-design-patterns-on-ios-using-swift-part-1-2
 
 https://www.raywenderlich.com/1000705-model-view-controller-mvc-in-ios-a-modern-approach
 
-## Localization:
+### Localization:
 
 https://medium.com/swlh/app-localization-in-swift-ios-swift-guide-baa2c2e4298e
 
@@ -460,7 +458,7 @@ https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPIn
 
 https://medium.com/lean-localization/ios-localization-tutorial-938231f9f881
 
-## Location:
+### Location:
 
 https://developer.apple.com/documentation/corelocation
 
@@ -480,7 +478,7 @@ https://softauthor.com/ios-swift-get-user-location-real-time/
 
 https://www.raywenderlich.com/5247-core-location-tutorial-for-ios-tracking-visited-locations
 
-## Machine Learning:
+### Machine Learning:
 
 https://developer.apple.com/machine-learning/
 
@@ -498,7 +496,7 @@ https://www.hackingwithswift.com/books/ios-swiftui/training-a-model-with-create-
 
 https://www.raywenderlich.com/5653-create-ml-tutorial-getting-started
 
-## Structs vs classes:
+### Structs vs classes:
 
 https://www.appypie.com/struct-vs-class-swift-how-to#:~:text=In%20Swift%2C%20structs%20are%20value,choice%20between%20classes%20or%20structs.
 
@@ -518,7 +516,7 @@ https://blog.logrocket.com/introduction-to-classes-and-structs-in-swift/
 
 https://levelup.gitconnected.com/class-vs-struct-8e4dafa66ae9
 
-## Testing:
+### Testing:
 
 https://www.raywenderlich.com/21020457-ios-unit-testing-and-ui-testing-tutorial
 
@@ -556,7 +554,7 @@ https://www.raywenderlich.com/30227776-swiftui-testing-with-viewinspector-for-io
 
 https://www.raywenderlich.com/21020457-ios-unit-testing-and-ui-testing-tutorial
 
-## UI:
+### UI:
 
 https://www.hackingwithswift.com/quick-start/swiftui/swiftui-vs-interface-builder-and-storyboards
 
@@ -578,7 +576,7 @@ https://developer.apple.com/xcode/interface-builder/
 
 https://www.raywenderlich.com/5055364-ios-storyboards-getting-started
 
-## View Controllers:
+### View Controllers:
 
 https://developer.apple.com/documentation/uikit/uiviewcontroller
 
@@ -608,7 +606,7 @@ https://www.codementor.io/@nguyentruongky/uitableviewcontroller-vs-uiviewcontrol
 
 https://www.raywenderlich.com/4363809-uisearchcontroller-tutorial-getting-started
 
-## Views:
+### Views:
 
 https://developer.apple.com/documentation/uikit/uicollectionview
 
