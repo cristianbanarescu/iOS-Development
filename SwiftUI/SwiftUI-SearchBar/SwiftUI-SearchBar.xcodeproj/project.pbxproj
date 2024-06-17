@@ -12,6 +12,7 @@
 		ECD285402C2028B300549452 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECD2853F2C2028B300549452 /* Assets.xcassets */; };
 		ECD285432C2028B300549452 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECD285422C2028B300549452 /* Preview Assets.xcassets */; };
 		ECD285662C20293200549452 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD285652C20293200549452 /* SearchBar.swift */; };
+		ECD285682C2032C300549452 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD285672C2032C300549452 /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		ECD285482C2028B400549452 /* SwiftUI-SearchBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-SearchBarTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECD285522C2028B400549452 /* SwiftUI-SearchBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-SearchBarUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECD285652C20293200549452 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		ECD285672C2032C300549452 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				ECD2853B2C2028B200549452 /* SwiftUI_SearchBarApp.swift */,
 				ECD2853D2C2028B200549452 /* ContentView.swift */,
+				ECD285672C2032C300549452 /* SearchViewModel.swift */,
 				ECD285652C20293200549452 /* SearchBar.swift */,
 				ECD2853F2C2028B300549452 /* Assets.xcassets */,
 				ECD285412C2028B300549452 /* Preview Content */,
@@ -237,6 +240,7 @@
 			files = (
 				ECD2853E2C2028B200549452 /* ContentView.swift in Sources */,
 				ECD2853C2C2028B200549452 /* SwiftUI_SearchBarApp.swift in Sources */,
+				ECD285682C2032C300549452 /* SearchViewModel.swift in Sources */,
 				ECD285662C20293200549452 /* SearchBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

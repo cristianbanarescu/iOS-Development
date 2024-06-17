@@ -8,6 +8,7 @@
 import SwiftUI
 
 /// Example of a project in which a `UIViewRepresentable` SwiftUI View containing a UISearchBar is integrated
+/// App also uses UserDefaults to store the search terms and show them to the user when user re-opens the app
 struct ContentView: View {
     
     let appleFrameworks = [
@@ -122,11 +123,28 @@ struct ContentView: View {
         "WidgetKit",
         "XCTest"
     ]
+    @State private var viewModel = SearchViewModel()
     @State var searchText: String = ""
+    @State var searchTermSearched: String = ""
+    @State var searchTerms: [String] = []
     
     var body: some View {
         VStack {
-            SearchBar(text: $searchText)
+            SearchBar(text: $searchText, searchTermSearched: $searchTermSearched)
+            
+            VStack(alignment: .leading) {
+                HStack {
+                    Text("Last 3 search terms: ")
+                    Spacer()
+                }
+                
+                ForEach(searchTerms, id: \.self) { searchTerm in
+                    Text(searchTerm)
+                        .italic()
+                        .bold()
+                }
+            }
+            .padding(.horizontal, 20)
             
             List {
                 let filteredFrameworks = appleFrameworks.filter { searchText.isEmpty ? true : $0.localizedCaseInsensitiveContains(searchText) }
@@ -134,6 +152,13 @@ struct ContentView: View {
                     Text(frameworkName)
                 }
             }
+        }
+        .onChange(of: searchTermSearched) { _, newValue in
+            searchTerms.append(newValue)
+            viewModel.store(searchTerms: searchTerms)
+        }
+        .onAppear {
+            searchTerms = viewModel.retrieveSearchTerms()
         }
     }
 }

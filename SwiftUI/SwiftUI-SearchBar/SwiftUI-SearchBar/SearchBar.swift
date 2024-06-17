@@ -10,21 +10,28 @@ import SwiftUI
 struct SearchBar: UIViewRepresentable {
     
     @Binding var text: String
+    @Binding var searchTermSearched: String
     
     class Coordinator: NSObject, UISearchBarDelegate {
         @Binding var text: String
+        @Binding var searchTermSearched: String
         
         func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
             text = searchText
         }
         
-        init(text: Binding<String>) {
+        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            searchTermSearched = searchBar.text ?? ""
+        }
+        
+        init(text: Binding<String>, searchTermSearched: Binding<String>) {
             _text = text
+            _searchTermSearched = searchTermSearched
         }
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(text: $text)
+        Coordinator(text: $text, searchTermSearched: $searchTermSearched)
     }
     
     func makeUIView(context: Context) -> UISearchBar {
