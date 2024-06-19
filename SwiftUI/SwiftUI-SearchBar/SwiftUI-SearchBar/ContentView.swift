@@ -154,7 +154,10 @@ struct ContentView: View {
             }
         }
         .onChange(of: searchTermSearched) { _, newValue in
-            searchTerms.append(newValue)
+            if searchTerms.count == 3 {
+                searchTerms.removeLast()
+            }
+            searchTerms.insert(newValue, at: 0)
             viewModel.store(searchTerms: searchTerms)
         }
         .onAppear {
