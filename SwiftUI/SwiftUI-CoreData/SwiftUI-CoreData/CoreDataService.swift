@@ -33,7 +33,6 @@ class CoreDataService: ObservableObject {
         do {
             items = try viewContext.fetch(fetchRequest)
         } catch  {
-            items = []
             print(error.localizedDescription)
         }
     }
@@ -44,10 +43,9 @@ class CoreDataService: ObservableObject {
         withAnimation {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
-            
-            items.append(newItem)
 
             saveContext()
+            getItems()
         }
     }
 
@@ -56,13 +54,11 @@ class CoreDataService: ObservableObject {
     func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach { item in
-                items.removeAll { existingItem in
-                    existingItem == item
-                }
                 viewContext.delete(item)
             }
 
             saveContext()
+            getItems()
         }
     }
     
