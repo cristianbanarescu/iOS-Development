@@ -11,8 +11,8 @@
 		EC47BF272C2AF1F0004D79CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC47BF262C2AF1F0004D79CA /* ContentView.swift */; };
 		EC47BF292C2AF1F1004D79CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC47BF282C2AF1F1004D79CA /* Assets.xcassets */; };
 		EC47BF2C2C2AF1F1004D79CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC47BF2B2C2AF1F1004D79CA /* Preview Assets.xcassets */; };
-		EC47BF2E2C2AF1F1004D79CA /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC47BF2D2C2AF1F1004D79CA /* Persistence.swift */; };
 		EC47BF312C2AF1F1004D79CA /* SwiftUI_CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC47BF2F2C2AF1F1004D79CA /* SwiftUI_CoreData.xcdatamodeld */; };
+		EC47BF3A2C2AF6B9004D79CA /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC47BF392C2AF6B9004D79CA /* CoreDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +21,8 @@
 		EC47BF262C2AF1F0004D79CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EC47BF282C2AF1F1004D79CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC47BF2B2C2AF1F1004D79CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EC47BF2D2C2AF1F1004D79CA /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		EC47BF302C2AF1F1004D79CA /* SwiftUI_CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftUI_CoreData.xcdatamodel; sourceTree = "<group>"; };
+		EC47BF392C2AF6B9004D79CA /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 				EC47BF242C2AF1F0004D79CA /* SwiftUI_CoreDataApp.swift */,
 				EC47BF262C2AF1F0004D79CA /* ContentView.swift */,
 				EC47BF282C2AF1F1004D79CA /* Assets.xcassets */,
-				EC47BF2D2C2AF1F1004D79CA /* Persistence.swift */,
+				EC47BF392C2AF6B9004D79CA /* CoreDataService.swift */,
 				EC47BF2F2C2AF1F1004D79CA /* SwiftUI_CoreData.xcdatamodeld */,
 				EC47BF2A2C2AF1F1004D79CA /* Preview Content */,
 			);
@@ -143,8 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC47BF2E2C2AF1F1004D79CA /* Persistence.swift in Sources */,
 				EC47BF272C2AF1F0004D79CA /* ContentView.swift in Sources */,
+				EC47BF3A2C2AF6B9004D79CA /* CoreDataService.swift in Sources */,
 				EC47BF312C2AF1F1004D79CA /* SwiftUI_CoreData.xcdatamodeld in Sources */,
 				EC47BF252C2AF1F0004D79CA /* SwiftUI_CoreDataApp.swift in Sources */,
 			);
