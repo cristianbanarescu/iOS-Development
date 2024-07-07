@@ -8,17 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var selectedAnimal: Animal
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationSplitView {
+            List(AnimalService.getAll(), id: \.name) { animal in
+                VStack {
+                    Text(animal.image)
+                        .font(.system(size: 40))
+                }
+                .onTapGesture {
+                    selectedAnimal = animal
+                }
+            }
+        } detail: {
+            DetailView(animal: selectedAnimal)
         }
-        .padding()
+    }
+}
+
+struct DetailView: View {
+    let animal: Animal
+    
+    var body: some View {
+        Text(animal.image)
+            .font(.system(size: 100))
+        Text(animal.description)
+            .font(.system(size: 30))
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(selectedAnimal: .placeholder)
 }

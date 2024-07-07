@@ -33,6 +33,9 @@
 		EC3DFC082C34878B002FB70E /* AnimalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DFBF82C34844C002FB70E /* AnimalService.swift */; };
 		EC3DFC0A2C3487EB002FB70E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DFC092C3487EB002FB70E /* DetailView.swift */; };
 		EC3DFC0C2C348A00002FB70E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DFC0B2C348A00002FB70E /* DetailView.swift */; };
+		EC3DFC0E2C348BB3002FB70E /* SharedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DFC0D2C348BB3002FB70E /* SharedDetailView.swift */; };
+		EC3DFC0F2C348BB3002FB70E /* SharedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DFC0D2C348BB3002FB70E /* SharedDetailView.swift */; };
+		EC3DFC102C348BB3002FB70E /* SharedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DFC0D2C348BB3002FB70E /* SharedDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +103,7 @@
 		EC3DFBF82C34844C002FB70E /* AnimalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalService.swift; sourceTree = "<group>"; };
 		EC3DFC092C3487EB002FB70E /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		EC3DFC0B2C348A00002FB70E /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		EC3DFC0D2C348BB3002FB70E /* SharedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 		EC3DFB9F2C34806C002FB70E = {
 			isa = PBXGroup;
 			children = (
+				EC3DFC0D2C348BB3002FB70E /* SharedDetailView.swift */,
 				EC3DFBAA2C34806C002FB70E /* SwiftUI-MultipleDevices */,
 				EC3DFBBE2C3480BC002FB70E /* SwiftUI-MultipleDevices-WatchOS Watch App */,
 				EC3DFBD42C348116002FB70E /* SwiftUI-MultipleDevices-macOS */,
@@ -412,6 +417,7 @@
 			files = (
 				EC3DFBAE2C34806C002FB70E /* ContentView.swift in Sources */,
 				EC3DFC062C34878B002FB70E /* AnimalService.swift in Sources */,
+				EC3DFC0E2C348BB3002FB70E /* SharedDetailView.swift in Sources */,
 				EC3DFBAC2C34806C002FB70E /* SwiftUI_MultipleDevicesApp.swift in Sources */,
 				EC3DFC0A2C3487EB002FB70E /* DetailView.swift in Sources */,
 				EC3DFBF52C3482F8002FB70E /* Animal.swift in Sources */,
@@ -424,6 +430,7 @@
 			files = (
 				EC3DFBC22C3480BC002FB70E /* ContentView.swift in Sources */,
 				EC3DFC072C34878B002FB70E /* AnimalService.swift in Sources */,
+				EC3DFC0F2C348BB3002FB70E /* SharedDetailView.swift in Sources */,
 				EC3DFBC02C3480BC002FB70E /* SwiftUI_MultipleDevices_WatchOSApp.swift in Sources */,
 				EC3DFC0C2C348A00002FB70E /* DetailView.swift in Sources */,
 				EC3DFBF62C3482F8002FB70E /* Animal.swift in Sources */,
@@ -437,6 +444,7 @@
 				EC3DFBD82C348116002FB70E /* ContentView.swift in Sources */,
 				EC3DFC082C34878B002FB70E /* AnimalService.swift in Sources */,
 				EC3DFBD62C348116002FB70E /* SwiftUI_MultipleDevices_macOSApp.swift in Sources */,
+				EC3DFC102C348BB3002FB70E /* SharedDetailView.swift in Sources */,
 				EC3DFBF72C3482F8002FB70E /* Animal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

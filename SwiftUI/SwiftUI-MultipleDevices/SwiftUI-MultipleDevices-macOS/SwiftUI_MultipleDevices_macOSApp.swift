@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftUI_MultipleDevices_macOSApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(selectedAnimal: .placeholder)
         }
     }
 }
