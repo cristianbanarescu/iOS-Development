@@ -12,15 +12,34 @@ import SwiftUI
  
  - using the .animation modifier which applies an animation you specify when the 'value' param changes
  - using withAnimation function which recomputes the View body using the specified animation
+ 
+ Spring animations:
+ 
+ - using the .spring or .interpolatingSpring modifiers
  */
 
 struct ContentView: View {
     @State private var rotationAngle: CGFloat = 0
     @State private var bottomArrowRotationAngle: CGFloat = 0
+    @State private var hideNotification: Bool = true
 
     var body: some View {
         
         VStack {
+            Spacer()
+            
+            ZStack {
+                RoundedRectangle(cornerRadius: 20)
+                    .foregroundStyle(.orange)
+                    .frame(height: 100)
+             
+                Text("This notification")
+                    .foregroundStyle(.white)
+                    .bold()
+                    .font(.largeTitle)
+            }
+            .offset(y: hideNotification ? -200 : 0)
+            
             Spacer()
             
             Text("Top arrow")
@@ -55,6 +74,14 @@ struct ContentView: View {
                     bottomArrowRotationAngle += 90
                 }
             }
+            .bold()
+            
+            Button("Show/Hide notification using spring animation") {
+                withAnimation(.interpolatingSpring(mass: 1, stiffness: 100, damping: 10, initialVelocity: 0)) {
+                    hideNotification.toggle()
+                }
+            }
+            .foregroundStyle(.orange)
             .bold()
         }
         .padding()
