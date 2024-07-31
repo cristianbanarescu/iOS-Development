@@ -33,12 +33,21 @@ struct ContentView: View {
                         GridItem(.fixed(columnWidth))
                     ]
                     
-                    LazyVGrid(columns: gridColumns, spacing: 20) {
-                        ForEach(Constants.sfSymbols, id: \.self) { sfSymbol in
-                            Image(systemName: sfSymbol)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: columnWidth - 50, height: columnWidth - 50)
+                    LazyVGrid(columns: gridColumns, spacing: 20, pinnedViews: [.sectionHeaders]) { // Grid with section header pinned (ie not scrolling)
+                        Section {
+                            ForEach(Constants.sfSymbols, id: \.self) { sfSymbol in
+                                Image(systemName: sfSymbol)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: columnWidth - 50, height: columnWidth - 50)
+                            }
+                        } header: {
+                            Text("Grid items:")
+                                .padding()
+                                .background {
+                                    RoundedRectangle(cornerRadius: 30)
+                                        .foregroundStyle(.green)
+                                }
                         }
                     }
                     
