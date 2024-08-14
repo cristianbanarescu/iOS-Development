@@ -14,6 +14,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var textfieldText: String = ""
     @State private var toggleOn: Bool = false
+    @State private var textEditorText: String = "This is some text"
     
     var body: some View {
         VStack {
@@ -76,6 +77,10 @@ struct ContentView: View {
                 Text("Toggle textfield text")
             })
             .tint(.red)
+            
+            TextEditor(text: $textEditorText)
+                .scrollContentBackground(.hidden) // set this in order to be able to set background color
+                .background(.red)
         }
         .padding()
         .onChange(of: toggleOn) {
