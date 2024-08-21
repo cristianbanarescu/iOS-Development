@@ -17,6 +17,8 @@ import SwiftUI
 struct ContentView: View {
     @State private var famousMusicians = ["John Lennon", "Bob Dylan", "Elvis Presley", "Michael Jackson", "Prince", "David Bowie", "Aretha Franklin", "Freddie Mercury", "Beyoncé", "Johnny Cash", "Miles Davis", "Jimi Hendrix", "Madonna", "Frank Sinatra", "Eminem", "Whitney Houston", "Stevie Wonder", "Janis Joplin", "Bob Marley", "Taylor Swift"]
     @State private var listSelection: Set<String> = [] // to use for multiple selection
+    @State private var searchText: String = ""
+    @State private var filteredMusicians: [String] = []
     
     var body: some View {
         NavigationStack {
@@ -27,7 +29,7 @@ struct ContentView: View {
                 // List needs to know how to uniquely identify each row (needs this for operations like row reordering or deletions)
                 // id: \.self > just use the value of the string itself to uniquely identify the rows
                 List(selection: $listSelection) {
-                    ForEach(famousMusicians, id: \.self) { musicianName in
+                    ForEach(filteredMusicians, id: \.self) { musicianName in
                         if musicianName.contains("Beyonc") {
                             DisclosureGroup(
                                 content: { Text(musicianName)
@@ -40,11 +42,18 @@ struct ContentView: View {
                         }
                     }
                     .onMove(perform: { indices, newOffset in
-                        famousMusicians.move(fromOffsets: indices, toOffset: newOffset)
+                        filteredMusicians.move(fromOffsets: indices, toOffset: newOffset)
                     })
                     .onDelete { indexSet in
-                        famousMusicians.remove(atOffsets: indexSet)
+                        filteredMusicians.remove(atOffsets: indexSet)
                     }
+                }
+                .searchable(text: $searchText, prompt: "Search your musician") // adds a search field which you can use to search inside your List
+                .onChange(of: searchText) { _, newValue in
+                    filteredMusicians = newValue.isEmpty ? famousMusicians : famousMusicians.filter { $0.lowercased().contains(searchText.lowercased()) }
+                } // detect search field text change and update the filtered items
+                .onAppear {
+                    filteredMusicians = famousMusicians
                 }
 //                .listStyle(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=List Style@*/DefaultListStyle()/*@END_MENU_TOKEN@*/)
                 .toolbar {
