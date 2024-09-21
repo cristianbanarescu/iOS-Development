@@ -1,0 +1,32 @@
+//
+//  StructsClassesActors.swift
+//  SwiftUI-AyncAwait
+//
+//  Created by Cristian Banarescu on 21.08.2024.
+//
+
+/*
+ 
+ This file contains information about Structs, Classes and Actors.
+ Will explain differences between them and also how to use them in async contexts.
+ 
+ Swiftful thinking: https://www.youtube.com/watch?v=-JLenSTKEcA&list=PLwvDm4Vfkdphr2Dl4sY4rS9PLzPdyi8PM&index=10
+ 
+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+ VALUE TYPES:
+ 
+ - Struct, Int, enum, Float, etc
+ 
+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+ REFERENCE TYPES:
+ 
+ - Class, Actor
+ 
+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+ 
+ */
+
+import Foundation
