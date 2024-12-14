@@ -10,6 +10,7 @@ I am always eager to collaborate, receive feedback, and contribute to exciting p
 - **iOS Frameworks**: UIKit, SwiftUI
 - **APIs & Networking**: URLSession, Alamofire, JSON Decoding, REST APIs
 - **Design Patterns**: MVC, MVVM
+- **AI**: For more details on AI and tools to use in your day to day coding/development, please check out the AI [page](./AI.md)
 - **Other**: Auto Layout, Storyboards, Programmatic UI, Dark Mode support, Localization
 
 ## Demo projects
