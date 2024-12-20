@@ -6,8 +6,9 @@ I am always eager to collaborate, receive feedback, and contribute to exciting p
 
 ## Skills and Tools
 
-- **Languages**: Swift
+- **Languages**: Swift, Dart
 - **iOS Frameworks**: UIKit, SwiftUI
+- **Cross-platform frameworks**: Flutter
 - **APIs & Networking**: URLSession, Alamofire, JSON Decoding, REST APIs
 - **Design Patterns**: MVC, MVVM
 - **AI**: For more details on AI and tools to use in your day to day coding/development, please check out the AI [page](./AI.md)
@@ -26,6 +27,7 @@ These are a collection of demo projects that showcase my skills and experience i
 - For `UITableView` please check out [TableViewUIKitDemo](./TableViewUIKitDemo/)
 - For `SwiftUI` related projects and examples, please see [SwiftUI folder](./SwiftUI)
 - For `Data structures and algorithms` please see [Data structures and algorithms](./Data%20structures%20&%20Algorithms/)
+- For cross-platform projects&demos, please see the Flutter [folder](./Flutter)
 
 ## Continuous Learning and Growth
 
