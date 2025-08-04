@@ -19,7 +19,16 @@
     ![refsHeadsMain](./resources/refs-heads-main.png)
     ![refsHeadsMainCommit](./resources/refs-heads-main-commit.png)
 - there may be times (ex: when creating a new file) when switching to another branch will also 'drag' your local changes (the file added) with you
-
+- fast-forward merge: you merge changes into a branch and that branch didn't have any other commits before the merge (you just "synced" the receiving branch with some updates)
+    - this means you don't have merge conflicts that need to be resolved
+- when using git & Github, it is important to create and use SSH keys when performing certain operations (e.g. push) instead of entering Github username & password each time. See more [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh)
+- `Remote tracking branch` > reference to the state of a branch on the remote
+    - last remote commit
+    - Ex: `origin/main`
+    - `git branch -r` > shows remote tracking branches
+    - `main`(local branch) vs `origin/main`(remote branch)
+    - you can perform: `git checkout origin/main`
+ 
 ## GUI Clients
 
 - GitKraken
@@ -33,6 +42,8 @@
 - `git init` > create a repo at the current folder path. Will create a `.git` folder
 - `remove .git` > will delete the repo
 - `git log` > shows the history of commits
+    - `git log --abbrev-commit` > shows the git history but uses shorther commit hash (instead of all characters from the commit's hash)
+    - `git log --oneline` > shows the git history but displays only the first line from the commit message
 - `git config --global [configurations]` > make changes inside the configuration file. Will apply changes for ALL local repos
     - Ex: `git config --global user.name "Cristian"` > configures/sets "Cristian" as the author's name for commit messages
     - Ex: `git config --global user.emal "myEmail@provider.com"` > configures/sets "myEmail@provider.com" as the author's email for commit messages
@@ -55,21 +66,27 @@
 - `git add file1 file2 file3 ...` > will add the files to the staging area, preparing them for being commited
     - `git add .` > adds all changed files to the staging area
 - `git commit -m "commit message"` > creates a commit with the "commit message" message. If you just run `git commit` this will open your default text editor (set for git) and prompt you to enter the commit's message
-- `git log --abbrev-commit` > shows the git history but uses shorther commit hash (instead of all characters from the commit's hash)
-- `git log --oneline` > shows the git history but displays only the first line from the commit message
-- `git commit --ammend` > "redo" previous commit.
-    - useful when you forgot to add something to a commit or when you'd like to update the commit's message
+    - `git commit --ammend` > "redo" previous commit.
+        - useful when you forgot to add something to a commit or when you'd like to update the commit's message
 - `git branch` > shows all branches 
-- `git branch <branchName>` > create the `branchName` branch 
-- `git switch <branchName>` > switch to the `branchName` branch 
-    - or `git checkout <branchName>`
+    - `git branch <branchName>` > create the `branchName` branch 
+    - `git switch <branchName>` > switch to the `branchName` branch 
+        - or `git checkout <branchName>`
+    - `git switch -` > go back to the branch you were before. useful when you enter a DETACHED HEAD and want to go back
+        - Ex: 
+            ```bash
+            git switch main // on main branch 
+            git switch bugfix // on bugfix branch 
+            git switch - // back on main branch
+            ``` 
+    - `git branch -d <branchName>` > delete the `branchName` branch 
+        - for this to work, you need to be on a different branch than the one you want to delete
+        - there's also a `force delete` (when the branch is not merged) > `git branch -D <branchName>`
+    - `git branch -m <branchName>` > rename the current branch you're on to 'branchName'
+        - you need to be checked out on the branch you want to rename
+    - `git branch -v` > see extra details about branches. Ex: see last commit from that branch
 - `git switch -c <branchName>` > create & switch to the `branchName` branch 
     - or `git checkout -b <branchName>`
-- `git branch -d <branchName>` > delete the `branchName` branch 
-    - for this to work, you need to be on a different branch than the one you want to delete
-    - there's also a `force delete` (when the branch is not merged) > `git branch -D <branchName>`
-- `git branch -m <branchName>` > rename the current branch you're on to 'branchName'
-    - you need to be checked out on the branch you want to rename
 - `git merge <branchName` 
     - merges work from `branchName` into your current branch 
     - Ex: 
@@ -80,7 +97,62 @@
         - will merge changes from the `bugfix` branch into `main`
         - merge changes from a branch into your current branch 
         - need to be checked out on the 'receiving' branch and 'receive' (merge) changes from another branch
+- `git diff` 
+    - show changes between commits, branches, tags, etc 
+    - Ex: compare staging area with working directory (working dir = changes NOT staged for next commit)
+    - uses 2 files when comparing: file "a" and file "b"
+    - `git diff` > will show changes NOT staged
+    - `git diff --staged` or `git diff --cached` > shows staged changes; 'show me what will be included in my commit if I commit now'
+    - `git diff HEAD` > show ALL changes since last commit (staged + unstaged)
+    - `git diff HEAD <file1> <file2>` ... > show changes since last commit for specific file(s)
+    - `git diff --staged <file1> <file2>` ... > show staged changes for specific file(s)
+    - `git diff branch1..branch2` > show changes between branches. See more about ".." vs "..." [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-comparing-branches-in-pull-requests)
+    - `git diff <commitHash1>..<commitHash2>` > show changes between 2 commits
+- `git stash` > stash/save your changes and use them in the future
+    - `git stash save` > save staged + unstaged changes
+    - `git stash pop` > remove most recent stash and apply changes back to your working directory (stashed changes WILL BE DELETED)
+    - `git stash apply` > same as `pop` but stashed changes are NOT deleted
+    - `git stash list` > view all stashes 
+    - `git stash apply stash@{2}` > apply a specific stash from the list of stashes
+    - `git stash drop stash@{2}` > delete a specific stash from the list of stashes
+    - `git stash clear` > remove all stashes
+- `git checkout <commitHash>` > checkout (go to/use) a specific commit
+    - will move to a DETACHED HEAD state
+    - usually HEAD points to a branch reference (pointer to last commit from the branch)
+    - 'schema': HEAD > branch > commit 
+    - checking out a specific branch > detached HEAD (no more referencing a branch)
+    - "re-attach" HEAD by simply switching back to a branch or create a new branch
+    - Ex: 
+        ```bash
+        git checkout abc1235c // detached HEAD (HEAD points to `abc1235c`)
+        git switch -c <branchName> // HEAD points to branchName (no longer DETACHED)
+        ``` 
+    - `git checkout HEAD~1` > refers to the commit before HEAD 
+    - `git checkout HEAD~3` > 3 commits before HEAD 
+    - `git checkout HEAD <fileName>` > reset changes from `fileName` to what they were on last commit (HEAD). Basically if you modified something in `fileName`, this will discard your changes
+        - equivalent: `git checkout -- <fileName>` or `git restore <fileName>`
+- `git restore` > discard changes
+    - `git restore <fileName>` > discard changes made to `fileName`
+    - `git restore --source HEAD~1 <fileName>` > reset fileName to 1 commit before HEAD; can even use a commit hash instead of HEAD~1
+    - `git restore --staged <fileName>` > remove `fileName` from staging area (unstage a file)
+- `git reset` > reset repo & commits
+    - `git reset <commitHash>` > resets repo to `commitHash`; removes the commits but the changes are still present in your working dir (they are unstaged)
+    - `git reset --hard <commitHash>` > resets commits + deletes changes from working dir (all changes are gone)
+- `git revert <commitHash>` > same as `reset` but it will create a new commit which reverses the changes
+    - Ex: - commit with message "added new text file"; > revert > "Reverts added new text file" 
+- `git remote` > view remotes for a repo
+    - `git remote add <name> <url>` ; add new remote
+        - connect local repo with the one in the cloud
+        - remote names are usually called 'origin' 
+        - this makes local repo "point to" cloud repo
+- `git push <remote> <branch>` > push local changes from a branch up into the Cloud
+    - remote == 'where to push'
+    - Ex: `git push origin main` > pushes `main` branch into `origin`
+    - `git push <remote> <localBranch>:<remoteBranch>` > push `localBranch` to a remote branch with a different name (`remoteBranch`); not very usual
+    - `git push -u origin main` > push and set upstream branch + track branch for future pushes 
 
+         
+ 
 ## macOS/Terminal commands 
 
 Especially useful when interacting/using git from the Terminal
