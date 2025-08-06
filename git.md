@@ -28,6 +28,32 @@
     - `git branch -r` > shows remote tracking branches
     - `main`(local branch) vs `origin/main`(remote branch)
     - you can perform: `git checkout origin/main`
+- Fetching:
+    - download changes from remote repo but don't automatically apply them to working files
+    - 'please go and get the latest info from Github but don't screw up my working directory'
+- Github repos:
+    - can be either public or private
+    - you can add collaborators
+    - use the README file as info about the repo, useful links, images, etc
+    - use Markdown for the README file
+    - use Gists for sharing small pieces of code
+    - use Pages as a website for your work; Pages are hosted & published via Github (static webpage)
+- The `feature branch workflow`:
+    - use separate branches for your work
+    - don't use the main branch directly 
+    - involves code reviews + pull requests
+- Forking:
+    - creating a 'copy' of some repo 
+    - helps when there is a need of greater collaboration but without involving need of access, push & other permissions or restrictions from the original repo
+    - you have your own repo, as a copy of the original repo
+    - you can create PRs from your fork to the original repo 
+    - Ex: 
+        - fork the repo
+        - clone the fork
+        - add upstream remote (of the original repo so you can get changes from the original repo)
+        - do some work
+        - push to origin (fork's origin remote)
+        - open a PR (to merge into the original repo branch)
  
 ## GUI Clients
 
@@ -70,7 +96,7 @@
         - useful when you forgot to add something to a commit or when you'd like to update the commit's message
 - `git branch` > shows all branches 
     - `git branch <branchName>` > create the `branchName` branch 
-    - `git switch <branchName>` > switch to the `branchName` branch 
+    - `git switch <branchName>` > switch to the `branchName` branch. Automatically tracks a remote branch
         - or `git checkout <branchName>`
     - `git switch -` > go back to the branch you were before. useful when you enter a DETACHED HEAD and want to go back
         - Ex: 
@@ -150,8 +176,18 @@
     - Ex: `git push origin main` > pushes `main` branch into `origin`
     - `git push <remote> <localBranch>:<remoteBranch>` > push `localBranch` to a remote branch with a different name (`remoteBranch`); not very usual
     - `git push -u origin main` > push and set upstream branch + track branch for future pushes 
-
-         
+- `git fetch <remote>` > fetch from the remote
+    - Ex: `git fetch origin`
+    - will update remote tracking branches
+    - `git fetch <remote> <branch>`
+    - fetching will also 'get' new branches that were created and you don't see them (yet) locally
+- `git pull` > similar to fetch BUT it WILL update HEAD branch with the changes 
+    - if you're on a branch and you 'pull' it will update your working directory
+    - `git pull` == `git fetch` (get updates) + `git merge` (apply changes to your working branch)
+    - `git pull <remote> <branch>`
+    - pulls can have merge conflicts
+    - `git pull` == `git pull origin <branchName>` (means that if you were checked out on `branchName`, running `git pull` is enough to bring in remote changes from `origin/branchName`) 
+    
  
 ## macOS/Terminal commands 
 
