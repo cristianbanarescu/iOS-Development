@@ -13,7 +13,13 @@
     - pointer that refers to the current 'location' in your repo
     - points to a branch reference (HEAD references a branch)
         - branch points to a commit
-    - `refs/heads/` folder from within the `.git` folder will have 1 file for each of your branches. Each file will contain a reference to the last commit from that branch
+    - can be DETACHED > pointing to some commit in particular
+    - `refs/heads/` folder from within the `.git` folder will have 1 file for each of your branches. Each file will contain a reference (commit hash) to the last commit(tip) from that branch
+        - same for `refs/tags`
+    - `refs` folder:
+        - heads
+        - remotes (remote tracking branches)
+        - tags
     - ex: opening `refs/heads/main` will show you the last commit from the `main` branch
 
     ![refsHeadsMain](./resources/refs-heads-main.png)
@@ -54,6 +60,12 @@
         - do some work
         - push to origin (fork's origin remote)
         - open a PR (to merge into the original repo branch)
+- git is a key-value data store
+    - insert any content into a git repo > git gives you a key (unique key > SHA-1 checksum) to later use to retrieve that content
+    - git `blobs` > store contents of files
+    - git `trees` > store contents of directories > can contain pointer to blobs
+    - every `commit` has a `tree` > structure of the contents of the commit
+    - `git cat-file -p <hash>` > shows you details about a hash; if the hash is for a commit, you will see: author, message, parent commit, treee
  
 ## GUI Clients
 
@@ -76,6 +88,8 @@
     - Ex: `git config --global user.name` > displays what global name was set as the author's name for commit messages
     - Ex: `git config --global core.editor "..."` > use this to set your default editor when adding messages to your commits (when you omit the `-m` parameter for `git commit`)
         - Ex: VSCode: `git config --global core.editor "code --wait"` . also pls check out [this thread](https://stackoverflow.com/questions/30024353/how-can-i-use-visual-studio-code-as-default-editor-for-git) from Stackoverflow on how to properly set this for VSCode
+    - running just `git config` inside a repo, will modify/show configurations for that repo
+        - Ex: `git config --local ...`
 - `git status` > shows info about repo's current status, branch you're currently on, changed files, etc. 
     - Ex: 
         ```bash 
@@ -187,6 +201,91 @@
     - `git pull <remote> <branch>`
     - pulls can have merge conflicts
     - `git pull` == `git pull origin <branchName>` (means that if you were checked out on `branchName`, running `git pull` is enough to bring in remote changes from `origin/branchName`) 
+- `git rebase` > another way of combining branches 
+    - rebase vs merging (rebase can be used instead of merging)
+    - can be used to cleanup git history
+    - instead of having merge commits on a branch (Ex: 'Merge branch main into feature') you can just add your branch commits (from a `feature` branch) `on top` of the commits from another branch (ex: main)
+        - this will mean that: the `feature` branch 'begins' at the tip of the `main` branch > history is rewritten
+        - Ex: 
+            ```bash
+            git switch feature # what branch you want to rebase
+            git rebase main # 'where' to move commits (where to rebase) from the feature branch (branch you're currently on)
+
+            # move the commits from feature on top of last commit from main
+            # this will reposition feature to start at main's last position
+            # commits on the feature branch will be recreated
+            ``` 
+    - DO NOT rebase when your commits are pushed and shared with others (can be done but is risky for everyone). Rebase is useful for your own local commits
+    - `git rebase --continue` (use this when you have conflicts while rebasing)
+    - `git rebase -i HEAD~4` (Interactive rebase + how many commits to rebase)
+        - rebase some commits instead of rebasing onto another branch 
+        - useful to rewrite history (ex: edit commit messages, remove/drop commits + their changes, "meld" commits) of current branch/current work
+        - `git rebase -i HEAD~4` == 'redo 4 commits on current branch' (last 4 from HEAD)
+        - multiple changes (multiple actions performed on multiple commits) in one go 
+        - Interactive rebase options: 
+            - pick
+            - reword
+            - edit
+            - drop (remove the commit and contents/changes from it)
+            - fixup ('meld' commits but only use previous commit log message)
+            - squash ('meld' commits and you could use log messages from all commits and combine all those messages into one)
+            - etc
+- `git tags` > tag = pointer to particular points in git history 
+    - Ex: `v4.1.0`
+    - they are similar to branch references but tags DO NOT change (they stay put)
+    - once a tag is created it will always refer to the same commit
+    - types: 
+        - lightweight > just a name/label pointing to a commit
+        - annotated > stores extra metadata (Ex: a commit message)
+    - are useful for [semantic versioning](https://semver.org/) for releases 
+        - 2.4.1 (2 = `major release` ; 4 = `minor release` ; 1 = `patches`)
+        - major release = significant changes; breaking changes
+        - minor release = new features but backwards compatible; not breaking changes
+        - patches = bug fixes, no new features
+    - `git tag` > shows all tags
+    - `git tag -l "..."` > list all tags with this filter 
+        - Ex: `git tag -l "*4.3.0*"` > shows all tags that contain "4.3.0"
+    - `git checkout <tag>` > checkout a tag > DETACHED HEAD
+    - you can diff tags: `git diff 1.0.0 1.0.1`
+    - `git tag <tagName>` > create a `lightweight` tag with <tagName> name
+    - `git tag -a <tagName>` > create a `annotated` tag with <tagName> name
+    - `git show 1.0.0` > view details about the tag "1.0.0"
+    - `git tag <tagName> <hash>` > create a tag from a commit hash
+    - `git tag <tagName> <hash> -f` > move/change the tag (f = force)
+    - `git tag -d <tagName>` > delete a tag
+    - `git push --tags` > push all tags
+        - tags are not pushed by default when you push code
+- `Reflogs`
+    - git keeps a history of changes related to references
+    - `.git/logs`
+    - Ex: switching between branches > HEAD is updated > git stores this event in the logs (Ex: .git/logs/HEAD)
+    - useful if you lost commits and maybe you like to 'go back in time'
+    - `reflogs are only local and they expire`
+    - `git reflog show` (default to HEAD)
+    - `git reflog show main` > show logs for main
+    - `HEAD@{0}` > most recent change in the reflog 
+    - `git reflog master@{one.week.ago}`
+        - `{2.days.ago}`
+        - `{yesterday}`
+        - etc
+    - `git diff main@{0} main@{yesterday}`
+    - `git checkout master@{1.week.ago}`
+    - git reflog shows you commit hashes or references and you can use them to git reset or git checkout
+    - git reflog shows you stuff that git log doesn't
+- `Aliases`:
+    - shortcuts for git commands
+    - to be added in the config file
+    - Ex: 
+        ```bash
+        [alias]
+            s = status
+        ```
+        - you can then use `git s` (instead of `git status`)
+    - Ex: `git config --global alias.showB branch`
+        - `git showB` == `git branch`
+    - can be configured for both global and local config files
+    - useful to look online for git aliases
+    
     
  
 ## macOS/Terminal commands 
