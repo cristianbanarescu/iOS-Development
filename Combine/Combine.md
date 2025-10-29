@@ -31,7 +31,7 @@
 - [Discover Combine](https://www.swiftbysundell.com/discover/combine/?utm_source=chatgpt.com)
 - [Future of Reactive Programming](https://medium.com/%40mumensh/the-future-of-reactive-programming-in-swift-cedb0d52ff05)
 - [Learn Combine for Swift in 6 hours](https://www.swiftful-thinking.com/blog/learn-combine-for-swift-in-6-hours)
-
+- [Combine framework tutorial - Karin Prater](https://www.youtube.com/playlist?list=PLWHegwAgjOkoIMgZ7QF_SHUtEB_rWXtH0)
 
 
 
