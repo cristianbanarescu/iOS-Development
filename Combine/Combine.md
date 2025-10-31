@@ -79,11 +79,27 @@
 - .retry -> retry to emit values
 - .throttle -> minimize the amount of data to process
 - .eraseToAnyPublisher()
+- .share() -> can combine multiple subscribers
+- you can create custom operators by simply adding extensions on the Publisher type. See example below
+- .print() -> debug Combine code
+- .breakpointOnError() and .breakpoint() to actually set breakpoints
+- .handleEvents() -> check what events take place (e.g receiving an output)
 
-Examples:
+
+### Code samples
 
 ```swift
-// TODO: add code samples
+// Custom operators
+
+extension Publisher where Output == Int {
+    func filterEvenNumbers() -> AnyPublisher<Int, Failure> {
+        filter({ $0.isMultiple(of: 2) })
+            .eraseToAnyPublisher()
+    }
+}
+
+let evenNumbers = [1, 3, 5, 7, 9, 10, 14, 18, 22, 26].publisher.filterEvenNumbers()
+
 ```
 
 ### Notes
