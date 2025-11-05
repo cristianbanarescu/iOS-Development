@@ -60,6 +60,8 @@
 - CurrentValueSubject -> retains the last value sent
 - send -> use it to publish a value
 - Use the Subject protocol to create a custom Subject
+- Subject = A publisher that exposes a method (send) for outside callers to publish elements. https://developer.apple.com/documentation/combine/subject
+- A subject is a publisher that you can use to ”inject” values into a stream, by calling its send(_:) method. This can be useful for adapting existing imperative code to the Combine model.
 
 ### Operators
 
@@ -89,7 +91,73 @@
 ### Code samples
 
 ```swift
-// Custom operators
+
+// EXAMPLE: Array publisher 
+
+let stringPublisher = ["1", "2", "A", "B", "3"].publisher
+let stringSub = stringPublisher.sink { receivedValue in
+    print(receivedValue)
+}
+
+```
+
+```swift
+// EXAMPLE: Just publisher - emit an output just once and then finish
+
+// https://medium.com/@amitaswal87/combine-in-swift-third-part-types-of-publishers-and-subscribers-40175524b601
+
+let publisher = Just("hey") // A publisher that emits an output to each subscriber just once, and then finishes.
+
+let subscriber = publisher.sink { valueReceived in
+    print(valueReceived)
+}
+
+```
+
+```swift
+// EXAMPLE: Timer publiser
+
+let timerPublisher = Timer.publish(every: 1.0, on: .main, in: .common) // connectable publisher
+let cancellableTimer = timerPublisher.autoconnect().sink { date in // cancellableTimer is actually subscribing to the Publisher by using .sink
+    // subscribers don’t receive any values until after a call to connect(). For convenience when working with a single subscriber, the autoconnect() operator performs the connect() call when attached to by the subscriber.
+    print(date)
+}
+
+```
+
+```swift
+// EXAMPLE: Timer publisher + subscriptions and cancellation
+
+@MainActor
+class MyClass {
+    private var cancellables: Set<AnyCancellable> = []
+    private var timerSubscription2: AnyCancellable? = nil
+    
+    func postTimerDate() {
+        timerPublisher.autoconnect().sink { date in // .sink returns a 'subscription' that needs to be kept alive so that you receive events/values from publishers
+            print(date) 
+        }.store(in: &cancellables) // need to store the subscription to the publisher (keep the subscription alive). if you don't store the subscription, you won't get values from it; Deallocation of the subscription (result from calling .sink on a publisher) will tear down the subscription stream.
+    }
+    
+    func postTimerDateUsingStoredSubscription() {
+        timerSubscription2 = timerPublisher.autoconnect().sink(receiveValue: { date in
+            print(date)
+        })
+    }
+    
+    func cancelTimerSubscription2() {
+        timerSubscription2?.cancel()    // this will cancel subscriptions and you won't print out any values     
+    }
+    
+    func setTimerSubscription2ToNil() {
+        timerSubscription2 = nil // this will cancel subscriptions and you won't print out any values
+    }
+}
+
+```
+
+```swift
+// EXAMPLE: Custom operators
 
 extension Publisher where Output == Int {
     func filterEvenNumbers() -> AnyPublisher<Int, Failure> {
@@ -99,7 +167,408 @@ extension Publisher where Output == Int {
 }
 
 let evenNumbers = [1, 3, 5, 7, 9, 10, 14, 18, 22, 26].publisher.filterEvenNumbers()
+```
 
+```swift
+// EXAMPLE: tryMap - error handling 
+
+enum StringError: Error, CustomStringConvertible {
+    case cannotConvertToInt
+    
+    var description: String {
+        switch self {
+        case .cannotConvertToInt:
+            "Conversion to int is impossible"
+        }
+    }
+}
+
+let stringPublisher = ["1", "2", "A", "B", "3"].publisher
+
+let publisherWithPossibleFailure = stringPublisher
+    .tryMap { emittedString in // use tryMap when you want to throw errors inside
+        let intValue = Int(emittedString)
+        
+        if let intValue {
+            return intValue
+        } else {
+            throw StringError.cannotConvertToInt
+        }
+    }
+
+let subscriptionForPossibleStringFailure = publisherWithPossibleFailure.sink { completion in // subscribe to receive values or error
+    switch completion {
+    case .finished:
+        print("Done receiving elements")
+    case .failure(let error as StringError):
+        print(error.description)
+    case .failure(_):
+        print("general failure")
+    }
+} receiveValue: { receivedValue in
+    print(receivedValue)
+}
+
+// Output:
+1
+2
+Conversion to int is impossible
+// once the publisher hits an error and emits it, it cannot emit any more values
+
+// EXAMPLE: mapError
+
+struct MyGenericError: Error { var wrappedError: Error }
+
+let mapErrorSubscription = publisherWithPossibleFailure
+    .mapError { error in
+        return MyGenericError(wrappedError: error) // I receive a StringError and 'turn it' (map) into a MyGenericError
+    }
+    .sink { completion in
+        switch completion {
+        case .finished:
+            print("finished emitting values")
+        case .failure(let error):
+            print(error.localizedDescription)
+        }
+    } receiveValue: { receivedValue in
+        print(receivedValue)
+    }
+
+// Output:
+1
+2
+The operation couldn’t be completed. (__lldb_expr_278.MyGenericError error 1.)
+```
+
+```swift
+// EXAMPLE: Publishers.Merge
+
+let firstPublisher = [1, 2, 3, 4, 5].publisher
+let secondPublisher = Just(99)
+let mergedPublisher = Publishers.Merge(firstPublisher, secondPublisher)
+
+print("will print a merge of 2 publishers:")
+
+let subscription = mergedPublisher.sink { value in
+    print(value)
+}
+
+// Output:
+will print a merge of 2 publishers:
+1
+2
+3
+4
+5
+99
+```
+
+```swift
+// EXAMPLE: compactMap
+
+let subscriptionWithCompactMap = stringPublisher // ["1", "2", "A", "B", "3"].publisher
+    .compactMap { emittedString in // use compactMap when you want NON-nil values only
+        let intValue = Int(emittedString)
+        
+        if let intValue {
+            return intValue
+        } else {
+            return nil
+        }
+    }
+    .sink { value in
+        print(value)
+    }
+
+// Output:
+1
+2
+3
+```
+
+```swift
+
+// EXAMPLE: filter 
+let filterPublisher = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].publisher
+
+let subscriptionWithEvenNumbers = filterPublisher
+    .filter { $0.isMultiple(of: 2) } // filter data emitted by the publisher
+    .sink { value in
+        print("received even number: \(value)")
+    }
+
+// Output:
+received even number: 2
+received even number: 4
+received even number: 6
+received even number: 8
+received even number: 10
+```
+
+```swift
+// EXAMPLE: Publishers.Zip + Zip3 (there's also Zip4)
+// create pairs from different publishers
+
+let publisherZip1 = [1, 2, 3].publisher
+let publisherZip2 = ["a", "b", "c"].publisher
+
+let subscriptionZip = Publishers.Zip(publisherZip1, publisherZip2)
+    .sink { value in
+        print(value) // (1, a), (2, b), (3, c)
+    }
+
+let publisherZip3 = [1.3, 23.12, 123.43].publisher
+
+let subscriptionZip3 = Publishers.Zip3(publisherZip1, publisherZip2, publisherZip3)
+    .sink { value in
+        print(value) // (1, "a", 1.3) (2, "b", 23.12) (3, "c", 123.43)
+    }
+```
+
+```swift
+
+// EXAMPLE: replaceError
+
+let publisherForReplaceError = ["1", "2", "A", "B", "3"].publisher
+
+let subscriptionForReplaceError = publisherForReplaceError
+    .tryMap { emittedString in // use tryMap when you want to throw errors inside
+        let intValue = Int(emittedString)
+        
+        if let intValue {
+            return intValue
+        } else {
+            throw StringError.cannotConvertToInt
+        }
+    }
+    .replaceError(with: -100) // replace error with -100
+    .sink { value in
+        print(value)
+    }
+
+// Output:
+1
+2
+-100
+```
+
+```swift
+
+// EXAMPLE: retry + catch
+
+let somePublisher = ["1", "2", "A", "B", "3"].publisher
+let subscriptionForReplaceError2 = somePublisher
+    .tryMap { emittedString in // use tryMap when you want to throw errors inside
+        let intValue = Int(emittedString)
+        
+        if let intValue {
+            return intValue
+        } else {
+            throw StringError.cannotConvertToInt
+        }
+    }
+    .retry(3)
+    .catch { error in
+        return Just(-1) // this is 'delivered' only after retrying for 3 times
+    }
+    .sink { value in
+        print(value)
+    }
+
+// Output:
+1
+2
+// first retry:
+1
+2
+// second retry:
+1
+2
+// third retry:
+1
+2
+// no more retries, 'just' emit a -1
+-1
+```
+
+```swift
+
+// EXAMPLE: debounce
+
+let textChanges = PassthroughSubject<String, Never>() // lets you send value into a Combine pipeline
+let cancellable = textChanges
+    .debounce(for: .milliseconds(300), scheduler: RunLoop.main) // delays forwarding values until there has been a 300ms pause in incoming events. If another value arrives before 300ms elapses, the timer resets and only the latest value after the quiet period is emitted.
+    .sink { value in
+        print("Debounced: \(value) at \(Date())")
+    }
+
+
+// Simulate quick typing
+Task { @MainActor in
+    textChanges.send("s")
+    
+    try? await Task.sleep(for: .seconds(0.1))
+    textChanges.send("sw")
+    
+    try? await Task.sleep(for: .seconds(0.2))
+    textChanges.send("swi") // this one emits
+    
+    try? await Task.sleep(for: .seconds(0.3))
+    textChanges.send("swift") // this one emits
+}
+
+// Because of the debounce, only values that are followed by at least 300ms of silence will be emitted. In this sequence:
+//  • "s" is followed by "sw" in 0.1s → not emitted.
+//  • "sw" is followed by "swi" in 0.2s → not emitted.
+//  • "swi" is followed by "swift" in 0.3s → that’s right at the debounce window; depending on timer precision, "swi" may emit, but typically the last "swift" will definitely emit after 300ms of quiet following it.
+
+// This pattern mimics debouncing text input (e.g., search queries) to avoid firing a request on every keystroke and only act once the user pauses typing.
+
+// Output:
+Debounced: swi at 2025-11-04 08:20:50 +0000
+Debounced: swift at 2025-11-04 08:20:50 +0000
+```
+
+```swift
+
+// EXAMPLE: combineLatest
+
+let pub1 = PassthroughSubject<Int, Never>()
+let pub2 = PassthroughSubject<Int, Never>()
+
+let otherCancellable = pub1
+    .combineLatest(pub2) // publishes a tuple upon receiving output from either publisher.
+    .sink { print("Result: \($0).") }
+
+
+pub1.send(1) // pub1 latest at this point is 1
+pub1.send(2) // pub1 latest at this point is 2
+pub2.send(2) // pub2 latest at this point is 2
+pub1.send(3) // pub1 latest at this point is 3
+pub1.send(45) // pub1 latest at this point is 45
+pub2.send(22) // pub2 latest at this point is 22
+
+// Prints:
+//    Result: (2, 2).    // pub1 latest = 2, pub2 latest = 2
+//    Result: (3, 2).    // pub1 latest = 3, pub2 latest = 2
+//    Result: (45, 2).   // pub1 latest = 45, pub2 latest = 2
+//    Result: (45, 22).  // pub1 latest = 45, pub2 latest = 22
+
+```
+
+```swift
+
+// EXAMPLE: CurrentValueSubject
+
+let currentValueSubject = CurrentValueSubject<Int, Never>(100) // wraps a single value and publishes a new element whenever that value changes
+
+let currentValueSubcriber = currentValueSubject
+    .sink { value in
+        print("Current value is \(value) at \(Date())")
+    }
+
+DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+    print("Sending new value at \(Date())")
+    currentValueSubject.send(200)
+}
+
+// Output: 
+
+Current value is 100 at 2025-11-04 08:40:35 +0000 // this gets printed because it is 'the current value' (even though it didn't change yet)
+Sending new value at 2025-11-04 08:40:36 +0000
+Current value is 200 at 2025-11-04 08:40:36 +0000
+
+```
+
+```swift
+
+// EXAMPLE: PassthroughSubject
+
+let passThroughSubj = PassthroughSubject<Int, Never>() // doesn't have an initial value; convenient way to adapt existing imperative code to the Combine model.
+
+DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+    passThroughSubj.send(20)
+}
+
+DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
+    passThroughSubj.send(40)
+}
+
+let subscriberOfPassthrough = passThroughSubj
+    .sink { value in
+        print("Got passthrough value: \(value) at \(Date())")
+    }
+
+// Output:
+
+Got passthrough value: 20 at 2025-11-04 08:44:20 +0000
+Got passthrough value: 40 at 2025-11-04 08:44:26 +0000
+```
+
+```swift
+
+// EXAMPLE: PassthroughSubject vs CurrentValueSubject (Quick Guide)
+
+• PassthroughSubject
+   • Emits values to subscribers only when send(_:) is called.
+   • Does not store the latest value; new subscribers won’t receive any previous value.
+   • Great for event streams (taps, notifications).
+
+• CurrentValueSubject
+   • Holds and exposes a current value (.value) and immediately sends it to new subscribers.
+   • Emits on send(_:) and when .value changes.
+   • Great for state that always has a meaningful “current” value.
+
+// 1) PassthroughSubject: no initial value, no replay
+let passthrough = PassthroughSubject<Int, Never>()
+
+let subA = passthrough.sink { print("A received:", $0) }
+passthrough.send(1)  // A receives 1
+passthrough.send(2)  // A receives 2
+
+let subB = passthrough.sink { print("B received:", $0) }
+// B receives nothing yet (no replay)
+passthrough.send(3)  // A receives 3, B receives 3
+
+// 2) CurrentValueSubject: has initial value, replays latest to new subscribers
+let current = CurrentValueSubject<Int, Never>(100)
+
+let subC = current.sink { print("C received:", $0) }
+// C immediately receives 100
+
+current.send(200)     // C receives 200
+print("Current value:", current.value) // 200
+
+let subD = current.sink { print("D received:", $0) }
+// D immediately receives 200 (latest value)
+current.send(300)     // C receives 300, D receives 300
+
+When to use which
+• Use PassthroughSubject for transient events with no meaningful “last value.”
+• Use CurrentValueSubject for stateful data where subscribers should always see the latest value upon subscription.
+
+```
+
+```swift
+
+// EXAMPLE: Publishers with limited subscriptions
+
+let timerPublisher = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect() // unlimited emitted values
+
+let foodPublisher = ["meat", "orange", "milk", "honey"].publisher // limited emitted values (only the ones from the array)
+
+let zippedSub = foodPublisher.zip(timerPublisher).sink { completion in // limited emitted values (combination/tuple of the 2 publishers) 
+    print("finished emitting values with completion: \(completion)")
+} receiveValue: { receivedValue in
+    print("received value: \(receivedValue)")
+}
+
+// Output:
+received value: ("meat", 2025-11-05 10:44:41 +0000)
+received value: ("orange", 2025-11-05 10:44:42 +0000)
+received value: ("milk", 2025-11-05 10:44:43 +0000)
+received value: ("honey", 2025-11-05 10:44:44 +0000)
+finished emitting values with completion: finished
 ```
 
 ### Notes
@@ -115,6 +584,8 @@ let evenNumbers = [1, 3, 5, 7, 9, 10, 14, 18, 22, 26].publisher.filterEvenNumber
 - [Future of Reactive Programming](https://medium.com/%40mumensh/the-future-of-reactive-programming-in-swift-cedb0d52ff05)
 - [Learn Combine for Swift in 6 hours](https://www.swiftful-thinking.com/blog/learn-combine-for-swift-in-6-hours)
 - [Combine framework tutorial - Karin Prater](https://www.youtube.com/playlist?list=PLWHegwAgjOkoIMgZ7QF_SHUtEB_rWXtH0)
+- [Processing URL session data task results with Combine](https://developer.apple.com/documentation/foundation/processing-url-session-data-task-results-with-combine)
+- [Karin Prater's Combine Framework Tutorial](https://www.youtube.com/playlist?list=PLWHegwAgjOkoIMgZ7QF_SHUtEB_rWXtH0)
 
 
 
