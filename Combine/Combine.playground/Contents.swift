@@ -1,6 +1,7 @@
 import UIKit
-import Combine
-
+@preconcurrency import Combine
+import PlaygroundSupport
+import SwiftUI
 
 //// https://medium.com/@amitaswal87/combine-in-swift-third-part-types-of-publishers-and-subscribers-40175524b601
 //
@@ -366,13 +367,120 @@ let publisherWithPossibleFailure = stringPublisher
 
 // MARK: - Publishers with limited subscriptions
 
-let timerPublisher = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect() // unlimited emitted values
+//let timerPublisher = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect() // unlimited emitted values
+//
+//let foodPublisher = ["meat", "orange", "milk", "honey"].publisher // limited emitted values (only the ones from the array)
+//
+//let zippedSub = foodPublisher.zip(timerPublisher).sink { completion in // limited emitted values (combination/tuple of the 2 publishers)
+//    print("finished emitting values with completion: \(completion)")
+//} receiveValue: { receivedValue in
+//    print("received value: \(receivedValue)")
+//}
 
-let foodPublisher = ["meat", "orange", "milk", "honey"].publisher // limited emitted values (only the ones from the array)
+//class MyClass {
+//    var myValue: Int = 0 {
+//        didSet {
+//            print("myValue was set to: \(myValue)")
+//        }
+//    }
+//}
+//
+//let myObject = MyClass()
+//let publisher = (1...3).publisher
+//let sub = publisher.sink { value in
+//    myObject.myValue = value
+//}
+//
+//// vs
+//
+//let otherSub = publisher.assign(to: \.myValue, on: myObject)
 
-let zippedSub = foodPublisher.zip(timerPublisher).sink { completion in // limited emitted values (combination/tuple of the 2 publishers) 
-    print("finished emitting values with completion: \(completion)")
-} receiveValue: { receivedValue in
-    print("received value: \(receivedValue)")
-}
+// MARK: - UIViewController textfield + assign(to: ,on: )
+
+//final class TextFieldViewController: UIViewController {
+//    let textField: UITextField = {
+//        let tf = UITextField(frame: .zero)
+//        tf.translatesAutoresizingMaskIntoConstraints = false
+//        tf.placeholder = "Type here"
+//        return tf
+//    }()
+//    let mirroredLabel: UILabel = {
+//        let lbl = UILabel(frame: .zero)
+//        lbl.translatesAutoresizingMaskIntoConstraints = false
+//        lbl.textColor = .label
+//        lbl.numberOfLines = 0
+//        lbl.textAlignment = .center
+//        return lbl
+//    }()
+//
+//    private let textFieldSubject = CurrentValueSubject<String, Never>("") // publisher
+//    private var subscriptions: Set<AnyCancellable> = []
+//    
+//    override func loadView() {
+//        let root = UIView()
+//        root.backgroundColor = .systemBackground
+//        root.addSubview(textField)
+//        root.addSubview(mirroredLabel)
+//        
+//        NSLayoutConstraint.activate([
+//            textField.centerXAnchor.constraint(equalTo: root.centerXAnchor),
+//            textField.topAnchor.constraint(equalTo: root.safeAreaLayoutGuide.topAnchor, constant: 20),
+//            textField.widthAnchor.constraint(equalTo: root.widthAnchor, multiplier: 0.7),
+//            mirroredLabel.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 16),
+//            mirroredLabel.centerXAnchor.constraint(equalTo: root.centerXAnchor),
+//            mirroredLabel.widthAnchor.constraint(equalTo: root.widthAnchor, multiplier: 0.8)
+//        ])
+//                
+//        // assign what is being typed in the textfield to the label
+//        textFieldSubject
+//            .compactMap { $0 } // take the non optional value of textfield.text
+//            .assign(to: \.text, on: mirroredLabel) // actually assigning the textfield's text to the label's text
+//            .store(in: &subscriptions) // store this so that it works
+//        
+//        textField.addTarget(self, action: #selector(textFieldTextChanged), for: .editingChanged)
+//        
+//        self.view = root
+//    }
+//    
+//    @objc func textFieldTextChanged(_ sender: UITextField) {
+//        textFieldSubject.send(sender.text ?? "")
+//        // or textFieldSubject.value = sender.text ?? ""
+//    }
+//}
+//
+//PlaygroundPage.current.liveView = TextFieldViewController()
+
+//
+//class MyModel: ObservableObject {
+//    @Published var lastUpdated: Date = Date()
+//
+//    init() {
+//         Timer.publish(every: 1.0, on: .main, in: .common)
+//             .autoconnect()
+//             .assign(to: &$lastUpdated)
+//    }
+//}
+//
+//struct ClockView: View {
+//    @StateObject var clockModel = MyModel()
+//    
+//    var dateFormatter: DateFormatter {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "HH:mm:ss"
+//        return dateFormatter
+//    }
+//    
+//    var body: some View {
+//        Text(dateFormatter.string(from: clockModel.lastUpdated))
+//            .fixedSize()
+//            .padding(50)
+//    }
+//}
+//
+//PlaygroundPage.current.setLiveView(ClockView())
+
+PlaygroundPage.current.needsIndefiniteExecution = true
+
+
+
 

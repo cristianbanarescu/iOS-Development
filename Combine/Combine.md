@@ -86,6 +86,8 @@
 - .print() -> debug Combine code
 - .breakpointOnError() and .breakpoint() to actually set breakpoints
 - .handleEvents() -> check what events take place (e.g receiving an output)
+- .subscribe(on: ) -> specifies which thread to use to send values. e.g: .subscribe(on: DispatchQueue.global())
+- .receive(on: ) -> specifies on which thread to receive values. Useful if you have a publisher that emits values on a background thread (URLSession.shared.dataTaskPublisher) and you want to receive values on another thread (e.g. Main Thread to update some UI)
 
 
 ### Code samples
@@ -569,6 +571,119 @@ received value: ("orange", 2025-11-05 10:44:42 +0000)
 received value: ("milk", 2025-11-05 10:44:43 +0000)
 received value: ("honey", 2025-11-05 10:44:44 +0000)
 finished emitting values with completion: finished
+```
+
+```swift
+
+// EXAMPLE: assign(to: , on:)
+
+class MyClass {
+    var myValue: Int = 0 {
+        didSet {
+            print("myValue was set to: \(myValue)")
+        }
+    }
+}
+
+let myObject = MyClass()
+let publisher = (1...3).publisher
+let sub = publisher.sink { value in
+    myObject.myValue = value
+}
+
+// vs
+
+let otherSub = publisher.assign(to: \.myValue, on: myObject) // easier 
+// assign > Take each value emitted by the publisher and 'put it' into a property on an object
+
+// Output is the same: 
+myValue was set to: 1
+myValue was set to: 2
+myValue was set to: 3
+```
+
+```swift
+
+// EXAMPLE: UITextField, UILabel + assign 
+
+final class TextFieldViewController: UIViewController {
+    let textField: UITextField = ...
+    let mirroredLabel: UILabel = ...
+
+    private let textFieldSubject = CurrentValueSubject<String, Never>("") // publisher
+    private var subscriptions: Set<AnyCancellable> = []
+    
+    override func loadView() {
+        // create the root view
+        
+        // add constraints
+            
+        // assign what is being typed in the textfield to the label
+        textFieldSubject
+            .compactMap { $0 } // take the non optional value of textfield.text
+            .assign(to: \.text, on: mirroredLabel) // actually assigning the textfield's text to the label's text
+            .store(in: &subscriptions) // store this so that it works
+        
+        textField.addTarget(self, action: #selector(textFieldTextChanged), for: .editingChanged)
+    }
+    
+    @objc func textFieldTextChanged(_ sender: UITextField) { // when editing changes, send values using the CurrentValueSubject (or just change it's value)
+        textFieldSubject.send(sender.text ?? "")
+        // or textFieldSubject.value = sender.text ?? ""
+    }
+}
+```
+
+```swift
+
+// EXAMPLE: assign(to: ) + SwiftUI & Published
+
+class MyModel: ObservableObject {
+    @Published var lastUpdated: Date = Date()
+
+    init() {
+        Timer.publish(every: 1.0, on: .main, in: .common)
+            .autoconnect()
+            .assign(to: &$lastUpdated) // no memory leak to 'capturing self'
+    }
+}
+
+struct ClockView: View {
+    @StateObject var clockModel = MyModel()
+    
+    var dateFormatter: DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm:ss"
+        return dateFormatter
+    }
+    
+    var body: some View {
+        Text(dateFormatter.string(from: clockModel.lastUpdated))
+            .fixedSize()
+            .padding(50)
+    }
+}
+
+```
+
+```swift
+
+// EXAMPLE: .receive(on: )
+
+let intSubject = PassthroughSubject<Int, Never>()
+
+let subscription = intSubject
+    .receive(on: DispatchQueue.main) // make sure to receive values on main thread
+    .sink(receiveValue: { value in
+        print("receive value \(value) on thread: \(Thread.current)")
+    })
+
+intSubject.send(1) // supposedly sending from Main thread
+
+DispatchQueue.global().async {
+  intSubject.send(2) // sending from a background thread
+}
+
 ```
 
 ### Notes
