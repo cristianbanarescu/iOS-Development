@@ -45,13 +45,25 @@
 - Just
 - Future
 - AnyPublisher<..., ...> -> generic type of publisher 
+- They don't emit values if they don't have a subscription attached to them
+- Sequence publishers actually stop publishing values after last element was published. e.g [1, 2, 3].publisher won't publish anything after "3". The subscription is also released after that
 
 ### Subscribers
 
 - Subscribers - consume the values emitted over time ; listens to the data stream and processes and responds to the emitted items
-- .sink
-- .assign(on: , to: )
-- .assign(on: )
+- How to create a subscription?
+    - .sink
+    - .assign(on: , to: )
+    - .assign(on: )
+- How to stop a data stream?
+    - subscription.cancel()
+    - subscription = nil 
+    - throw an error (e.g. tryMap + throw some error. see examples below)
+- Subscribers decide how much data they want to receive 
+- Subcription protocol
+    - the 'glue' that puts together a Publisher and a Subscriber
+    - this makes the flow of data work
+    - it is the contract between publishers and subscribers
 
 ### Subjects 
 
@@ -88,6 +100,8 @@
 - .handleEvents() -> check what events take place (e.g receiving an output)
 - .subscribe(on: ) -> specifies which thread to use to send values. e.g: .subscribe(on: DispatchQueue.global())
 - .receive(on: ) -> specifies on which thread to receive values. Useful if you have a publisher that emits values on a background thread (URLSession.shared.dataTaskPublisher) and you want to receive values on another thread (e.g. Main Thread to update some UI)
+- .scan -> to transform values from an upstream publisher 
+- .removeDuplicates
 
 
 ### Code samples
@@ -663,7 +677,42 @@ struct ClockView: View {
             .padding(50)
     }
 }
+```
 
+```swift
+
+// EXAMPLE: .assign + strong reference cycle + memory leak
+// https://developer.apple.com/documentation/combine/publisher/assign(to:on:)
+
+class MyClass {
+    var anInt: Int = 0 {
+        didSet {
+            print("anInt was set to: \(anInt)")
+        }
+    }
+    
+    var subject = CurrentValueSubject<Int, Never>(0)
+    var subscriptions = Set<AnyCancellable>()
+    
+    init() {
+        subject
+            .assign(to: \.anInt, on: self) // the publisher instance keeps a strong reference to self; better use .sink 
+            .store(in: &subscriptions)
+    }
+    
+    deinit {
+        print("deinit called") // not called
+    }
+}
+
+
+var myObject: MyClass? = MyClass()
+myObject?.subject.send(10)
+myObject = nil
+
+// Output:
+anInt was set to: 0
+anInt was set to: 10
 ```
 
 ```swift
@@ -683,6 +732,79 @@ intSubject.send(1) // supposedly sending from Main thread
 DispatchQueue.global().async {
   intSubject.send(2) // sending from a background thread
 }
+
+```
+
+```swift
+
+// EXAMPLE: .scan 
+
+let timerPublisher = Timer.publish(every: 1.0, on: .main, in: .common)
+
+let subscription = timerPublisher
+    .autoconnect()
+    .scan(0) { result, _ in // basically return +1, starting from 0, ignoring the Date that the Timer publisher published
+        return result + 1
+    }
+    .sink { valueReceived in
+        print(valueReceived)
+    }
+
+// Output:
+1
+2
+3
+...
+
+
+let timerPublisher = Timer.publish(every: 1.0, on: .main, in: .common)
+
+let subscription = timerPublisher
+    .autoconnect()
+    .scan(1) { accumulatingResult, publishedDate in // takes into consideration the published date value from the Timer publisher
+        let calendar = Calendar.current
+        let seconds = calendar.component(.second, from: publishedDate)
+        
+        if seconds.isMultiple(of: 2) {
+            return accumulatingResult * 2
+        } else {
+            return accumulatingResult * 3
+        }
+    }
+    .sink { valueReceived in
+        print(valueReceived)
+    }
+
+// Output:
+3
+6
+18
+36
+108
+...
+```
+
+```swift
+
+// EXAMPLE: .removeDuplicates
+
+
+let publisherWithDuplicates = ["A", "B", "C", "C", "D", "D", "E", "F", "G", "H", "H"].publisher
+let subscriberWithoutDuplicates = publisherWithDuplicates
+    .removeDuplicates() // removes duplicate values if they come one after the other (come in sequence) ; can be useful in scenarios when user taps a button multiple times and we don't want to perform some request multiple times for the same input
+    .sink { receivedValue in
+        print(receivedValue)
+    }
+
+// Output:
+A
+B
+C
+D
+E
+F
+G
+H
 
 ```
 

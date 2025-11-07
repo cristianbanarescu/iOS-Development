@@ -55,41 +55,41 @@ import SwiftUI
 //    myClass.cancelTimerSubscription2()
 //}
 
-let publisherArray = [1, 2, 3, 4, 5, 6].publisher
-
-//let subscription = publisherArray
-//    .map { "Hello, World! \($0)" } // transform each value emitted by the publisher
-//    .sink { valueReceived in
-//        print(valueReceived)
+//let publisherArray = [1, 2, 3, 4, 5, 6].publisher
+//
+////let subscription = publisherArray
+////    .map { "Hello, World! \($0)" } // transform each value emitted by the publisher
+////    .sink { valueReceived in
+////        print(valueReceived)
+////    }
+//
+//let stringPublisher = ["1", "2", "A", "B", "3"].publisher
+////
+//////let stringSub = stringPublisher.sink { receivedValue in
+//////    print(receivedValue)
+//////}
+////
+//enum StringError: Error, CustomStringConvertible {
+//    case cannotConvertToInt
+//    
+//    var description: String {
+//        switch self {
+//        case .cannotConvertToInt:
+//            "Conversion to int is impossible"
+//        }
 //    }
-
-let stringPublisher = ["1", "2", "A", "B", "3"].publisher
-//
-////let stringSub = stringPublisher.sink { receivedValue in
-////    print(receivedValue)
-////}
-//
-enum StringError: Error, CustomStringConvertible {
-    case cannotConvertToInt
-    
-    var description: String {
-        switch self {
-        case .cannotConvertToInt:
-            "Conversion to int is impossible"
-        }
-    }
-}
-//
-let publisherWithPossibleFailure = stringPublisher
-    .tryMap { emittedString in // use tryMap when you want to throw errors inside
-        let intValue = Int(emittedString)
-        
-        if let intValue {
-            return intValue
-        } else {
-            throw StringError.cannotConvertToInt
-        }
-    }
+//}
+////
+//let publisherWithPossibleFailure = stringPublisher
+//    .tryMap { emittedString in // use tryMap when you want to throw errors inside
+//        let intValue = Int(emittedString)
+//        
+//        if let intValue {
+//            return intValue
+//        } else {
+//            throw StringError.cannotConvertToInt
+//        }
+//    }
 //
 //let subscriptionForPossibleStringFailure = publisherWithPossibleFailure.sink { completion in
 //    switch completion {
@@ -481,6 +481,64 @@ let publisherWithPossibleFailure = stringPublisher
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
+//let timerPublisher = Timer.publish(every: 1.0, on: .main, in: .common)
+//
+//let subscription = timerPublisher
+//    .autoconnect()
+//    .scan(0) { result, _ in // basically return +1, starting from 0, ignoring the Date that the Timer publisher published
+//        return result + 1
+//    }
+//    .sink { valueReceived in
+//        print(valueReceived)
+//    }
+
+//let timerPublisher = Timer.publish(every: 1.0, on: .main, in: .common)
+//
+//let subscription = timerPublisher
+//    .autoconnect()
+//    .scan(1) { accumulatingResult, publishedDate in
+//        let calendar = Calendar.current
+//        let seconds = calendar.component(.second, from: publishedDate)
+//        
+//        if seconds.isMultiple(of: 2) {
+//            return accumulatingResult * 2
+//        } else {
+//            return accumulatingResult * 3
+//        }
+//    }
+//    .sink { valueReceived in
+//        print(valueReceived)
+//    }
+
+//let publisherWithDuplicates = ["A", "B", "C", "C", "D", "D", "E", "F", "G", "H", "H"].publisher
+//let subscriberWithoutDuplicates = publisherWithDuplicates
+//    .removeDuplicates()
+//    .sink { receivedValue in
+//        print(receivedValue)
+//    }
+
+class MyClass {
+    var anInt: Int = 0 {
+        didSet {
+            print("anInt was set to: \(anInt)")
+        }
+    }
+    
+    var subject = CurrentValueSubject<Int, Never>(0)
+    var subscriptions = Set<AnyCancellable>()
+    
+    init() {
+        subject
+            .assign(to: \.anInt, on: myObject)
+    }
+    
+    deinit {
+        print("deinit called")
+    }
+}
 
 
+var myObject: MyClass? = MyClass()
+myObject?.subject.send(10)
 
+myObject = nil
