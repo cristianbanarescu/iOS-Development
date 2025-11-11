@@ -37,7 +37,10 @@
 - Publisher - abstract representations of async data streams; emit events/items over time ; initiates the data stream (e.g. emit user input)
 - PassthroughSubject
 - CurrentValueSubject -> retains the last value sent
-- @Published (SwiftUI)
+- CurrentValueSubject -> it is used like a var but with a Publisher stream attached to it
+- CurrentValueSubject -> needs an initial value
+- CurrentValueSubject -> whenever you subscribe to it it will directly send you its current value
+- @Published -> adds a Publisher to a property; used in SwiftUI
 - Timer publisher
 - NotificationCenter publisher
 - URLSession publisher (`URLSession.shared.dataTaskPublisher`)
@@ -68,7 +71,7 @@
 ### Subjects 
 
 - Subject - special type that is a Publisher AND can also be a Subscriber
-- PassthroughSubject
+- PassthroughSubject -> use it like a func; use it to 'start doing something'/start a stream and send values; doesn't have a current value
 - CurrentValueSubject -> retains the last value sent
 - send -> use it to publish a value
 - Use the Subject protocol to create a custom Subject
@@ -92,7 +95,7 @@
 - .replaceError
 - .retry -> retry to emit values
 - .throttle -> minimize the amount of data to process
-- .eraseToAnyPublisher()
+- .eraseToAnyPublisher() -> use this when you don't want other parts of the code to use your Publishers and send values. Use a private publisher that will actually send values when you need but do not expose it outside your object; you'll use a AnyPublisher to 'get' to the values emitted by your actual publisher
 - .share() -> can combine multiple subscribers
 - you can create custom operators by simply adding extensions on the Publisher type. See example below
 - .print() -> debug Combine code
@@ -103,6 +106,14 @@
 - .scan -> to transform values from an upstream publisher 
 - .removeDuplicates
 
+### Notes
+
+- Publishers and Subscribers are just abstractions (protocols) for working with data streams. There are built-in ones and you can also create your own custom ones if you need
+- When you attach a subscriber to a publisher, you created a subscription and you'll need to store it somewhere in order to make the subscription work; subscriptions can be cancelled
+- Subscriptions will be cancelled automatically when the object that stores them is deallocated
+- When you 'hold on' to a subscription (ie have a reference to it) you can cancel the subscription by setting that reference to nil (or in a view controller when the VC is dismissed/you leave the screen)
+- Never == "never have any failure"
+- TODO: find some Combine homework/project ideas that I can work on to exercise more
 
 ### Code samples
 
@@ -808,12 +819,61 @@ H
 
 ```
 
-### Notes
+```swift
 
-- Publishers and Subscribers are just abstractions (protocols) for working with data streams. There are built-in ones and you can also create your own custom ones if you need
-- When you attach a subscriber to a publisher, you created a subscription and you'll need to store it somewhere in order to make the subscription work; subscriptions can be cancelled
-- Subscriptions will be cancelled automatically when the object that stores them is deallocated
-- When you 'hold on' to a subscription (ie have a reference to it) you can cancel the subscription by setting that reference to nil (or in a view controller when the VC is dismissed/you leave the screen)
+// EXAMPLE: CurrentValueSubject sending completion
+
+let currentValueSubject = CurrentValueSubject<Int, Never>(10)
+
+let sub = currentValueSubject.sink { _ in
+    print("received completion")
+} receiveValue: { receivedValue in
+    print("got value: \(receivedValue)")
+}
+
+currentValueSubject.send(20)
+currentValueSubject.send(30)
+
+currentValueSubject.send(completion: .finished)
+
+// this will not send the value 40. stream is finished
+currentValueSubject.send(40)
+
+// Output:
+got value: 10
+got value: 20
+got value: 30
+received completion
+```
+
+```swift
+
+// EXAMPLE: @Published publisher
+
+class MyClass {
+    @Published var anInt: Int = 0 // use it only with properties from classes
+
+    var subscriptions = Set<AnyCancellable>()
+
+    init() {
+        $anInt // access the publisher of 'anInt' using a $
+            .sink { receivedValue in
+                print(receivedValue) // also prints the initial value > so it seems this is actually a CurrentValueSubject
+            }
+            .store(in: &subscriptions)
+        
+        anInt = 10
+    }
+}
+
+let aClass = MyClass()
+// aClass.$anInt.send(30) // this will not work; publishing only happens from inside the class
+
+// Output:
+0
+10
+
+```
 
 ## Useful resource
 

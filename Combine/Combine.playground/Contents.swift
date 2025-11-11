@@ -517,28 +517,65 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 //        print(receivedValue)
 //    }
 
+//class MyClass {
+//    var anInt: Int = 0 {
+//        didSet {
+//            print("anInt was set to: \(anInt)")
+//        }
+//    }
+//    
+//    var subject = CurrentValueSubject<Int, Never>(0)
+//    var subscriptions = Set<AnyCancellable>()
+//    
+//    init() {
+//        subject
+//            .assign(to: \.anInt, on: myObject)
+//    }
+//    
+//    deinit {
+//        print("deinit called")
+//    }
+//}
+//
+//
+//var myObject: MyClass? = MyClass()
+//myObject?.subject.send(10)
+//
+//myObject = nil
+
+// MARK: - EXAMPLE: CurrentValueSubject sending completion
+
+//let currentValueSubject = CurrentValueSubject<Int, Never>(10)
+//
+//let sub = currentValueSubject.sink { _ in
+//    print("received completion")
+//} receiveValue: { receivedValue in
+//    print("got value: \(receivedValue)")
+//}
+//
+//currentValueSubject.send(20)
+//currentValueSubject.send(30)
+//
+//currentValueSubject.send(completion: .finished)
+//
+//// this will not send the value 40. stream is finished
+//currentValueSubject.send(40)
+
 class MyClass {
-    var anInt: Int = 0 {
-        didSet {
-            print("anInt was set to: \(anInt)")
-        }
-    }
-    
-    var subject = CurrentValueSubject<Int, Never>(0)
+    @Published var anInt: Int = 0 // use it only with properties from classes
+
     var subscriptions = Set<AnyCancellable>()
-    
+
     init() {
-        subject
-            .assign(to: \.anInt, on: myObject)
-    }
-    
-    deinit {
-        print("deinit called")
+        $anInt // access the publisher of 'anInt' using a $
+            .sink { receivedValue in
+                print(receivedValue) // also prints the initial value > so it seems this is actually a CurrentValueSubject
+            }
+            .store(in: &subscriptions)
+        
+        anInt = 10
     }
 }
 
-
-var myObject: MyClass? = MyClass()
-myObject?.subject.send(10)
-
-myObject = nil
+let aClass = MyClass()
+// aClass.$anInt.send(30) // this will not work; publishing only happens from inside the class
