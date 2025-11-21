@@ -33,6 +33,10 @@ These are a collection of demo projects that showcase my skills and experience i
 
 The 'Git & Github' [page](git.md) contains useful information on how to use Git & Github for an iOS developer and in general.
 
+## Concurrency & Multithreading
+
+The Concurrency [page](./Concurrency/Concurrency.md) contains useful information about: multithreading, GCD, Swift Concurrency, serial vs concurrent queues, sync vs async, etc.
+
 ## Continuous Learning and Growth
 
 As a developer, I believe that learning never stops. I'm constantly exploring new technologies, keeping up with the latest trends in iOS development, and improving my current skills. In addition to working on these projects, I regularly:
