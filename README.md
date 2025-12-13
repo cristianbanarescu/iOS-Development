@@ -14,13 +14,13 @@ I am always eager to collaborate, receive feedback, and contribute to exciting p
 - **AI**: For more details on AI and tools to use in your day to day coding/development, please check out the AI [page](./AI.md)
 - **Other**: Auto Layout, Storyboards, Programmatic UI, Dark Mode support, Localization
 
-## Demo projects
+## Topics & Demo projects
 
 These are a collection of demo projects that showcase my skills and experience in iOS development. Each project is designed to demonstrate a specific concept or technology, from core Swift fundamentals to more advanced frameworks and APIs. These demos highlight my hands-on approach to learning and applying new techniques in real-world scenarios:
 
-- For `accessibility` (Voice Over and Dynamic Type) please check out [AccessibilityDemo](./AccessibilityDemo/)
+- For `Accessibility` (Voice Over and Dynamic Type) please check out [AccessibilityDemo](./AccessibilityDemo/)
 - For general `Swift concepts` please check out [SwiftDemo](./SwiftDemo/)
-- For `networking` (URLSession and Alamofire) please check out [NetworkingDemo](./NetworkingDemo/)
+- For `Networking` (URLSession and Alamofire) please check out [NetworkingDemo](./NetworkingDemo/)
 - For `Cocoapods` and `Lottie-ios` usage please check out [CocoaPodsDemo](./CocoaPodsDemo/)
 - For `ARC(Automatic reference counting)` in Swift, please check out [ARCDemo](./ARCDemo/)
 - For `WKWebView` or `SFSafariViewController` please check out [WebContentDemo](./WebContentDemo/)
@@ -28,14 +28,8 @@ These are a collection of demo projects that showcase my skills and experience i
 - For `SwiftUI` related projects and examples, please see [SwiftUI folder](./SwiftUI)
 - For `Data structures and algorithms` please see [Data structures and algorithms](./Data%20structures%20&%20Algorithms/)
 - For cross-platform projects&demos, please see the Flutter [folder](./Flutter)
-
-## Git & Github
-
-The 'Git & Github' [page](git.md) contains useful information on how to use Git & Github for an iOS developer and in general.
-
-## Concurrency & Multithreading
-
-The Concurrency [page](./Concurrency/Concurrency.md) contains useful information about: multithreading, GCD, Swift Concurrency, serial vs concurrent queues, sync vs async, etc.
+- See the [Git & Github page](git.md) for useful information on how to use Git & Github for an iOS developer and in general.
+- See the [Concurrency & Multithreading page](./Concurrency/Concurrency.md) contains useful information about: multithreading, GCD, Swift Concurrency, serial vs concurrent queues, sync vs async, etc.
 
 ## Continuous Learning and Growth
 
@@ -51,8 +45,8 @@ I'm always open to feedback and collaboration. If you're working on an exciting 
 
 You can contact me on [LinkedIn](https://www.linkedin.com/in/cristian-alexandru-banarescu/) or via email at cristianbanarescu@gmail.com
 
-## Useful links, articles, opinions, knowledge base
+## Useful resources
 
-Here are some resources that helped me understand, develop, practice, improve different concepts around iOS:
+Here are some resources that helped me understand, develop, practice, improve on different concepts around iOS:
 
-- []()
+- [Understanding Memory in iOS — Stack vs Heap, Crashes, and Handling](https://anubhavgiri01.medium.com/understanding-memory-in-ios-stack-vs-heap-crashes-and-handling-cc22a65b8090)
