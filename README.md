@@ -23,6 +23,7 @@ These are a collection of demo projects that showcase my skills and experience i
 - For `Networking` (URLSession and Alamofire) please check out [NetworkingDemo](./NetworkingDemo/)
 - For `Cocoapods` and `Lottie-ios` usage please check out [CocoaPodsDemo](./CocoaPodsDemo/)
 - For `ARC(Automatic reference counting)` in Swift, please check out [ARCDemo](./ARCDemo/)
+- For more details on iOS memory management, check [this page](./memory-management.md)
 - For `WKWebView` or `SFSafariViewController` please check out [WebContentDemo](./WebContentDemo/)
 - For `UITableView` please check out [TableViewUIKitDemo](./TableViewUIKitDemo/)
 - For `SwiftUI` related projects and examples, please see [SwiftUI folder](./SwiftUI)

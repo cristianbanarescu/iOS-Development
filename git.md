@@ -22,8 +22,8 @@
         - tags
     - ex: opening `refs/heads/main` will show you the last commit from the `main` branch
 
-    ![refsHeadsMain](./resources/refs-heads-main.png)
-    ![refsHeadsMainCommit](./resources/refs-heads-main-commit.png)
+    ![refsHeadsMain](./Resources/refs-heads-main.png)
+    ![refsHeadsMainCommit](./Resources/refs-heads-main-commit.png)
 - there may be times (ex: when creating a new file) when switching to another branch will also 'drag' your local changes (the file added) with you
 - fast-forward merge: you merge changes into a branch and that branch didn't have any other commits before the merge (you just "synced" the receiving branch with some updates)
     - this means you don't have merge conflicts that need to be resolved
