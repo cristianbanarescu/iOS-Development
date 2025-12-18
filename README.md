@@ -50,4 +50,4 @@ You can contact me on [LinkedIn](https://www.linkedin.com/in/cristian-alexandru-
 
 Here are some resources that helped me understand, develop, practice, improve on different concepts around iOS:
 
-- [Understanding Memory in iOS — Stack vs Heap, Crashes, and Handling](https://anubhavgiri01.medium.com/understanding-memory-in-ios-stack-vs-heap-crashes-and-handling-cc22a65b8090)
+- 

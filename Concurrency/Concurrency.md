@@ -272,6 +272,65 @@ serial.async { //  The async block is dispatched to the serial queue, and "1" is
 
 ```
 
+## Scenarios
+
+Q: 'You have three APIs — they can be called in any order; maybe 1 & 2 execute and then wait for 3. Or any other combination'
+A: 
+- nested blocks
+- DispatchQueue + completion
+- OperationQueue (helps to add dependencies between operations)
+```swift
+    let queue = OperationQueue()
+    let op1 = BlockOperation {
+        print("stuff")
+    }
+    let op2 = BlockOperation {
+        print("stuff 2")
+    }
+    let op3 = BlockOperation {
+        print("stuff 3")
+    }
+    op2.addDependency(op1)
+    op3.addDependency(op2)
+    queue.addOperations([op1, op2, op3], waitUntilFinished: false)
+```
+- async await
+```swift
+func fetchAll() async {
+    let r1 = await api1()
+    let r2 = await api2()
+    let r3 = await api3()
+}
+```
+- DispatchGroup (api1 and api2 run in parallel and then api3 gets excuted)
+```swift
+let group = DispatchGroup()
+
+group.enter()
+api1 { _ in group.leave() }
+
+group.enter() 
+api2 { _ in group.leave() }
+
+group.notify(queue: .main) {
+    api3 { _ in }
+}
+```
+- async await (api1 and api2 run in parallel and then api3 gets excuted)
+```swift
+Task {
+    async let r1 = api1()
+    async let r2 = api2()
+    let _ = await (r1, r2)
+    await api3()
+}
+```
+- Combine (api1 and api2 run in parallel and then api3 gets excuted)
+```swift
+Publishers.Zip(api1Publisher, api2Publisher)
+    .sink { _ in api3 { _ in } }
+```
+
 ## Main Thread vs. Background Thread (Global Thread)
 
 
@@ -283,14 +342,13 @@ serial.async { //  The async block is dispatched to the serial queue, and "1" is
 - Main Thread Checker
 - Async / Await / Actor Is iOS13+
 
-## Useful links
+## Credits & Useful links
 
 - [Apple - DispatchQueue class](https://developer.apple.com/documentation/dispatch/dispatchqueue)
 - https://betterprogramming.pub/the-complete-guide-to-concurrency-and-multithreading-in-ios-59c5606795ca#b3d8
 - https://medium.com/geekculture/threads-in-ios-gcd-nsoperation-part-1-64e460c0bdea
 - https://khanumair-9430.medium.com/gcd-dispatchworkitem-swift-cancelling-a-task-in-dispatch-68da958c5b20
-- Dispatch Group vs Operation — iOS Swift:
-    - https://medium.com/@basnurevinod/dispatch-group-vs-operation-ios-swift-3a62540e6b1b#:~:text=With%20GCD%20Queues%20(Dispatch%20Queues,as%20we%20call%20in%20Operation.
+- [Dispatch Group vs Operation — iOS Swift](https://medium.com/@basnurevinod/dispatch-group-vs-operation-ios-swift-3a62540e6b1b#:~:text=With%20GCD%20Queues%20Dispatch%20Queues,as%20we%20call%20in%20Operation)
 - https://medium.com/@sizonov.9595/difference-between-sync-and-async-in-serial-and-concurrent-queues-70bdf57bb6ab
 - https://blog.devgenius.io/gcd-learning-series-day-3-sync-vs-async-in-dispatchqueue-70adcb2f2909
 - [Sean Allen Concurrency & Threading](https://www.youtube.com/watch?v=iTcq6L-PaDQ&t=3s)
@@ -298,3 +356,4 @@ serial.async { //  The async block is dispatched to the serial queue, and "1" is
 - https://medium.com/@mohitdubey_83162/interview-dispatchqueues-sync-vs-async-explained-f425635a1744
 - https://medium.com/@mohitdubey_83162/interview-concurrent-vs-serial-dispatch-queues-in-swift-d076c8af9423
 - https://www.donnywals.com/dispatching-async-or-sync-the-differences-explained/
+- [Swift Concurrency Interview Cheatsheet](https://medium.com/@aayushi9555/swift-concurrency-interview-cheatsheet-16d30e258988)
