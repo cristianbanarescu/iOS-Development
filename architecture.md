@@ -142,3 +142,4 @@ let viewModelWithReadFromDisk = ViewModelFixed(service: DiskService())
 
 - [DRY in Swift: Write Clean, Reusable Code](https://medium.com/@ios-interview/dry-in-swift-write-clean-reusable-code-f6e75239254e)
 - [Stop hardcoding and use dependency inversion](https://medium.com/@shobhakartiwari/swift-dependency-inversion-why-i-stopped-hardcoding-66db1c108803)
+- [Swift Singletons - Udemy](https://www.udemy.com/course/swiftui-singletons/learn/lecture/30704332?start=0#overview)

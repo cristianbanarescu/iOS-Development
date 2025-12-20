@@ -101,3 +101,4 @@ func createPerson() {
 - [What are Stack and Heap Memory?](https://www.youtube.com/watch?v=ep2xOW52mDY)
 - [Stack vs Heap](https://www.youtube.com/watch?v=4ocXiQ6mIuk&t=269s)
 - [Stack vs Heap repo](https://github.com/jrasmusson/ios-professional-course/blob/main/Knowing/StackVsHeap/README.md)
+- [What is ARC? - Udemy](https://www.udemy.com/course/swiftui-arc/learn/lecture/30704358?start=0#overview)
