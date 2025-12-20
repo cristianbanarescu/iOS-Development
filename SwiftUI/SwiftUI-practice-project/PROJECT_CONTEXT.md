@@ -52,12 +52,9 @@ Teaching style:
 - Ask me reasoning questions as we go
 
 Current progress:
-- Requirements and architecture decisions are defined
-- No code has been written yet
-- We finished Step 1 from the Roadmap below.
+- Project was created, some code was added and I finished Step 1 from the Roadmap below.
 
-Please continue from Step 2 from the Roadmap below.
-
+Using all the above & below information about what we're building/improving, please continue from Step 2 from the Roadmap.
 
 ## Goals
 - Practice SwiftUI end-to-end
@@ -65,14 +62,14 @@ Please continue from Step 2 from the Roadmap below.
 - Build testable, production-quality code
 
 ## Constraints
-- iOS 18+
+- iOS 26+
 - SwiftUI only
 - Apple-native APIs
 - No third-party libraries
 - Public API (no keys, no auth)
 
 ## App Concept
-- Feed-based app (“Pulse”)
+- Feed-based app called "Pulse". *A modern SwiftUI app that fetches, displays, edits, and persists data from an API.*. Think of it as a **lightweight “activity / posts” app**, similar to a simplified social feed or task/activity tracker.
 - Fetch, display, edit, create data
 
 ## API
@@ -302,16 +299,6 @@ Please continue from Step 2 from the Roadmap below.
 * Fast feedback vs full coverage
 * Real-world tradeoffs
 
-## The Project We’ll Build
-
-### **App Name (working): *Pulse***
-
-*A modern SwiftUI app that fetches, displays, edits, and persists data from an API.*
-
-Think of it as a **lightweight “activity / posts” app**, similar to a simplified social feed or task/activity tracker.
-
----
-
 ## Why This App Is Ideal for Learning SwiftUI
 
 This app naturally forces us to touch **every major SwiftUI concept** without feeling artificial.
@@ -388,7 +375,7 @@ This app naturally forces us to touch **every major SwiftUI concept** without fe
 * Async tests for networking
 * UI tests for navigation and flows
 
-➡️ XCTest, XCUITest, mocking, test pyramid
+➡️ Swift Testing, XCUITest, mocking, test pyramid
 
 ---
 
