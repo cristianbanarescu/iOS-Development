@@ -50,10 +50,13 @@ Teaching style:
 - Point out common SwiftUI mistakes and fix them
 - Treat my code like a code review
 - Ask me reasoning questions as we go
+- Do not directly provide all the code that I need to write. You can add just some comments and let me do most of the work. If I don't know what code to write, I will ask you and I need you to help me with that and with some simple explanations on why we added a piece of code.
+- When you provide explanations about how something works in SwiftUI, I need those explanations to be short and on point. I do not need to many explanations because I may not really understand the concept behind. Too much explaining would 'hurt' my knowledge.
 
 Current progress:
 - PulseApp.swift exists
-- I finished Step 1 from the Roadmap below.
+- Folders structure exists (View, Models, Services, etc)
+- I finished Step 2 from the Roadmap below. I have added ActivityRowView and FeedView. 
 
 Using all the above & below information about what we're building/improving, please continue from Step 2 from the Roadmap.
 
