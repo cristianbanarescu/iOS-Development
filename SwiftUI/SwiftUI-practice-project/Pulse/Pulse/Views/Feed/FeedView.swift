@@ -11,6 +11,17 @@ struct FeedView: View {
     // @State answers “what can this view change?” What does THIS view control?
     // A view owns state only when it owns the user interaction that changes it.
     @State private var showThirdLine = true
+    @State private var activities: [Activity] = [
+        Activity(id: "1", title: "first one", body: "first one body"),
+        Activity(id: "2", title: "second one", body: "second one body"),
+        Activity(id: "3", title: "third one", body: "third one body")
+    ]
+    @State private var selectedActivity: Activity?
+    
+    init(showThirdLine: Bool = true, activities: [Activity]) {
+        self.showThirdLine = showThirdLine
+        self.activities = activities
+    }
 
     var body: some View {
         VStack(spacing: 16) {
@@ -25,9 +36,12 @@ struct FeedView: View {
             Divider()
 
             VStack(spacing: 12) {
-                ActivityRowView(title: "First activity", subtitle: "This is a placeholder", thirdLine: showThirdLine ? "Extra details": nil)
-                ActivityRowView(title: "Another activity", subtitle: "Static data for now", thirdLine: showThirdLine ? "Extra details": nil)
-                ActivityRowView(title: "One more", subtitle: "We’ll make this dynamic later", thirdLine: showThirdLine ? "Extra details": nil)
+                ForEach(activities, id: \.id) { activity in
+                    ActivityRowView(activity: activity) {
+                        print(activity.id)
+                        selectedActivity = activity
+                    }
+                }
             }
 
             Spacer()
@@ -37,6 +51,10 @@ struct FeedView: View {
 }
 
 #Preview {
-    FeedView()
+    FeedView(activities: [
+        Activity(id: "1", title: "first one", body: "first one body"),
+        Activity(id: "2", title: "second one", body: "second one body"),
+        Activity(id: "3", title: "third one", body: "third one body"),
+    ])
 }
 

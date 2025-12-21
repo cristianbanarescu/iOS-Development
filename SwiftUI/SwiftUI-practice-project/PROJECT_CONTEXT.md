@@ -57,9 +57,9 @@ Teaching style:
 Current progress:
 - PulseApp.swift exists
 - Folders structure exists (View, Models, Services, etc)
-- I finished Step 3 from the Roadmap below. I have added ActivityRowView and FeedView. 
+- I finished Step 4 from the Roadmap below. I have added Activity to the Models folder. I updated the FeedView to so that it displays ActivityRowView using a ForEach. ActivityRowView uses a closure so that it signals to the parent (FeedView) that the row was tapped.
 
-Using all the above & below information about what we're building/improving, please continue from Step 4 from the Roadmap.
+Using all the above & below information about what we're building/improving, please continue from Step 5 from the Roadmap.
 
 ## Goals
 - Practice SwiftUI end-to-end

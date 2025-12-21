@@ -22,7 +22,11 @@ import SwiftUI
 struct PulseApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FeedView(activities: [
+                Activity(id: "1", title: "first one", body: "first one body"),
+                Activity(id: "2", title: "second one", body: "second one body"),
+                Activity(id: "3", title: "third one", body: "third one body"),
+            ])
 //                .environment(\.colorScheme, .dark) // environment injection
         }
     }
