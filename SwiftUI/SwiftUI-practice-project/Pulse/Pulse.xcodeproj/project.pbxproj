@@ -30,7 +30,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		ECB7536F2EF74A240041DBAD /* Pulse */ = {
+		EC789D0C2EF84A3C001CD2B9 /* Pulse */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Pulse;
 			sourceTree = "<group>";
@@ -75,7 +75,7 @@
 		ECB753642EF74A240041DBAD = {
 			isa = PBXGroup;
 			children = (
-				ECB7536F2EF74A240041DBAD /* Pulse */,
+				EC789D0C2EF84A3C001CD2B9 /* Pulse */,
 				ECB7537D2EF74A260041DBAD /* PulseTests */,
 				ECB753872EF74A260041DBAD /* PulseUITests */,
 				ECB7536E2EF74A240041DBAD /* Products */,
@@ -108,7 +108,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				ECB7536F2EF74A240041DBAD /* Pulse */,
+				EC789D0C2EF84A3C001CD2B9 /* Pulse */,
 			);
 			name = Pulse;
 			packageProductDependencies = (

@@ -52,7 +52,8 @@ Teaching style:
 - Ask me reasoning questions as we go
 
 Current progress:
-- Project was created, some code was added and I finished Step 1 from the Roadmap below.
+- PulseApp.swift exists
+- I finished Step 1 from the Roadmap below.
 
 Using all the above & below information about what we're building/improving, please continue from Step 2 from the Roadmap.
 
