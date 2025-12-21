@@ -52,13 +52,14 @@ Teaching style:
 - Ask me reasoning questions as we go
 - Do not directly provide all the code that I need to write. You can add just some comments and let me do most of the work. If I don't know what code to write, I will ask you and I need you to help me with that and with some simple explanations on why we added a piece of code.
 - When you provide explanations about how something works in SwiftUI, I need those explanations to be short and on point. I do not need to many explanations because I may not really understand the concept behind. Too much explaining would 'hurt' my knowledge.
+- When teaching new topics or explaining new concepts, do not over explain things. I need answers to be focused just as they need to be in iOS interviews. I'd like to correctly answer a question about a possible subject/topics I am learning now and not go into too many details.
 
 Current progress:
 - PulseApp.swift exists
 - Folders structure exists (View, Models, Services, etc)
-- I finished Step 2 from the Roadmap below. I have added ActivityRowView and FeedView. 
+- I finished Step 3 from the Roadmap below. I have added ActivityRowView and FeedView. 
 
-Using all the above & below information about what we're building/improving, please continue from Step 2 from the Roadmap.
+Using all the above & below information about what we're building/improving, please continue from Step 4 from the Roadmap.
 
 ## Goals
 - Practice SwiftUI end-to-end
