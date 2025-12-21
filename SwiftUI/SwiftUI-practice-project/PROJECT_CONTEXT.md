@@ -412,3 +412,7 @@ Pulse/
 │   ├── Unit/
 │   └── UI/
 ```
+
+## Resources
+
+The [Roadmap](./Pulse_SwiftUI_Learning_Roadmap.pdf) file contains details about how to generate code for this dummy project and how to learn and answer to different SwiftUI questions and topics. Generated using ChatGPT. To be used when coding in an 'offline' mode (not using ChatGPT/using ChatGPT and LLM has 'no idea' on previous history and interactions).
