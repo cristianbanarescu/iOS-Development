@@ -2,7 +2,7 @@
 
 ## Basic explanation of the 'some' keyword
 
-- `some View` = I(iOS) don't have to know/don't 'care' what view there is to display; iOS will display it as long as it conforms to the `View` protocol
+- `some View` = I don't have to know/don't 'care' what view (or combination of Views) there is to display; iOS will display it as long as it conforms to the `View` protocol
 
 - 'opaque type’ = type where the value and implementation details are hidden
 
