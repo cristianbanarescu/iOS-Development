@@ -875,7 +875,7 @@ let aClass = MyClass()
 
 ```
 
-## Useful resource
+## Credits
 
 - [Discover Combine](https://www.swiftbysundell.com/discover/combine/?utm_source=chatgpt.com)
 - [Future of Reactive Programming](https://medium.com/%40mumensh/the-future-of-reactive-programming-in-swift-cedb0d52ff05)
@@ -883,6 +883,8 @@ let aClass = MyClass()
 - [Combine framework tutorial - Karin Prater](https://www.youtube.com/playlist?list=PLWHegwAgjOkoIMgZ7QF_SHUtEB_rWXtH0)
 - [Processing URL session data task results with Combine](https://developer.apple.com/documentation/foundation/processing-url-session-data-task-results-with-combine)
 - [Karin Prater's Combine Framework Tutorial](https://www.youtube.com/playlist?list=PLWHegwAgjOkoIMgZ7QF_SHUtEB_rWXtH0)
-
-
-
+- [iOS Interview Questions for Combine](https://medium.com/@anujiosdeveloper/ios-interview-questions-related-to-the-combine-framework-2b0e301b87e1)
+- [Types of Publishers, Subscribers, Operators](https://medium.com/@amitaswal87/combine-in-swift-third-part-types-of-publishers-and-subscribers-40175524b601)
+- [Apple - Combine docs](https://developer.apple.com/documentation/combine)
+- [What problem does Combine solve?](https://www.hackingwithswift.com/interviews/daniel-steinberg-what-problem-does-combine-solve)
+- [Using Combine](https://heckj.github.io/swiftui-notes/)
