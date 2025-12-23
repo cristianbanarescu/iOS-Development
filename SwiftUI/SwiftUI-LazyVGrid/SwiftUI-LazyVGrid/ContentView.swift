@@ -9,7 +9,7 @@ import SwiftUI
 
 /*
  - LazyVGrid > A container view with child views arranged in a grid that grows vertically
- - creating items only as needed.
+ - creating items only as needed. helps with performance; load view on-demand
  - https://www.hackingwithswift.com/quick-start/swiftui/how-to-position-views-in-a-grid-using-lazyvgrid-and-lazyhgrid
  - use GridItem to specify what layout you want
  - LazyVGrid + GridItem => Grid with columns
@@ -28,6 +28,7 @@ struct ContentView: View {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 100, maximum: 300))], spacing: 30) {
                 ForEach(0..<100) { index in
                     Text("\(index)")
+                        .font(.title2)
                         .frame(width: 100, height: 100)
                         .background(Color.red)
                         .cornerRadius(10)

@@ -13,11 +13,27 @@ struct ContentView: View {
         VStack {
             Text("Count: \(counter)")
             Button("Increment") { counter += 1 }
-            let _ = Self._printChanges()
+                .modifier(PrimaryButtonStyle())
         }
     }
 }
 
 #Preview {
     ContentView()
+}
+
+extension View {
+    func primaryButtonStyle() -> some View {
+        modifier(PrimaryButtonStyle())
+    }
+}
+
+struct PrimaryButtonStyle: ViewModifier {
+  func body(content: Content) -> some View {
+    content
+      .padding()
+      .background(Color.blue)
+      .foregroundColor(.white)
+      .clipShape(Capsule())
+  }
 }

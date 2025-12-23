@@ -65,6 +65,11 @@ class CountManager: ObservableObject {
     @Published var count: Int = 0
 }
 
+@Observable
+class CountManagerWithObservable { // no need for ObservableObject
+    var count: Int = 0 // no need for @Published
+}
+
 struct CountView: View {
     @ObservedObject var countManager: CountManager // let this be a StateObject instead of an ObservedObject so that CountView maintains CountManager alive for the duration of CountView's life
     // here, CountView is NOT the owner of CountManager (when using @EnvironmentObject; if using @StateObject, then yes, the CountView would be the owner of CountManager)
@@ -94,6 +99,8 @@ struct ContentView: View {
             CountView(countManager: countManager)
             
             InsideView()
+            
+            ViewWithObservable()
         }
         .padding()
         .environmentObject(countManager) // this will pass CountManager to all the subviews; if you don't pass it here, Previews will crash
@@ -107,6 +114,21 @@ struct InsideView: View {
         VStack {
             Text("Inside View using an environment object")
             Text("\(countManager.count)")
+        }
+    }
+}
+
+struct ViewWithObservable: View {
+    // NO need for @StateObject
+    let observedObject = CountManagerWithObservable()
+    
+    var body: some View {
+        VStack {
+            Button("Increase counter using @ObservableObject") {
+                observedObject.count += 1
+            }
+            Text("Inside ViewWithObservable using an @ObservableObject")
+            Text("Its count is: \(observedObject.count)")
         }
     }
 }

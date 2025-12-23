@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import SwiftUI_PlayProject
 
 final class SwiftUI_PlayProjectUITests: XCTestCase {
 
@@ -27,6 +28,12 @@ final class SwiftUI_PlayProjectUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
+        
+        let button = app.buttons["Increment"]
+        button.tap()
+        
+        let text = app.staticTexts.matching(NSPredicate(format: "label CONTAINS[c] 'Count:'")).firstMatch
+        XCTAssertEqual(text.label, "Count: 1")
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
