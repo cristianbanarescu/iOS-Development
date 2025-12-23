@@ -1,6 +1,7 @@
 # SwiftUI Interview Questions & Answers
 
 Generated using Claude.
+For demo/practice mode only.
 
 ## Basics & Fundamentals
 

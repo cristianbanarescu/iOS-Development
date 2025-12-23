@@ -1,5 +1,7 @@
 # SwiftUI Learning Project using ChatGPT
 
+Generated using ChatGPT. For demo/practice mode only.
+
 ## Prompt
 
 I want you to act like a very experienced senior iOS engineer and SwiftUI expert.

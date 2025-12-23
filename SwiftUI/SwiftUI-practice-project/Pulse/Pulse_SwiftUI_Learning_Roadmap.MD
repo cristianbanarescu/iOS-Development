@@ -2,6 +2,7 @@
 **Enhanced Edition with Code Samples & Offline Tasks**
 
 Generated using Claude.
+For demo/practice mode only.
 
 ---
 
