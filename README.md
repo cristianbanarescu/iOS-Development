@@ -46,7 +46,7 @@ I'm always open to feedback and collaboration. If you're working on an exciting 
 
 You can contact me on [LinkedIn](https://www.linkedin.com/in/cristian-alexandru-banarescu/) or via email at cristianbanarescu@gmail.com
 
-## Useful resources
+## Credits
 
 Here are some resources that helped me understand, develop, practice, improve on different concepts around iOS:
 

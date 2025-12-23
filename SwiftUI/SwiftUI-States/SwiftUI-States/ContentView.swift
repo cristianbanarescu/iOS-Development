@@ -26,22 +26,23 @@ import SwiftUI
  - use it as a simple source of truth for a view; ie a Boolean, Int, String, etc (value types); this state doesn't get outside of current View
  - value updates > body of the View will refresh
  - good idea to mark @State with private (private @State var number: Int = 0 ) to reinforce the fact that this State belongs only to current view
+ - Example: some button from the current View changes some kind of state > increase the value of a counter and then show the updated value of the counter
  
  @StateObject:
 
- - use it when your view creates it first; if you (a View) are creating this first, use @StateObject
+ - use it when your view creates the object first; if you (a View) are creating this first, use @StateObject
  - this makes sure that this object will stay alive along with the current view
  - has persistence; when the view redraws itself a StateObject will remain persistent through the lifetime of the view
  - use @StateObject only once per object > whichever view is responsible for creating the object; the other views should just use @ObservedObject
- - use it to create observed objects and not for storing objects that were passed from outside current view
- - a View with a property of an StateObject => that View OWNS the object
- - use @StateObject to create the object and then pass it along other views using @ObservedObject
+ - use it to create observed objects and not for storing objects that were passed from outside current view (for that, use @ObservedObject)
+ - a View with a property marked @StateObject => that View OWNS the object
+ - use @StateObject to create the object and then 'read from it' inside other views using @ObservedObject
  
  
  @ObservedObject:
  
- - object is more complex than just a simple @State; has more properties and methods
- - when a view with an observedObject is placed inside another view (which has own state) and the state of the parent view changes, the 'child view' (with the observed object) will be refreshed and all the 'state' of the child view will be reset; this reset does not happen if child object uses its own 'StateObject'
+ - object is more complex than just a simple @State; has more properties and methods; some custom object that contains different properties
+ - when a view with an @ObservedObject is placed inside another view (which has own state) and the state of the parent view changes, the 'child view' (with the observed object) will be refreshed and all the 'state' of the child view will be reset; this reset does not happen if child object uses its own 'StateObject'
  - other views (who don't OWN the object) will watch for when values inside the ObservedObject change
  - DO NOT USE IT TO ACTUALLY CREATE THE OBJECT
  - USE IT ONLY WITH OBJECTS THAT WERE CREATED ELSEWHERE, NOT IN CURRENT VIEW
@@ -50,23 +51,23 @@ import SwiftUI
  
  @EnvironmentObject:
  
- - object made available to multiple views using the app itself ; shared data that every view can watch for
+ - object made available to multiple views using the app itself ; shared data that every view can watch for (like when you need to 'watch' for updates inside a Singleton)
  - you don't assign a value to an @EnvironmentObject object
  - you create the object elsewhere and just pass it along inside the subviews using the .environmentObject() modifier
- - Using this property wrapper, you declare the type of thing you expect to receive but you do not create it – you’re expecting to receive it from the environment
+ - Using this property wrapper, you declare the type of thing you expect to receive but you DO NOT CREATE IT – you’re expecting to receive it from the environment
  - If you need multiple objects to the environment you can add multiple environmentObject() modifiers one after the other
  
  - @State, @StateObject, @GestureState > the current view owns this data
  */
 
-// ObservableObject > conforming types can be used inside views so that when important changes happen to Published properties, the views will know and will reload their UI
+// ObservableObject > conforming types can be used inside views so that when important changes happen to Published properties, the views will know and will reload their UI (only part of the UI that depends on the observed properties of the object)
 class CountManager: ObservableObject {
     @Published var count: Int = 0
 }
 
 struct CountView: View {
-    @EnvironmentObject var countManager: CountManager // let this be a StateObject instead of an ObservedObject so that CountView maintains CountManager alive for the duration of CountView's life
-    // here, CountView is the owner of CountManager
+    @ObservedObject var countManager: CountManager // let this be a StateObject instead of an ObservedObject so that CountView maintains CountManager alive for the duration of CountView's life
+    // here, CountView is NOT the owner of CountManager (when using @EnvironmentObject; if using @StateObject, then yes, the CountView would be the owner of CountManager)
 
     var body: some View {
         VStack {
@@ -90,7 +91,7 @@ struct ContentView: View {
             
             Text("ContentView Counter: \(countManager.count)")
             
-            CountView() // using this and @ObservedObject inside the CountView, will reset the value of countManager.count whenever ContentView refreshes itself (when count for ContentView changes)
+            CountView(countManager: countManager)
             
             InsideView()
         }
