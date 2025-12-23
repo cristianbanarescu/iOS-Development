@@ -11,5 +11,5 @@ struct Activity {
     let id: String
     let title: String
     let body: String
-    let thirdLine: String? = nil
+    let thirdLine: String?
 }

@@ -78,7 +78,8 @@ struct ActivityRowView: View {
 #Preview {
     ActivityRowView(activity: Activity(id: "testID",
                                        title: "Preview Activity",
-                                       body: "This is what a row looks like"),
+                                       body: "This is what a row looks like",
+                                       thirdLine: nil),
                     onTap: { })
     .padding()
 }

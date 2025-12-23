@@ -11,17 +11,12 @@ struct FeedView: View {
     // @State answers “what can this view change?” What does THIS view control?
     // A view owns state only when it owns the user interaction that changes it.
     @State private var showThirdLine = true
-    @State private var activities: [Activity] = [
-        Activity(id: "1", title: "first one", body: "first one body"),
-        Activity(id: "2", title: "second one", body: "second one body"),
-        Activity(id: "3", title: "third one", body: "third one body")
+    private var activities: [Activity] = [
+        Activity(id: "1", title: "first one", body: "first one body", thirdLine: nil),
+        Activity(id: "2", title: "second one", body: "second one body", thirdLine: "test"),
+        Activity(id: "3", title: "third one", body: "third one body", thirdLine: "test2")
     ]
     @State private var selectedActivity: Activity?
-    
-    init(showThirdLine: Bool = true, activities: [Activity]) {
-        self.showThirdLine = showThirdLine
-        self.activities = activities
-    }
 
     var body: some View {
         VStack(spacing: 16) {
@@ -37,7 +32,14 @@ struct FeedView: View {
 
             VStack(spacing: 12) {
                 ForEach(activities, id: \.id) { activity in
-                    ActivityRowView(activity: activity) {
+                    let displayActivity = Activity(
+                        id: activity.id,
+                        title: activity.title,
+                        body: activity.body,
+                        thirdLine: showThirdLine ? activity.thirdLine : nil
+                    )
+
+                    ActivityRowView(activity: displayActivity) {
                         print(activity.id)
                         selectedActivity = activity
                     }
@@ -51,10 +53,6 @@ struct FeedView: View {
 }
 
 #Preview {
-    FeedView(activities: [
-        Activity(id: "1", title: "first one", body: "first one body"),
-        Activity(id: "2", title: "second one", body: "second one body"),
-        Activity(id: "3", title: "third one", body: "third one body"),
-    ])
+    FeedView()
 }
 
