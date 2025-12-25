@@ -6,22 +6,9 @@ This page covers AI concepts, particularly generative AI (ChatGPT), and offers i
 
 For a detailed deep dive into different AI tools, concepts, demos, please check out the Generative AI Udemy [course](https://www.udemy.com/course/complete-ai-guide/)
 
-## Applications of AI in Development
-
-AI tools like GitHub Copilot and ChatGPT can assist developers by:
-- generating boilerplate code
-- optimizing algorithms
-- debugging errors efficiently
-- answering technical questions 
-- generating documentation
-
 ## Best practices/resources/tips to improve prompts and outputs
 
-- Specify exactly what you need, including constraints or desired formats.
-- Add sample inputs and outputs for clarity.
-- Refine prompts based on ChatGPT's responses to improve results.
-- **Use Temperature and Max Tokens**: Adjust these parameters in the API to control the randomness and length of responses.
-- Openart AI's prompt [book](https://cdn.openart.ai/assets/Stable%20Diffusion%20Prompt%20Book%20From%20OpenArt%2010-28.pdf) - how to improve your promtpting to generate images 
+- Openart AI's prompt [book](https://cdn.openart.ai/assets/Stable%20Diffusion%20Prompt%20Book%20From%20OpenArt%2010-28.pdf) - how to improve your prompting to generate images 
 - https://promptomania.com/
 - https://playground.com/
 - https://lexica.art/
@@ -46,28 +33,6 @@ ChatGPT plugins extend its functionality by integrating it with third-party tool
 12. **Flowchart Generator**: Helps visualize app logic and decision-making processes.
 13. **ER Diagram Builder**: Creates entity-relationship diagrams for database modeling.
 14. **Storyboard Assistant**: Automates the generation of iOS storyboards from text descriptions.
-
-#### Other notable plugins
-
-**Education and Learning:**
-1. **EdX Plugin**: Helps find online courses and resources for technical skill development.
-2. **Khan Academy**: Offers guidance on foundational and advanced programming concepts.
-3. **Coursera Assistant**: Finds courses and certifications tailored to your field.
-
-**Visual and Diagram Tools:**
-1. **Lucidchart Integration**: Creates detailed UML, flowcharts, and organizational diagrams.
-2. **Visio Connector**: Simplifies the process of creating and managing professional diagrams.
-3. **Miro Board Plugin**: Enables collaborative brainstorming and diagramming in real-time.
-
-**Communication and Language Tools:**
-1. **Speak Plugin**: Provides real-time translations and communication tips for global teams.
-2. **Grammarly Assistant**: Helps refine technical documentation and communication.
-3. **Loom Plugin**: Facilitates quick video explanations of concepts or bugs.
-
-**Miscellaneous Productivity Tools:**
-1. **Zapier Plugin**: Automates workflows by connecting multiple apps.
-2. **Notion AI**: Enhances productivity by generating content for planning and note-taking.
-3. **Todoist Integration**: Helps organize tasks and manage priorities efficiently.
 
 ## Other Notable AI Tools
 
@@ -98,4 +63,5 @@ Gemini AI by Google is a multimodal platform for complex tasks across text, imag
 - [PlantUML](https://plantuml.com/): Text-based UML diagram generation tool.
 - [Perplexity AI](https://www.perplexity.ai/): Conversational AI and search platform.
 - [Google Vertex AI](https://cloud.google.com/vertex-ai): Unified platform for machine learning by Google.
-
+- [What to fix in AI-generated Swift code](https://www.hackingwithswift.com/articles/281/what-to-fix-in-ai-generated-swift-code)
+- [Paul Hudson's repo with rules for LLMs when coding](https://github.com/twostraws/SwiftAgents)
