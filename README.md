@@ -31,6 +31,7 @@ These are a collection of demo projects that showcase my skills and experience i
 - For cross-platform projects&demos, please see the Flutter [folder](./Flutter)
 - See the [Git & Github page](git.md) for useful information on how to use Git & Github for an iOS developer and in general.
 - See the [Concurrency & Multithreading page](./Concurrency/Concurrency.md) contains useful information about: multithreading, GCD, Swift Concurrency, serial vs concurrent queues, sync vs async, etc.
+- See the [AI page](AI.md) for more details regarding AI, prompting and usages in iOS development.
 
 ## Continuous Learning and Growth
 
@@ -50,4 +51,7 @@ You can contact me on [LinkedIn](https://www.linkedin.com/in/cristian-alexandru-
 
 Here are some resources that helped me understand, develop, practice, improve on different concepts around iOS:
 
-- 
+- [Feature flags in Swift](https://swiftwithmajid.com/2025/09/16/feature-flags-in-swift/?utm_source=substack&utm_medium=email)
+- [Measuring function execution time in Swift](https://medium.com/@ios-interview/how-to-measure-function-execution-time-in-swift-%EF%B8%8F-interview-question-807f28864f7e)
+- [Safely migrating singletons to Swift 6](https://dev.to/arshtechpro/safely-migrating-singletons-to-swift-6-4nm8)
+- [Monitoring app performance with MetricKit](https://swiftwithmajid.com/2025/12/09/monitoring-app-performance-with-metrickit/?utm_source=substack&utm_medium=email)

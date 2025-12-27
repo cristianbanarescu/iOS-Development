@@ -65,3 +65,7 @@ Gemini AI by Google is a multimodal platform for complex tasks across text, imag
 - [Google Vertex AI](https://cloud.google.com/vertex-ai): Unified platform for machine learning by Google.
 - [What to fix in AI-generated Swift code](https://www.hackingwithswift.com/articles/281/what-to-fix-in-ai-generated-swift-code)
 - [Paul Hudson's repo with rules for LLMs when coding](https://github.com/twostraws/SwiftAgents)
+- [20 AI prompts for iOS developers](https://medium.com/@rahulnimje94/20-ai-prompts-every-ios-developer-should-save-2025-edition-0b7a3e94e092)
+- [Other useful AI prompts for iOS developers](https://medium.com/@rahulnimje94/i-replaced-30-of-my-ios-work-with-ai-heres-the-exact-prompt-pack-i-use-daily-f559843057f7)
+- [Swift Langchain - Swift Agents](https://github.com/christopherkarani/SwiftAgents?ck_subscriber_id=2978340983&utm_source=convertkit&utm_medium=email&utm_campaign=SwiftLee%20Weekly%20-%20Issue%20303%20-%2020158217)
+- [Stop Getting Average Code from Your LLM](https://merowing.info/posts/stop-getting-average-code-from-your-llm/?ck_subscriber_id=2978340983&utm_source=convertkit&utm_medium=email&utm_campaign=SwiftLee%20Weekly%20-%20Issue%20303%20-%2020158217)
