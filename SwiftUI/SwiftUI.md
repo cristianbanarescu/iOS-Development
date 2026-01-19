@@ -8,6 +8,7 @@
 - Use `@StateObject` when owning a reference type (ie initialize a ViewModel object inside a View)
 - Use `@ObservedObject` when NOT owning the reference type. You just 'observe' it, you are not its owner
 - Navigation is done via: `NavigationStack`, `NavigationLink`, `.navigationTitle` 
+    - also useful: `.toolbar` and `ToolbarItem` to add navigation 'bar button items'
 
 ## Credits
 
