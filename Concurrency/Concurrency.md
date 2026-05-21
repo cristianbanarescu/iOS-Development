@@ -357,3 +357,4 @@ Publishers.Zip(api1Publisher, api2Publisher)
 - https://medium.com/@mohitdubey_83162/interview-concurrent-vs-serial-dispatch-queues-in-swift-d076c8af9423
 - https://www.donnywals.com/dispatching-async-or-sync-the-differences-explained/
 - [Swift Concurrency Interview Cheatsheet](https://medium.com/@aayushi9555/swift-concurrency-interview-cheatsheet-16d30e258988)
+- [Swift Concurrency from Zero to Hero | Reading List](https://swiftology.io/articles/swift-concurrency-zero-to-hero/?utm_source=substack&utm_medium=email)

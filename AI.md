@@ -45,7 +45,7 @@ ChatGPT plugins extend its functionality by integrating it with third-party tool
 ### Gemini AI
 Gemini AI by Google is a multimodal platform for complex tasks across text, images, and other data formats, enabling the creation of intelligent systems with natural language and generative capabilities.
 
-## Useful Resources
+## Credits & Useful Resources
 
 - [OpenAI Documentation](https://platform.openai.com/docs/): Comprehensive guide for OpenAI tools.
 - [TensorFlow](https://www.tensorflow.org/): Open-source platform for machine learning.
@@ -69,3 +69,7 @@ Gemini AI by Google is a multimodal platform for complex tasks across text, imag
 - [Other useful AI prompts for iOS developers](https://medium.com/@rahulnimje94/i-replaced-30-of-my-ios-work-with-ai-heres-the-exact-prompt-pack-i-use-daily-f559843057f7)
 - [Swift Langchain - Swift Agents](https://github.com/christopherkarani/SwiftAgents?ck_subscriber_id=2978340983&utm_source=convertkit&utm_medium=email&utm_campaign=SwiftLee%20Weekly%20-%20Issue%20303%20-%2020158217)
 - [Stop Getting Average Code from Your LLM](https://merowing.info/posts/stop-getting-average-code-from-your-llm/?ck_subscriber_id=2978340983&utm_source=convertkit&utm_medium=email&utm_campaign=SwiftLee%20Weekly%20-%20Issue%20303%20-%2020158217)
+- [Automating Codex](https://build.ms/2026/2/12/automating-codex/?ck_subscriber_id=2978340983&utm_source=convertkit&utm_medium=email&utm_campaign=SwiftLee%20Weekly%20-%20Issue%20311%20-%2020748050)
+- [Agentic Coding in Xcode with Gemini CLI](https://peterfriese.dev/blog/2026/agentic-coding-xcode-geminicli/?ck_subscriber_id=2978340983&utm_source=convertkit&utm_medium=email&utm_campaign=SwiftLee%20Weekly%20-%20Issue%20311%20-%2020748050)
+- [AI Development A van der Lee](https://www.avanderlee.com/category/ai-development/?utm_source=substack&utm_medium=email)
+- [Tracking token usage in Foundation Models](https://artemnovichkov.com/blog/tracking-token-usage-in-foundation-models?ck_subscriber_id=2978340983&utm_source=convertkit&utm_medium=email&utm_campaign=SwiftLee%20Weekly%20-%20Issue%20312%20-%2020825110)

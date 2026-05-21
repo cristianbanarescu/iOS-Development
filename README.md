@@ -55,3 +55,4 @@ Here are some resources that helped me understand, develop, practice, improve on
 - [Measuring function execution time in Swift](https://medium.com/@ios-interview/how-to-measure-function-execution-time-in-swift-%EF%B8%8F-interview-question-807f28864f7e)
 - [Safely migrating singletons to Swift 6](https://dev.to/arshtechpro/safely-migrating-singletons-to-swift-6-4nm8)
 - [Monitoring app performance with MetricKit](https://swiftwithmajid.com/2025/12/09/monitoring-app-performance-with-metrickit/?utm_source=substack&utm_medium=email)
+- [Code magic CLI tools](https://github.com/codemagic-ci-cd/cli-tools/?utm_source=swiftlee&utm_medium=sponsorship&utm_campaign=variant_e&ck_subscriber_id=2978340983)

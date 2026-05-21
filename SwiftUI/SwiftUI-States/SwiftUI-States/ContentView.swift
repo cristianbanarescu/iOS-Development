@@ -73,13 +73,14 @@ class CountManagerWithObservable { // no need for ObservableObject
 struct CountView: View {
     @ObservedObject var countManager: CountManager // let this be a StateObject instead of an ObservedObject so that CountView maintains CountManager alive for the duration of CountView's life
     // here, CountView is NOT the owner of CountManager (when using @EnvironmentObject; if using @StateObject, then yes, the CountView would be the owner of CountManager)
+    // in the current view tree, it doesn't make sense for this countManager to be @StateObject because it does not own the value, it just reads it; this view is a child view and just receives some state from the parent
 
     var body: some View {
         VStack {
-            Button("Increase counter from CountManager") {
+            Button("Increase counter from inside CountView (child view)") {
                 countManager.count += 1
             }
-            Text("CountManager Counter: \(countManager.count)")
+            Text("CountManager Counter from CountView(child view): \(countManager.count)")
         }
     }
 }
@@ -113,22 +114,24 @@ struct InsideView: View {
     var body: some View {
         VStack {
             Text("Inside View using an environment object")
-            Text("\(countManager.count)")
+            Text("Inside View counter: \(countManager.count)")
         }
     }
 }
 
 struct ViewWithObservable: View {
-    // NO need for @StateObject
-    let observedObject = CountManagerWithObservable()
+    // if this is not marked with @State, then changing the counter from the other views will make this view also refresh and lose the current state (the current counter value set here)
+    // if this is not @State then it means we just observe the count manager that was injected via .environmentObject(countManager)
+    // observing the manager via .environmentObject(countManager) means that when any view (that use that manager) changes the value of that manager's count, it will trigger a refresh over all the views using/observing it and the 'independent' state of this current view will be lost
+    @State var observableCounteManager = CountManagerWithObservable()
     
     var body: some View {
         VStack {
             Button("Increase counter using @ObservableObject") {
-                observedObject.count += 1
+                observableCounteManager.count += 1
             }
             Text("Inside ViewWithObservable using an @ObservableObject")
-            Text("Its count is: \(observedObject.count)")
+            Text("Its count is: \(observableCounteManager.count)")
         }
     }
 }
